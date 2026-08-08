@@ -16,16 +16,4 @@
   "images": [],
   "featured": true,
   "date": "2026-06-12"
-}{
-  "title": "Logistics Exception System",
-  "category": "Software Development",
-  "description": "",
-  "detailedDescription":"",
-  "technologies": ["Php", "Python", "Laravel"],
-  "githubUrl": "https://github.com/mide73924/",
-  "deployedUrl": "",
-  "images": [
-  ],
-  "featured": true,
-  "date": "2026-02-02"
 }
