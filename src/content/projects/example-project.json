@@ -1,4 +1,22 @@
 {
+  "title": "Leroy Lock - Technology & Science Video Essay Channel",
+  "category": "Technical Media & Educational Content",
+  "description": "A technology-focused YouTube channel producing educational videos and essays exploring computer science, networking, databases, human-computer interaction, scientific reasoning, and emerging technologies.",
+  "detailedDescription": "Leroy Lock is a technical media platform focused on explaining complex ideas in computing, science, and technology through structured educational videos and video essays. The channel covers topics including CCNA networking concepts, database management, SQL, data analytics, cloud computing, human-computer interaction, scientific reasoning, and broader discussions about technology and society.",
+  "technologies": [
+    "YouTube Studio",
+    "Video Production",
+    "Research & Technical Writing",
+    "Screen Recording",
+    "Educational Content Design",
+    "Computer Science Communication"
+  ],
+  "githubUrl": "",
+  "deployedUrl": "https://www.youtube.com/@LeroyLock",
+  "images": [],
+  "featured": true,
+  "date": "2026-06-12"
+}{
   "title": "Logistics Exception System",
   "category": "Software Development",
   "description": "",
