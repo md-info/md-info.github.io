@@ -4,7 +4,7 @@ description: "An article for the Workgroup for Resilient Idustrial Systems"
 publishDate: 2025-10-24
 category: "Article"
 tags: ["Article"]
-featured: true
+featured: false
 draft: true
 author: "Michel Deosaran"
 ---
