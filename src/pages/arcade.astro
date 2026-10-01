@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Night Run — Michel Deosaran" description="An original neon-city browser arcade. Dodge traffic and collect signal packets on a night run through the city.">
+  <div class="dossier-content arcade-content"><p class="eyebrow">07 / AFTER HOURS</p><div class="arcade-heading"><div><h1>Night <em>run.</em></h1><p class="lead">An original browser arcade. Collect cyan signals. Avoid red traffic.</p></div><span class="arcade-badge">NO DOWNLOAD / NO SIGN-IN</span></div>
+    <div class="arcade-shell"><div class="arcade-hud"><span>SIGNAL <b id="game-score">0000</b></span><span>INTEGRITY <b id="game-health">3 / 3</b></span><span>BEST <b id="game-best">0000</b></span></div>
+      <div class="game-viewport"><canvas id="night-run" width="1000" height="500" tabindex="0" aria-label="Night Run. Use left and right arrow keys or A and D to change lanes. Space pauses. Escape exits the run."></canvas>
+      <div id="game-overlay" class="game-overlay"><p class="eyebrow">TORONTO / AFTER HOURS</p><h2 id="game-message">The city is yours.</h2><p id="game-instructions">Three lanes. One night. How far can you go?</p><button id="game-start" class="enter-button">START RUN <span>↗</span></button></div></div>
+      <div class="arcade-controls"><button id="game-left" aria-label="Move left">← LEFT</button><button id="game-pause">PAUSE</button><button id="game-right" aria-label="Move right">RIGHT →</button></div>
+    </div><p class="game-help"><kbd>← →</kbd> / <kbd>A D</kbd> Change lane &nbsp; <kbd>Space</kbd> Pause &nbsp; <kbd>Esc</kbd> End run. Touch controls work below the screen.</p><p class="game-disclaimer">A small independent experiment, built for this portfolio.</p><p id="game-announcement" class="sr-only" aria-live="polite"></p>
+    <noscript><p>This arcade needs JavaScript. The rest of the portfolio is available without it.</p></noscript>
+  </div>
+  <script>import '../scripts/night-run.ts';</script>
+</Layout>

@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mide73924.github.io",
+  site: "https://md-info.github.io",
+  devToolbar: { enabled: false },
   // base: '/micheldeo/',  // <--- this ensures all built assets use the correct subpath
 
   vite: {

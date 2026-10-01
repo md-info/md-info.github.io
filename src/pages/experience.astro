@@ -1,53 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const files = [
+  { number: '01', title: 'Education', subtitle: 'Computing & Information Systems', text: 'Athabasca University. A foundation in software, systems, and the way people use technology.', href: '/experience/education/', tag: 'ACADEMIC RECORD' },
+  { number: '02', title: 'Work', subtitle: 'Business development', text: 'Freelance outreach and sales development through Michael & Zion Revenue Group.', href: '/experience/work/', tag: 'PROFESSIONAL RECORD' },
+  { number: '03', title: 'Community', subtitle: 'Student affairs & leadership', text: 'Workgroup for Resilient Industrial Systems. Student resources, communication, and community building.', href: '/experience/extracurricular/', tag: 'COMMUNITY RECORD' },
+];
 ---
-
-<Layout title="Experience - Peter Vu" description="Explore my professional experience, skills, and background in software engineering and research.">
-	<div class="py-16 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-6xl mx-auto">
-			<!-- Header -->
-			<div class="text-center mb-16 animate-fade-in">
-				<h1 class="text-4xl font-bold text-primary mb-4">What I've Been Up To 📚</h1>
-				<p class="text-secondary text-lg max-w-2xl mx-auto">
-					My journey so far - from confused freshman to slightly-less-confused junior looking for their first co-op!
-				</p>
-			</div>
-
-			<!-- Overview Cards -->
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 animate-stagger">
-				<div class="card p-6 text-center animate-scale-in" style="--index: 0;">
-					<div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-semibold text-primary mb-2">Work & Internships</h3>
-					<p class="text-secondary mb-4">My (limited but growing!) work experience and internships</p>
-					<a href="/experience/work" class="btn btn-secondary">See what I've done</a>
-				</div>
-
-				<div class="card p-6 text-center animate-scale-in" style="--index: 1;">
-					<div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-semibold text-primary mb-2">Education</h3>
-					<p class="text-secondary mb-4">University and other certifications</p>
-					<a href="/experience/education" class="btn btn-secondary">My academic journey</a>
-				</div>
-
-				<div class="card p-6 text-center animate-scale-in" style="--index: 2;">
-					<div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-semibold text-primary mb-2">Extracurriculars & Volunteering</h3>
-          <p class="text-secondary mb-4">Clubs and initiatives I'm proud of</p>
-					<a href="/experience/extracurricular" class="btn btn-secondary">See my adventures</a>
-				</div>
-			</div>
-		</div>
-	</div>
+<Layout title="Experience — Michel Deosaran">
+  <div class="dossier-content"><p class="eyebrow">03 / EXPERIENCE RECORD</p><h1>Learning. Building.<br /><em>Connecting.</em></h1><p class="lead">Three parts of the same journey.</p><div class="experience-files">{files.map(file => <a class="experience-file" href={file.href}><div class="experience-number">{file.number}</div><span class="eyebrow">{file.tag}</span><h2>{file.title}</h2><h3>{file.subtitle}</h3><p>{file.text}</p><span class="file-action">OPEN RECORD <b>↗</b></span></a>)}</div></div>
 </Layout>

@@ -11,7 +11,7 @@ const blogCollection = defineCollection({
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
-    author: z.string().default('Peter Vu'),
+    author: z.string().default('Michel Deosaran'),
     image: z.string().optional(),
     courseCode: z.string().optional(),
     courseName: z.string().optional(),
