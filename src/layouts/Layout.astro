@@ -1,61 +1,61 @@
 ---
-import "../styles/global.css"
-import Navigation from '../components/layout/Navigation.astro';
-import Footer from '../components/layout/Footer.astro';
-
-interface Props {
-	title?: string;
-	description?: string;
-}
-
-const { title = "Alex Johnson - Portfolio", description = "Personal portfolio and blog" } = Astro.props;
+import '../styles/global.css';
+import '../styles/night-city.css';
+interface Props { title?: string; description?: string; home?: boolean; }
+const { title = 'Michel Deosaran', description = 'Computing, cybersecurity, and business. The personal portfolio of Michel Deosaran.', home = false } = Astro.props;
+const path = Astro.url.pathname;
+const items = [
+  ['/profile/', 'Enter profile', '01'], ['/projects/', 'Projects', '02'],
+  ['/experience/', 'Experience', '03'], ['/research/', 'Research', '04'],
+  ['/coursework/', 'Coursework', '05'], ['/blog/', 'Journal', '06'], ['/arcade/', 'Night run', '07'], ['/contact/', 'Connect', '08'],
+];
 ---
-
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		
-		<!-- Theme initialization script - runs before page renders -->
-		<script is:inline>
-			(function() {
-				const savedTheme = localStorage.getItem('theme');
-				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-				
-				if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-					document.documentElement.setAttribute('data-theme', 'dark');
-				}
-			})();
-		</script>
-		
-		<!-- Preconnect to Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		
-		<title>{title}</title>
-	</head>
-	<body class="min-h-screen flex flex-col">
-		<Navigation />
-		<main class="flex-1">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} /><meta name="theme-color" content="#090c12" />
+    <meta property="og:title" content={title} /><meta property="og:description" content={description} />
+    <meta property="og:image" content="https://md-info.github.io/images/toronto-waterfront.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/images/toronto-waterfront.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class:list={['night-city', { 'is-home': home }]}>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <div class="city-scene" aria-hidden="true">
+      <div class="scene-shot shot-waterfront"></div><div class="scene-shot shot-aerial"></div>
+      <div class="scene-grade"></div><div class="rain"></div><div class="scanlines"></div>
+    </div>
+    <div class="screen-frame" aria-hidden="true"></div>
+    <header class="system-bar"><a href="/" aria-label="Michel Deosaran main menu">MD<span>_</span></a><span>PERSONAL INTERFACE <b> / </b> TORONTO, ON</span><time id="toronto-time">TORONTO</time></header>
+    <div class="interface-grid">
+      {home && <aside class="menu-panel">
+        <a href="/" class="identity" aria-label="Michel Deosaran main menu"><span>MICHEL</span><strong>DEOSARAN<span class="identity-dot">.</span></strong></a>
+        <p class="identity-caption">COMPUTING · SECURITY · BUSINESS</p>
+        <div class="menu-heading"><span>MAIN MENU</span><span>MD / 001</span></div>
+        <nav aria-label="Main menu" class="game-menu">
+          {items.map(([href, label, number], index) => <a href={href} class:list={['menu-item', { active: index === 0 }]}><span class="menu-number">{number}</span><span>{label}</span><span class="menu-indicator" aria-hidden="true">↗</span></a>)}
+          <button class="menu-item settings-open" aria-haspopup="dialog"><span class="menu-number">09</span><span>Settings</span><span class="menu-indicator" aria-hidden="true">＋</span></button>
+        </nav>
+        <div class="menu-bottom"><span class="status-light"></span> OPEN TO CONNECTIONS <span class="version">V.01</span></div>
+      </aside>}
+      <main id="content" class:list={['content-screen', { 'home-screen': home }]} tabindex="-1">
+        {!home && <div class="dossier-bar"><a href="/">← MAIN MENU</a><span>ARCHIVE / {path.split('/').filter(Boolean)[0]?.toUpperCase()}</span></div>}
+        <slot />
+      </main>
+    </div>
+    <footer class="controls-bar"><span>43°39′ N &nbsp; 79°23′ W <i> / </i> THE CITY AFTER DARK</span><div><span><kbd>{home ? '↑ ↓' : 'Tab'}</kbd> Navigate</span><span><kbd>↵</kbd> Select</span><span><kbd>Esc</kbd> Back</span><button class="settings-open" aria-label="Open interface settings">⚙ Settings</button></div></footer>
+    <dialog id="settings-dialog" aria-labelledby="settings-title">
+      <div class="dialog-top"><span>INTERFACE CONFIGURATION</span><button id="settings-close" aria-label="Close settings">×</button></div>
+      <h2 id="settings-title">Settings</h2><p>Make yourself comfortable.</p>
+      <label class="setting-row">Ambient motion <input type="checkbox" id="motion-setting" checked /></label>
+      <label class="setting-row">Menu sound <input type="checkbox" id="sound-setting" /></label>
+      <p class="settings-note">Sound is off by default. Motion follows your device preference until you change it.</p>
+      <div class="photo-credits"><span>TORONTO NIGHT PHOTOGRAPHY</span><a href="https://unsplash.com/photos/pFR9lF9LuN8" target="_blank" rel="noopener noreferrer">Mike Swigunski ↗</a><a href="https://unsplash.com/photos/CamJb_3RDoM" target="_blank" rel="noopener noreferrer">alex° ↗</a><a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash license ↗</a></div>
+    </dialog>
+    <script>import '../scripts/interface.ts';</script>
+  </body>
 </html>
-
-<style>
-	html {
-		scroll-behavior: smooth;
-	}
-	
-	body {
-		margin: 0;
-		width: 100%;
-		min-height: 100vh;
-	}
-</style>

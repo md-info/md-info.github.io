@@ -1,140 +1,29 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/projects/ProjectCard.astro";
-import ProjectModal from "../components/projects/ProjectModal.astro";
-import { readdir, readFile } from "node:fs/promises";
-
-// Load all project data
-const projectFiles = await readdir("./src/content/projects");
-const projects = await Promise.all(
-  projectFiles
-    .filter((file) => file.endsWith(".json"))
-    .map(async (file) => {
-      const content = await readFile(`./src/content/projects/${file}`, "utf-8");
-      return JSON.parse(content);
-    })
-);
-
-// Sort projects by date (newest first) and featured status
-const sortedProjects = projects.sort((a, b) => {
-  if (a.featured && !b.featured) return -1;
-  if (!a.featured && b.featured) return 1;
-  return new Date(b.date).getTime() - new Date(a.date).getTime();
-});
-
-const categories = ["All", ...new Set(projects.map((p) => p.category))];
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+const projects = (await getCollection('projects')).sort((a,b) => b.data.date.localeCompare(a.data.date));
+const categories = [...new Set(projects.map(p => p.data.category))];
 ---
-
-<Layout
-  title="Projects - Michel Deosaran"
-  description="Explore my portfolio of software development, machine learning, and research projects."
->
-  <div class="py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto">
-      <!-- Header -->
-      <div class="text-center mb-12 animate-fade-in">
-        <h1 class="text-4xl font-bold text-primary mb-4">
-          Stuff I've Built 🛠️
-        </h1>
-        <p class="text-secondary text-lg max-w-2xl mx-auto">
-          Here's a collection of projects I've worked on, be it for hackathons,
-          courses, or toy quality-of-lifes! To be updated when I have time...
-        </p>
-      </div>
-
-      <!-- Filter Buttons -->
-      <div
-        class="flex flex-wrap justify-center gap-3 mb-12 animate-slide-in-left"
-      >
-        {
-          categories.map((category) => (
-            <button
-              class={`filter-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                category === "All"
-                  ? "bg-primary text-white"
-                  : "bg-surface border border-color text-secondary hover:border-primary hover:text-accent"
-              }`}
-              data-category={category}
-            >
-              {category}
-            </button>
-          ))
-        }
-      </div>
-
-      <!-- Projects Grid -->
-      <div
-        id="projects-grid"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger"
-      >
-        {
-          sortedProjects.map((project, index) => (
-            <div class="project-item" data-category={project.category}>
-              <ProjectCard project={project} index={index} />
-            </div>
-          ))
-        }
-      </div>
-
-      <!-- No results message -->
-      <div id="no-results" class="text-center py-12 hidden">
-        <p class="text-secondary text-lg">
-          No projects found for the selected category.
-        </p>
-      </div>
-    </div>
+<Layout title="Projects — Michel Deosaran" description="Explore Michel's projects in technical education and business development.">
+  <div class="dossier-content"><p class="eyebrow">02 / PROJECT ARCHIVE</p><h1>Ideas in <em>operation.</em></h1><p class="lead">Technical storytelling. Digital business. Work that connects people and systems.</p>
+    <div class="archive-filters" role="group" aria-label="Filter projects"><button data-category="all" aria-pressed="true">ALL PROJECTS</button>{categories.map(category => <button data-category={category} aria-pressed="false">{category}</button>)}</div>
+    <div class="project-grid">{projects.map(({id,data}, index) => <article class="project-file" data-project-category={data.category}><div class="project-file-top"><span>FILE / 0{index + 1}</span><span>↗</span></div><p class="eyebrow">{data.category}</p><h2>{data.title}</h2><p>{data.description}</p><div class="skill-tags">{data.technologies.slice(0,3).map(tech => <span>{tech}</span>)}</div><button class="enter-button project-open" data-dialog={`project-${id}`}>OPEN DOSSIER <span>＋</span></button></article>)}</div>
+    <p id="project-count" class="archive-count" aria-live="polite">{projects.length} FILES AVAILABLE</p>
+    {projects.map(({id,data}) => <dialog id={`project-${id}`} class="project-dialog" aria-labelledby={`title-${id}`}><div class="dialog-top"><span>PROJECT DOSSIER</span><button class="project-close" aria-label="Close project">×</button></div><p class="eyebrow">{data.category}</p><h2 id={`title-${id}`}>{data.title}</h2><p class="project-detail-copy">{data.detailedDescription}</p><div class="skill-tags">{data.technologies.map(tech => <span>{tech}</span>)}</div><div class="project-links">{data.deployedUrl && <a class="enter-button" href={data.deployedUrl} target="_blank" rel="noopener noreferrer">EXPLORE PROJECT ↗</a>}{data.githubUrl && data.githubUrl !== data.deployedUrl && <a class="enter-button" href={data.githubUrl} target="_blank" rel="noopener noreferrer">SOURCE ↗</a>}</div></dialog>)}
   </div>
-
-  <ProjectModal />
+  <script>
+    const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-category]')];
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-project-category]')];
+    filters.forEach(button => button.addEventListener('click', () => {
+      filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
+      cards.forEach(card => card.hidden = button.dataset.category !== 'all' && card.dataset.projectCategory !== button.dataset.category);
+      const count = cards.filter(card => !card.hidden).length;
+      document.querySelector('#project-count')!.textContent = `${count} ${count === 1 ? 'FILE' : 'FILES'} AVAILABLE`;
+    }));
+    document.querySelectorAll<HTMLButtonElement>('.project-open').forEach(button => button.addEventListener('click', () => (document.getElementById(button.dataset.dialog!) as HTMLDialogElement).showModal()));
+    document.querySelectorAll<HTMLDialogElement>('.project-dialog').forEach(dialog => {
+      dialog.querySelector('.project-close')?.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => { const rect = dialog.getBoundingClientRect(); if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close(); });
+    });
+  </script>
 </Layout>
-
-<script>
-  // Filter functionality
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const projectItems = document.querySelectorAll(".project-item");
-  const noResults = document.getElementById("no-results");
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const category = btn.getAttribute("data-category");
-
-      // Update active button
-      filterBtns.forEach((b) => {
-        if (b.getAttribute("data-category") === category) {
-          b.className =
-            "filter-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-primary text-white";
-        } else {
-          b.className =
-            "filter-btn px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-surface border border-color text-secondary hover:border-primary hover:text-accent";
-        }
-      });
-
-      // Filter projects
-      let visibleCount = 0;
-      projectItems.forEach((item) => {
-        const itemCategory = item.getAttribute("data-category");
-        if (category === "All" || itemCategory === category) {
-          item.style.display = "block";
-          visibleCount++;
-        } else {
-          item.style.display = "none";
-        }
-      });
-
-      // Show/hide no results message
-      if (visibleCount === 0) {
-        noResults?.classList.remove("hidden");
-      } else {
-        noResults?.classList.add("hidden");
-      }
-    });
-  });
-
-  // Project card click handlers
-  document.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const projectData = JSON.parse(card.getAttribute("data-project") || "{}");
-      (window as any).openProjectModal(projectData);
-    });
-  });
-</script>
