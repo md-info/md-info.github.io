@@ -3,8 +3,19 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout home title="Michel Deosaran — Toronto After Dark" description="Enter Michel Deosaran's portfolio. Computing, cybersecurity, and business development, through a Toronto after-dark interface.">
   <div class="home-topline"><span><i class="status-light"></i> CONNECTION ESTABLISHED</span><span>PERSONAL PORTFOLIO / 2026</span></div>
+  <aside id="incoming-call" class="incoming-call" aria-label="Incoming call from Michel" hidden>
+    <div class="call-label">INCOMING CONNECTION</div><div class="call-icon" aria-hidden="true">⌁</div>
+    <strong>MICHEL DEOSARAN</strong><span class="call-status">PERSONAL LINE / TORONTO</span>
+    <div class="call-actions"><button id="answer-call">ANSWER ↗</button><button id="decline-call">DECLINE</button></div>
+  </aside>
+  <aside id="active-call" class="active-call" aria-label="Active call with Michel" hidden>
+    <div class="call-label">MICHEL DEOSARAN <span>● LIVE</span></div>
+    <div class="caller-feed"><img src="/images/michel-caller.png" alt="Michel Deosaran" width="936" height="1047" /><div class="caller-scan" aria-hidden="true"></div></div>
+    <button id="end-call" aria-label="End call with Michel">END CALL ×</button>
+  </aside>
   <div class="welcome-copy"><p class="eyebrow">WELCOME TO MY CORNER OF THE CITY</p><h1>Curious mind.<br />Connected <em>world.</em></h1><div class="intro-dialogue" aria-label="Conversation with Michel">
-    <p class="home-description dialogue-subtitle" aria-live="polite" aria-atomic="true"><span class="dialogue-speaker" hidden>Michel:</span> <span id="dialogue-line">I'm Michel. I explore the space between technology, security, and the people behind it.</span></p>
+    <p class="home-description dialogue-subtitle" id="call-subtitle"><span class="dialogue-speaker" hidden>Michel:</span> <span id="dialogue-line">I'm Michel. I explore the space between technology, security, and the people behind it.</span></p>
+    <span id="call-announcement" class="sr-only" aria-live="polite" aria-atomic="true"></span>
     <div id="dialogue-choices" class="dialogue-choices" role="group" aria-label="Choose your reply" hidden>
       <a href="/profile/" class="dialogue-choice dialogue-progress" id="dialogue-progress"><span aria-hidden="true">›</span> Sure, I'll check it out. <span class="dialogue-action" aria-hidden="true">↗</span></a>
       <button class="dialogue-choice" data-reply="interests"><span aria-hidden="true">›</span> What are you working on?</button>
@@ -16,30 +27,4 @@ import Layout from '../layouts/Layout.astro';
   <noscript><p class="no-script">All portfolio pages are available through the main menu. JavaScript adds sound, settings, and the arcade.</p></noscript>
 </Layout>
 
-<script>
- const choices = document.querySelector<HTMLElement>('#dialogue-choices')!;
- const returning = document.querySelector<HTMLElement>('#return-profile')!;
- const speaker = document.querySelector<HTMLElement>('.dialogue-speaker')!;
- const line = document.querySelector<HTMLElement>('#dialogue-line')!;
- const replies: Record<string,string> = {
-  interests: "I'm studying Computing & Information Systems at Athabasca University, while exploring cybersecurity, creating technical content, and building digital business projects. You'll find those threads in my profile.",
-  toronto: "Toronto after dark is the setting for this portfolio: city lights, movement, and a game-inspired interface. Take a look around — the menu opens my work, studies, and interests."
- };
- function readSession(key:string) { try { return sessionStorage.getItem(key); } catch { return null; } }
- function saveSession(key:string,value:string) { try { sessionStorage.setItem(key,value); } catch { /* Dialogue still works when storage is unavailable. */ } }
- if (readSession('md-intro-complete') !== 'yes') {
-  choices.hidden=false; returning.hidden=true; speaker.hidden=false;
-  const last=readSession('md-intro-last'); if(last && replies[last]) line.textContent=replies[last];
-  choices.querySelectorAll<HTMLButtonElement>('button[data-reply]').forEach(button=>{
-   const key=button.dataset.reply!;
-   if(readSession('md-intro-used-'+key)==='yes') button.disabled=true;
-   button.addEventListener('click',()=>{
-    line.textContent=replies[key]; saveSession('md-intro-last',key);
-    saveSession('md-intro-used-'+key,'yes'); button.disabled=true;
-    choices.classList.remove('dialogue-refresh'); void choices.offsetWidth; choices.classList.add('dialogue-refresh');
-    choices.querySelector<HTMLAnchorElement>('a')!.focus({preventScroll:true});
-   });
-  });
-  document.querySelector('#dialogue-progress')!.addEventListener('click',()=>saveSession('md-intro-complete','yes'));
- }
-</script>
+<script src="../scripts/intro-call.ts"></script>
