@@ -3,7 +3,43 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout home title="Michel Deosaran — Toronto After Dark" description="Enter Michel Deosaran's portfolio. Computing, cybersecurity, and business development, through a Toronto after-dark interface.">
   <div class="home-topline"><span><i class="status-light"></i> CONNECTION ESTABLISHED</span><span>PERSONAL PORTFOLIO / 2026</span></div>
-  <div class="welcome-copy"><p class="eyebrow">WELCOME TO MY CORNER OF THE CITY</p><h1>Curious mind.<br />Connected <em>world.</em></h1><p class="home-description">I'm Michel. I explore the space between<br class="desktop-break" /> technology, security, and the people behind it.</p><a class="enter-button" href="/profile/"><span>ENTER PROFILE</span><span>↗</span></a></div>
+  <div class="welcome-copy"><p class="eyebrow">WELCOME TO MY CORNER OF THE CITY</p><h1>Curious mind.<br />Connected <em>world.</em></h1><div class="intro-dialogue" aria-label="Conversation with Michel">
+    <p class="home-description dialogue-subtitle" aria-live="polite" aria-atomic="true"><span class="dialogue-speaker" hidden>Michel:</span> <span id="dialogue-line">I'm Michel. I explore the space between technology, security, and the people behind it.</span></p>
+    <div id="dialogue-choices" class="dialogue-choices" role="group" aria-label="Choose your reply" hidden>
+      <a href="/profile/" class="dialogue-choice dialogue-progress" id="dialogue-progress"><span aria-hidden="true">›</span> Sure, I'll check it out. <span class="dialogue-action" aria-hidden="true">↗</span></a>
+      <button class="dialogue-choice" data-reply="interests"><span aria-hidden="true">›</span> What are you working on?</button>
+      <button class="dialogue-choice" data-reply="toronto"><span aria-hidden="true">›</span> Why Toronto after dark?</button>
+    </div>
+    <a class="enter-button" id="return-profile" href="/profile/"><span>ENTER PROFILE</span><span>↗</span></a>
+  </div></div>
   <div class="home-bottom"><div><span class="eyebrow">CURRENT PURSUIT</span><p>Computing & Information Systems</p><small>Athabasca University</small></div><div class="scene-caption"><span>01—02 / TORONTO AT NIGHT</span><div class="scene-progress"></div><small>A city in motion. A mind at work.</small></div></div>
   <noscript><p class="no-script">All portfolio pages are available through the main menu. JavaScript adds sound, settings, and the arcade.</p></noscript>
 </Layout>
+
+<script>
+ const choices = document.querySelector<HTMLElement>('#dialogue-choices')!;
+ const returning = document.querySelector<HTMLElement>('#return-profile')!;
+ const speaker = document.querySelector<HTMLElement>('.dialogue-speaker')!;
+ const line = document.querySelector<HTMLElement>('#dialogue-line')!;
+ const replies: Record<string,string> = {
+  interests: "I'm studying Computing & Information Systems at Athabasca University, while exploring cybersecurity, creating technical content, and building digital business projects. You'll find those threads in my profile.",
+  toronto: "Toronto after dark is the setting for this portfolio: city lights, movement, and a game-inspired interface. Take a look around — the menu opens my work, studies, and interests."
+ };
+ function readSession(key:string) { try { return sessionStorage.getItem(key); } catch { return null; } }
+ function saveSession(key:string,value:string) { try { sessionStorage.setItem(key,value); } catch { /* Dialogue still works when storage is unavailable. */ } }
+ if (readSession('md-intro-complete') !== 'yes') {
+  choices.hidden=false; returning.hidden=true; speaker.hidden=false;
+  const last=readSession('md-intro-last'); if(last && replies[last]) line.textContent=replies[last];
+  choices.querySelectorAll<HTMLButtonElement>('button[data-reply]').forEach(button=>{
+   const key=button.dataset.reply!;
+   if(readSession('md-intro-used-'+key)==='yes') button.disabled=true;
+   button.addEventListener('click',()=>{
+    line.textContent=replies[key]; saveSession('md-intro-last',key);
+    saveSession('md-intro-used-'+key,'yes'); button.disabled=true;
+    choices.classList.remove('dialogue-refresh'); void choices.offsetWidth; choices.classList.add('dialogue-refresh');
+    choices.querySelector<HTMLAnchorElement>('a')!.focus({preventScroll:true});
+   });
+  });
+  document.querySelector('#dialogue-progress')!.addEventListener('click',()=>saveSession('md-intro-complete','yes'));
+ }
+</script>
