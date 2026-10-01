@@ -21,7 +21,13 @@
 @keyframes city-pan { from { transform:scale(1) translate(-.5%,0); } to { transform:scale(1.08) translate(1%,-1%); } }
 @keyframes city-crossfade { 0%,35%,100% { opacity:0; } 45%,85% { opacity:1; } }
 @keyframes rain-fall { to { translate:0 120px; } }
-@keyframes screen-enter { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+@keyframes screen-enter {
+ 0% { clip-path:inset(0 0 100% 0); transform:translateX(-2px); }
+ 22% { clip-path:polygon(0 0,100% 0,100% 28%,0 28%,0 42%,100% 42%,100% 46%,0 46%); transform:translateX(1px); }
+ 46% { clip-path:inset(0 0 25% 0); transform:translateX(-1px); }
+ 72% { clip-path:inset(0 0 9% 0); transform:none; }
+ 100% { clip-path:inset(0); transform:none; }
+}
 @keyframes progress { from { transform:scaleX(0); } to { transform:scaleX(1); } }
 .motion-paused .scene-shot,.motion-paused .rain,.motion-paused .scene-progress::after,.tab-hidden .scene-shot,.tab-hidden .rain { animation-play-state:paused; }
 .motion-paused .content-screen { animation:none; }
@@ -53,7 +59,7 @@
 .menu-bottom { display:flex; align-items:center; gap:9px; margin-top:auto; padding-top:18px; border-top:1px solid #e35b5f55; font:12.6px 'IBM Plex Mono',monospace; color:#dca5a9; letter-spacing:.3px; }
 .version { margin-left:auto; color:var(--hud-red); }
 .status-light { display:inline-block; width:5px; height:5px; background:var(--hud-cyan); box-shadow:0 0 8px #86edf355; flex-shrink:0; }
-.content-screen { animation:screen-enter .3s ease-out; min-width:0; }
+.content-screen { animation:screen-enter 180ms steps(1,end) both; min-width:0; }
 .content-screen:focus { outline:none; }
 .home-screen { display:flex; flex-direction:column; padding:34px 0 28px 52px; }
 .home-topline { flex-wrap:wrap; display:flex; align-items:center; justify-content:space-between; gap:20px; color:var(--hud-cyan); font:12.6px 'IBM Plex Mono',monospace; letter-spacing:1px; }
@@ -181,9 +187,9 @@
 .work-record h2 { color:var(--hud-yellow); font:600 50.4px 'Barlow Condensed',sans-serif; margin:18px 0; }
 .record-back { display:inline-block; margin-top:35px; color:var(--hud-cyan); font:15.4px 'IBM Plex Mono',monospace; }
 @view-transition { navigation:auto; }
-::view-transition-old(root) { animation:screen-out .15s ease-in both; }
-::view-transition-new(root) { animation:screen-enter .25s ease-out both; }
-@keyframes screen-out { to { opacity:0; } }
+::view-transition-old(root) { animation:none; opacity:0; mix-blend-mode:normal; }
+::view-transition-new(root) { animation:none; mix-blend-mode:normal; }
+
 @media (max-width:900px) { .experience-files { grid-template-columns:1fr; } .experience-number { padding-bottom:15px; } }
 @media (max-width:700px) { .project-grid { grid-template-columns:1fr; } .project-file { padding:22px; } .project-file-top { margin-bottom:25px; } .project-file h2 { font-size:42px; } .archive-filters button { text-align:left; } .experience-file { padding:24px; } }
 @media (max-width:700px) { .arcade-badge { display:none; } .arcade-hud { font-size:11.2px; padding:12px 10px; letter-spacing:0; } .arcade-hud b { margin-left:4px; } #night-run { aspect-ratio:1.35; } .arcade-controls { padding:8px; gap:8px; } .game-overlay h2 { margin:8px 0; } .game-overlay>p:not(.eyebrow) { font-size:19.6px; } }
@@ -273,4 +279,28 @@
  .menu-item { line-height:1.1; min-height:42px; }
  .night-city h1 { font-size:64px; }
  .home-description { margin:20px 0; }
+}
+
+/* Discrete signal acquisition replaces archive fades, slides, and zooms. */
+@keyframes signal-lock {
+ 0% { clip-path:inset(0 0 100% 0); transform:translateX(-2px); }
+ 35% { clip-path:inset(0 0 55% 0); transform:translateX(1px); }
+ 65% { clip-path:inset(0 0 12% 0); transform:none; }
+ 100% { clip-path:inset(0); transform:none; }
+}
+.night-city [class*="animate-"] {
+ animation:signal-lock 140ms steps(1,end) both!important;
+ animation-delay:min(calc(var(--index,0) * 18ms),90ms)!important;
+ opacity:1!important;
+}
+.night-city .card,.night-city .btn,.night-city .menu-item,.night-city .experience-file,
+.night-city [class*="transition-"] { transition:none; }
+.night-city .card:hover,.night-city img:hover { transform:none; }
+.motion-paused [class*="animate-"],.motion-paused .content-screen {
+ animation:none!important; opacity:1!important; clip-path:none!important; transform:none!important;
+}
+@media (prefers-reduced-motion:reduce) {
+ .night-city .content-screen,.night-city [class*="animate-"] {
+ animation:none!important; opacity:1!important; clip-path:none!important; transform:none!important;
+ }
 }
