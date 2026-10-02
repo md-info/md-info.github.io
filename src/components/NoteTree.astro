@@ -1,0 +1,12 @@
+---
+interface Node { name: string; children: Node[]; notes: {title:string;url:string;search:string}[]; }
+interface Props { node: Node; current: string; }
+const { node, current } = Astro.props;
+---
+<details class="note-folder" open>
+  <summary>{node.name}</summary>
+  <div class="folder-children">
+    {node.children.map(child => <Astro.self node={child} current={current} />)}
+    {node.notes.map(note => <a href={note.url} data-note-search={note.search} aria-current={note.url === current ? 'page' : undefined}><span aria-hidden="true">▤</span>{note.title}</a>)}
+  </div>
+</details>

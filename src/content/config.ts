@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
     description: z.string(),
     publishDate: z.date(),
     updatedDate: z.date().optional(),
+    folder: z.string().optional(),
     category: z.string(),
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
