@@ -1,9 +1,13 @@
 {
-    "title": "Intro Research & Study Skills",
-    "code": "COMM 100",
-    "institution": "Athabasca University",
-    "semester": "Winter 2025",
-    "description": "Course description and key topics covered",
-    "grade": "A-",
-    "writeups": []
-  }
+  "title": "Intro Research & Study Skills",
+  "code": "COMM 100",
+  "institution": "Athabasca University",
+  "semester": "Winter 2025",
+  "description": "",
+  "grade": "A-",
+  "writeups": [],
+  "startDate": "2025-02-01",
+  "endDate": "2025-04-17",
+  "status": "Completed",
+  "registrationOrder": 19
+}

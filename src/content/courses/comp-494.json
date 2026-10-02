@@ -1,9 +1,13 @@
 {
-    "title": "Research Methods",
-    "code": "COMP 494",
-    "institution": "Athabasca University",
-    "semester": "Fall 2025",
-    "description": "Course description and key topics covered",
-    "grade": "A-",
-    "writeups": []
-  }
+  "title": "Research Methods",
+  "code": "COMP 494",
+  "institution": "Athabasca University",
+  "semester": "Fall 2025",
+  "description": "",
+  "grade": "A-",
+  "writeups": [],
+  "startDate": "2025-10-01",
+  "endDate": "2026-01-10",
+  "status": "Completed",
+  "registrationOrder": 12
+}

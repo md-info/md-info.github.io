@@ -1,9 +1,13 @@
 {
-    "title": "Interactive Technologies",
-    "code": "COMP 214",
-    "institution": "Athabasca University",
-    "semester": "Summer 2025",
-    "description": "Course description and key topics covered",
-    "grade": "A+",
-    "writeups": []
-  }
+  "title": "Interactive Technologies",
+  "code": "COMP 214",
+  "institution": "Athabasca University",
+  "semester": "Summer 2025",
+  "description": "",
+  "grade": "A+",
+  "writeups": [],
+  "startDate": "2025-06-01",
+  "endDate": "2025-07-24",
+  "status": "Completed",
+  "registrationOrder": 18
+}

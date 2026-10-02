@@ -1,9 +1,13 @@
- {
-    "title": "Intro to Computer Systems",
-    "code": "COMP 200",
-    "institution": "Athabasca University",
-    "semester": "Summer 2024",
-    "description": "Course description and key topics covered",
-    "grade": "A",
-    "writeups": []
-  }
+{
+  "title": "Intro. to Computer Systems",
+  "code": "COMP 200",
+  "institution": "Athabasca University",
+  "semester": "Summer 2024",
+  "description": "",
+  "grade": "A",
+  "writeups": [],
+  "startDate": "2024-06-01",
+  "endDate": "2024-09-21",
+  "status": "Completed",
+  "registrationOrder": 22
+}

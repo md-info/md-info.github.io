@@ -1,9 +1,13 @@
- {
-    "title": "Intro to Information Systems & Computer Applications",
-    "code": "COMP 210",
-    "institution": "Athabasca University",
-    "semester": "Winter 2025",
-    "description": "Course description and key topics covered",
-    "grade": "A+",
-    "writeups": []
-  }
+{
+  "title": "Intro to Info Sys & Comp Apps",
+  "code": "COMP 210",
+  "institution": "Athabasca University",
+  "semester": "Winter 2025",
+  "description": "",
+  "grade": "A+",
+  "writeups": [],
+  "startDate": "2025-02-01",
+  "endDate": "2025-04-07",
+  "status": "Completed",
+  "registrationOrder": 21
+}

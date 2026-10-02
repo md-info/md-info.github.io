@@ -1,9 +1,13 @@
-  {
-    "title": "Java for Programmers",
-    "code": "COMP 308",
-    "institution": "Athabasca University",
-    "semester": "Winter 2026",
-    "description": "Course description and key topics covered",
-    "grade": "IP",
-    "writeups": []
-  }
+{
+  "title": "Java for Programmers",
+  "code": "COMP 308",
+  "institution": "Athabasca University",
+  "semester": "Winter 2026",
+  "description": "",
+  "grade": "C",
+  "writeups": [],
+  "startDate": "2026-02-01",
+  "endDate": "2026-05-24",
+  "status": "Completed",
+  "registrationOrder": 10
+}

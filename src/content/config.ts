@@ -41,6 +41,10 @@ const coursesCollection = defineCollection({
     code: z.string(),
     institution: z.string(),
     semester: z.string(),
+    startDate: z.string(),
+    endDate: z.string(),
+    status: z.enum(['Completed', 'In Progress']),
+    registrationOrder: z.number(),
     description: z.string(),
     grade: z.string().optional(),
     writeups: z.array(z.object({
