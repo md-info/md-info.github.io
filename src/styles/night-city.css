@@ -428,3 +428,6 @@
  .active-call,.home-screen:has(#active-call:not([hidden])) .active-call { position:fixed; top:max(12px,env(safe-area-inset-top)); left:max(12px,env(safe-area-inset-left)); width:150px; z-index:70; }
  .home-screen:has(#active-call:not([hidden])) .welcome-copy { padding-top:0; }
 }
+@media(max-width:700px) {
+ body>.active-call .caller-feed { height:140px; }
+}
