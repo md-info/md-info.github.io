@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Radio from '../components/Radio.astro';
 import '../styles/night-city.css';
 interface Props { title?: string; description?: string; home?: boolean; }
 const { title = 'Michel Deosaran', description = 'Computing, cybersecurity, and business. The personal portfolio of Michel Deosaran.', home = false } = Astro.props;
@@ -30,7 +31,7 @@ const items = [
       <div class="scene-grade"></div><div class="rain"></div><div class="scanlines"></div>
     </div>
     <div class="screen-frame" aria-hidden="true"></div>
-    <header class="system-bar"><a href="/" aria-label="Michel Deosaran main menu">MD<span>_</span></a><span>PERSONAL INTERFACE <b> / </b> TORONTO, ON</span><time id="toronto-time">TORONTO</time></header>
+    <header class="system-bar"><a href="/" aria-label="Michel Deosaran main menu">MD<span>_</span></a><span>PERSONAL INTERFACE <b> / </b> TORONTO, ON</span><Radio /><time id="toronto-time">TORONTO</time></header>
     <div class="interface-grid">
       {home && <aside class="menu-panel">
         <a href="/" class="identity" aria-label="Michel Deosaran main menu"><img class="identity-logo" src="/images/deosaran-michel.png" alt="Deosaran Michel" width="2170" height="725" /></a>
@@ -59,4 +60,3 @@ const items = [
     <script>import '../scripts/interface.ts';</script>
   </body>
 </html>
-
