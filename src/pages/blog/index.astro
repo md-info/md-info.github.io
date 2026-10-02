@@ -7,7 +7,7 @@ import { formatDate } from "../../utils/dateUtils";
 const blogPosts = await getCollection(
   "blog",
   ({ data }) => {
-    return !data.draft;
+    return !data.draft && data.listed;
   },
 );
 

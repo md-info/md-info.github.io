@@ -5,7 +5,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 const formatDate = (date:Date) => new Intl.DateTimeFormat('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(date);
 interface Props { post: CollectionEntry<'blog'>; headings: {depth:number;slug:string;text:string}[]; }
 const { post, headings } = Astro.props;
-const notes = (await getCollection('blog', ({data}) => !data.draft)).sort((a,b)=>a.data.title.localeCompare(b.data.title));
+const notes = (await getCollection('blog', ({data}) => !data.draft)).sort((a,b)=>a.data.title.localeCompare(b.data.title, undefined, {numeric:true}));
 type Folder = {name:string;children:Folder[];notes:{title:string;url:string;search:string}[]};
 const root:Folder = {name:'Journal',children:[],notes:[]};
 const folderPath = (note:CollectionEntry<'blog'>) => note.data.folder ?? [note.data.category, ...(note.data.courseCode ? [note.data.courseCode] : [])].join('/');
@@ -16,10 +16,12 @@ for (const note of notes) {
     if (!child) { child={name,children:[],notes:[]}; branch.children.push(child); }
     branch=child;
   }
-  branch.notes.push({title:note.data.title,url:`/blog/${note.slug}/`,search:[note.data.title,note.data.description,...note.data.tags,note.body].join(' ').toLowerCase()});
+  branch.notes.push({title:note.data.title,url:`/blog/${note.slug}/`,search:[note.data.title,note.data.description,...note.data.tags].join(' ').toLowerCase()});
 }
+function sortFolders(branch:Folder) { branch.children.sort((a,b)=>a.name.localeCompare(b.name,undefined,{numeric:true})); branch.children.forEach(sortFolders); }
+sortFolders(root);
 const outline = headings.filter(h=>h.depth>=2 && h.depth<=3);
-const related = notes.filter(note=>note.slug!==post.slug && note.data.tags.some(tag=>post.data.tags.includes(tag)));
+const related = notes.filter(note=>note.data.listed && note.slug!==post.slug && note.data.tags.some(tag=>post.data.tags.includes(tag)));
 ---
 <Layout title={`${post.data.title} — Michel Deosaran`} description={post.data.description}>
   <div class="note-workspace">
@@ -59,11 +61,19 @@ const related = notes.filter(note=>note.slug!==post.slug && note.data.tags.some(
   const folders=[...document.querySelectorAll<HTMLDetailsElement>('.note-folder')];
   const status=document.querySelector<HTMLElement>('#search-status');
   const initialOpen=new Map(folders.map(folder=>[folder,folder.open]));
-  input?.addEventListener('input',()=>{
+  let searchIndex:Promise<Record<string,string>> | undefined;
+  let revision=0;
+  input?.addEventListener('input',async()=>{
+    const currentRevision=++revision;
     const query=input.value.trim().toLowerCase();
     const terms=query.split(/\s+/).filter(Boolean);
+    let content:Record<string,string>={};
+    if(query){
+      try { searchIndex ??= fetch('/blog/search.json').then(response=>{if(!response.ok)throw new Error('Search unavailable');return response.json();}); content=await searchIndex; } catch { searchIndex=undefined; if(status)status.textContent='Full-text search unavailable; searching titles and tags.'; }
+    }
+    if(currentRevision!==revision)return;
     let count=0;
-    for(const link of links){link.hidden=!terms.every(term=>link.dataset.noteSearch?.includes(term));if(!link.hidden)count++;}
+    for(const link of links){link.hidden=!terms.every(term=>(content[link.getAttribute('href') ?? ''] ?? link.dataset.noteSearch ?? '').includes(term));if(!link.hidden)count++;}
     for(const folder of [...folders].reverse()){
       folder.hidden=query.length>0 && ![...folder.querySelectorAll<HTMLAnchorElement>('[data-note-search]')].some(link=>!link.hidden);
       folder.open=query.length>0 ? !folder.hidden : initialOpen.get(folder) ?? true;
@@ -121,3 +131,6 @@ const related = notes.filter(note=>note.slug!==post.slug && note.data.tags.some(
   @media(max-width:1500px) { .note-workspace { grid-template-columns:230px minmax(0,1fr) 190px; } .note-explorer,.note-context { padding:20px 16px; } .read-mode { display:none; } }
   @media(max-width:1100px) { .note-workspace { grid-template-columns:minmax(0,1fr); } .note-explorer { position:static; max-height:none; border-right:0; border-bottom:1px solid #ff727544; } .note-context { grid-column:1; grid-row:2; position:static; max-height:none; border-left:0; border-bottom:1px solid #ff727544; } .note-reader { grid-row:3; } .note-explorer { grid-row:1; } .note-tab { padding:16px; } .read-mode { display:none; } .note-document { padding:24px 20px; } .note-body { font-size:24px; } .note-properties>div { grid-template-columns:80px minmax(0,1fr); gap:10px; } }
 </style>
+
+
+
