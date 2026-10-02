@@ -1,0 +1,1650 @@
+{
+  "Skip to content": {
+    "fr": "Aller au contenu",
+    "ja": "本文へ移動"
+  },
+  "PERSONAL INTERFACE": {
+    "fr": "INTERFACE PERSONNELLE",
+    "ja": "パーソナル・インターフェース"
+  },
+  "SOFTWARE · BUSINESS DEVELOPMENT": {
+    "fr": "LOGICIEL · DÉVELOPPEMENT COMMERCIAL",
+    "ja": "ソフトウェア · ビジネス開発"
+  },
+  "MAIN MENU": {
+    "fr": "MENU PRINCIPAL",
+    "ja": "メインメニュー"
+  },
+  "Enter profile": {
+    "fr": "Voir le profil",
+    "ja": "プロフィール"
+  },
+  "Projects": {
+    "fr": "Projets",
+    "ja": "プロジェクト"
+  },
+  "Experience": {
+    "fr": "Expérience",
+    "ja": "経歴"
+  },
+  "Research": {
+    "fr": "Recherche",
+    "ja": "調査・研究"
+  },
+  "Coursework": {
+    "fr": "Cours",
+    "ja": "履修科目"
+  },
+  "Journal": {
+    "fr": "Journal",
+    "ja": "ノート"
+  },
+  "Night run": {
+    "fr": "Virée nocturne",
+    "ja": "ナイトラン"
+  },
+  "Connect": {
+    "fr": "Contact",
+    "ja": "連絡"
+  },
+  "Settings": {
+    "fr": "Paramètres",
+    "ja": "設定"
+  },
+  "OPEN TO CONNECTIONS": {
+    "fr": "OUVERT AUX ÉCHANGES",
+    "ja": "つながりを歓迎"
+  },
+  "CONNECTION ESTABLISHED": {
+    "fr": "CONNEXION ÉTABLIE",
+    "ja": "接続完了"
+  },
+  "PERSONAL PORTFOLIO / 2026": {
+    "fr": "PORTFOLIO PERSONNEL / 2026",
+    "ja": "個人ポートフォリオ / 2026"
+  },
+  "INCOMING CONNECTION": {
+    "fr": "APPEL ENTRANT",
+    "ja": "着信中"
+  },
+  "PERSONAL LINE / TORONTO": {
+    "fr": "LIGNE PERSONNELLE / TORONTO",
+    "ja": "個人回線 / トロント"
+  },
+  "ANSWER ↗": {
+    "fr": "RÉPONDRE ↗",
+    "ja": "応答 ↗"
+  },
+  "DECLINE": {
+    "fr": "REFUSER",
+    "ja": "拒否"
+  },
+  "● LIVE": {
+    "fr": "● EN DIRECT",
+    "ja": "● 通話中"
+  },
+  "END CALL ×": {
+    "fr": "RACCROCHER ×",
+    "ja": "通話終了 ×"
+  },
+  "WELCOME TO MY CORNER OF THE CITY": {
+    "fr": "BIENVENUE DANS MON COIN DE LA VILLE",
+    "ja": "この街の、僕の居場所へようこそ"
+  },
+  "Curious mind.": {
+    "fr": "Esprit curieux.",
+    "ja": "好奇心を胸に。"
+  },
+  "Connected": {
+    "fr": "Un monde",
+    "ja": "世界と"
+  },
+  "world.": {
+    "fr": "connecté.",
+    "ja": "つながる。"
+  },
+  "ENTER PROFILE": {
+    "fr": "VOIR LE PROFIL",
+    "ja": "プロフィールへ"
+  },
+  "CURRENT PURSUIT": {
+    "fr": "ÉTUDES EN COURS",
+    "ja": "現在の学び"
+  },
+  "Computing & Information Systems": {
+    "fr": "Informatique et systèmes d’information",
+    "ja": "コンピューティング・情報システム"
+  },
+  "01—02 / TORONTO AT NIGHT": {
+    "fr": "01—02 / TORONTO LA NUIT",
+    "ja": "01—02 / 夜のトロント"
+  },
+  "A city in motion. A mind at work.": {
+    "fr": "Une ville en mouvement. Un esprit à l’œuvre.",
+    "ja": "動き続ける街。考え続ける心。"
+  },
+  "THE CITY AFTER DARK": {
+    "fr": "LA VILLE APRÈS LA TOMBÉE DU JOUR",
+    "ja": "夜の街"
+  },
+  "Navigate": {
+    "fr": "Naviguer",
+    "ja": "移動"
+  },
+  "Select": {
+    "fr": "Sélectionner",
+    "ja": "選択"
+  },
+  "Back": {
+    "fr": "Retour",
+    "ja": "戻る"
+  },
+  "♫ Radio": {
+    "fr": "♫ Radio",
+    "ja": "♫ ラジオ"
+  },
+  "♫ Radio · LIVE": {
+    "fr": "♫ Radio · EN DIRECT",
+    "ja": "♫ ラジオ · 再生中"
+  },
+  "TORONTO AFTER DARK / RADIO": {
+    "fr": "TORONTO LA NUIT / RADIO",
+    "ja": "夜のトロント / ラジオ"
+  },
+  "Menu Atmosphere": {
+    "fr": "Ambiance du menu",
+    "ja": "メニューの雰囲気"
+  },
+  "PAUSED": {
+    "fr": "EN PAUSE",
+    "ja": "一時停止"
+  },
+  "ON AIR": {
+    "fr": "À L’ANTENNE",
+    "ja": "再生中"
+  },
+  "VOLUME": {
+    "fr": "VOLUME",
+    "ja": "音量"
+  },
+  "⚙ Settings": {
+    "fr": "⚙ Paramètres",
+    "ja": "⚙ 設定"
+  },
+  "INTERFACE CONFIGURATION": {
+    "fr": "CONFIGURATION DE L’INTERFACE",
+    "ja": "インターフェース設定"
+  },
+  "Make yourself comfortable.": {
+    "fr": "Installez-vous à votre aise.",
+    "ja": "自分好みにどうぞ。"
+  },
+  "Ambient motion": {
+    "fr": "Animations d’ambiance",
+    "ja": "背景アニメーション"
+  },
+  "Menu sound": {
+    "fr": "Sons du menu",
+    "ja": "メニュー音"
+  },
+  "Sound is off by default. Motion follows your device preference until you change it.": {
+    "fr": "Le son est désactivé par défaut. Les animations suivent les préférences de votre appareil jusqu’à modification.",
+    "ja": "音は初期状態ではオフです。アニメーションは変更するまで端末の設定に従います。"
+  },
+  "TORONTO NIGHT PHOTOGRAPHY": {
+    "fr": "PHOTOGRAPHIES DE TORONTO LA NUIT",
+    "ja": "トロントの夜景写真"
+  },
+  "Unsplash license ↗": {
+    "fr": "Licence Unsplash ↗",
+    "ja": "Unsplashライセンス ↗"
+  },
+  "← MAIN MENU": {
+    "fr": "← MENU PRINCIPAL",
+    "ja": "← メインメニュー"
+  },
+  "01 / PERSONAL DOSSIER": {
+    "fr": "01 / DOSSIER PERSONNEL",
+    "ja": "01 / パーソナルファイル"
+  },
+  "Behind the": {
+    "fr": "Derrière",
+    "ja": "インターフェースの"
+  },
+  "interface.": {
+    "fr": "l’interface.",
+    "ja": "向こう側。"
+  },
+  "A student of systems. A builder of connections.": {
+    "fr": "Étudier les systèmes. Créer des liens.",
+    "ja": "システムを学び、つながりを築く。"
+  },
+  "and writing on": {
+    "fr": "et mes articles sur",
+    "ja": "執筆活動は"
+  },
+  "FOCUS AREAS": {
+    "fr": "DOMAINES D’INTÉRÊT",
+    "ja": "専門・関心分野"
+  },
+  "Computing": {
+    "fr": "Informatique",
+    "ja": "コンピューティング"
+  },
+  "Business development": {
+    "fr": "Développement commercial",
+    "ja": "ビジネス開発"
+  },
+  "Outreach · CRM · Research": {
+    "fr": "Prospection · CRM · Recherche",
+    "ja": "顧客開拓 · CRM · 調査"
+  },
+  "Communication · Sales strategy": {
+    "fr": "Communication · Stratégie commerciale",
+    "ja": "コミュニケーション · 営業戦略"
+  },
+  "LET'S CONNECT": {
+    "fr": "ENTRONS EN CONTACT",
+    "ja": "つながりましょう"
+  },
+  "02 / PROJECT ARCHIVE": {
+    "fr": "02 / ARCHIVES DES PROJETS",
+    "ja": "02 / プロジェクト一覧"
+  },
+  "Ideas in": {
+    "fr": "Des idées",
+    "ja": "アイデアを"
+  },
+  "operation.": {
+    "fr": "en action.",
+    "ja": "かたちに。"
+  },
+  "Local AI. Data engineering. Practical tools built for real-world challenges.": {
+    "fr": "IA locale. Ingénierie des données. Des outils pratiques pour des défis concrets.",
+    "ja": "ローカルAI。データエンジニアリング。現実の課題に向き合う実用的なツール。"
+  },
+  "ALL PROJECTS": {
+    "fr": "TOUS LES PROJETS",
+    "ja": "すべてのプロジェクト"
+  },
+  "AI-Assisted Financial Planning": {
+    "fr": "Planification financière assistée par IA",
+    "ja": "AI支援の資金計画"
+  },
+  "Web Data ETL & Intelligence": {
+    "fr": "ETL de données web et intelligence",
+    "ja": "WebデータETL・インテリジェンス"
+  },
+  "FILE / 01": {
+    "fr": "DOSSIER / 01",
+    "ja": "ファイル / 01"
+  },
+  "FILE / 02": {
+    "fr": "DOSSIER / 02",
+    "ja": "ファイル / 02"
+  },
+  "Ipon Buffer — Local AI Emergency Savings Planner": {
+    "fr": "Ipon Buffer — Planificateur d’épargne d’urgence avec IA locale",
+    "ja": "Ipon Buffer — ローカルAIによる緊急資金の積立プランナー"
+  },
+  "OPEN DOSSIER": {
+    "fr": "OUVRIR LE DOSSIER",
+    "ja": "詳細を開く"
+  },
+  "PROJECT DOSSIER": {
+    "fr": "DOSSIER DU PROJET",
+    "ja": "プロジェクト詳細"
+  },
+  "Associated with Zeon Michael Group": {
+    "fr": "Associé à Zeon Michael Group",
+    "ja": "Zeon Michael Group関連"
+  },
+  "Associated with Athabasca University": {
+    "fr": "Associé à l’Université Athabasca",
+    "ja": "アサバスカ大学関連"
+  },
+  "VIEW SUBMISSION ↗": {
+    "fr": "VOIR LA SOUMISSION ↗",
+    "ja": "応募作品を見る ↗"
+  },
+  "SOURCE ↗": {
+    "fr": "CODE SOURCE ↗",
+    "ja": "ソースコード ↗"
+  },
+  "04 / APPLIED RESEARCH": {
+    "fr": "04 / RECHERCHE APPLIQUÉE",
+    "ja": "04 / 応用調査"
+  },
+  "Evidence into": {
+    "fr": "Des données probantes",
+    "ja": "根拠を"
+  },
+  "intelligence.": {
+    "fr": "à l’intelligence.",
+    "ja": "知見へ。"
+  },
+  "EXPLORE ZM INTELLIGENCE": {
+    "fr": "DÉCOUVRIR ZM INTELLIGENCE",
+    "ja": "ZM INTELLIGENCEを見る"
+  },
+  "SOFTWARE DEVELOPMENT ROLE ↗": {
+    "fr": "POSTE EN DÉVELOPPEMENT LOGICIEL ↗",
+    "ja": "ソフトウェア開発の仕事 ↗"
+  },
+  "CURRENT FOCUS / IN DEVELOPMENT": {
+    "fr": "PRIORITÉ ACTUELLE / EN DÉVELOPPEMENT",
+    "ja": "現在の重点 / 開発中"
+  },
+  "Trace the source.": {
+    "fr": "Remonter à la source.",
+    "ja": "出典をたどる。"
+  },
+  "ZM INTELLIGENCE METHODOLOGY ↗": {
+    "fr": "MÉTHODOLOGIE ZM INTELLIGENCE ↗",
+    "ja": "ZM INTELLIGENCEの方法論 ↗"
+  },
+  "RESEARCH THROUGH ENGINEERING": {
+    "fr": "LA RECHERCHE PAR L’INGÉNIERIE",
+    "ja": "エンジニアリングを通じた調査"
+  },
+  "01 / SOURCE & STRUCTURE": {
+    "fr": "01 / SOURCES ET STRUCTURE",
+    "ja": "01 / 出典と構造化"
+  },
+  "Understand the records.": {
+    "fr": "Comprendre les données.",
+    "ja": "記録を理解する。"
+  },
+  "02 / VERIFY & CONNECT": {
+    "fr": "02 / VÉRIFIER ET RELIER",
+    "ja": "02 / 検証と連携"
+  },
+  "Preserve the evidence.": {
+    "fr": "Préserver les preuves.",
+    "ja": "根拠を守る。"
+  },
+  "03 / SUPPORT UNDERWRITING": {
+    "fr": "03 / APPUYER L’ANALYSE DES RISQUES",
+    "ja": "03 / 投資審査を支える"
+  },
+  "Make research reusable.": {
+    "fr": "Rendre la recherche réutilisable.",
+    "ja": "調査を再利用できる形に。"
+  },
+  "Coursework archive": {
+    "fr": "Archives des cours",
+    "ja": "履修科目一覧"
+  },
+  "My Computing & Information Systems registration archive, including completed courses and current studies.": {
+    "fr": "Mon historique d’inscription en informatique et systèmes d’information, avec les cours terminés et les études en cours.",
+    "ja": "コンピューティング・情報システムの履修記録。修了科目と現在の学習をまとめています。"
+  },
+  "Total Courses": {
+    "fr": "Nombre de cours",
+    "ja": "科目数"
+  },
+  "Academic Years": {
+    "fr": "Années universitaires",
+    "ja": "学年度"
+  },
+  "Completed Courses": {
+    "fr": "Cours terminés",
+    "ja": "修了科目"
+  },
+  "In Progress": {
+    "fr": "En cours",
+    "ja": "履修中"
+  },
+  "Completed": {
+    "fr": "Terminé",
+    "ja": "修了"
+  },
+  "Start date": {
+    "fr": "Date de début",
+    "ja": "開始日"
+  },
+  "End date": {
+    "fr": "Date de fin",
+    "ja": "終了日"
+  },
+  "Intro Comp Programming (C++)": {
+    "fr": "Introduction à la programmation (C++)",
+    "ja": "プログラミング入門（C++）"
+  },
+  "Computer Networks": {
+    "fr": "Réseaux informatiques",
+    "ja": "コンピュータネットワーク"
+  },
+  "Ethics for Computing & Info Sy": {
+    "fr": "Éthique de l’informatique et des systèmes d’information",
+    "ja": "コンピューティング・情報システムの倫理"
+  },
+  "Organization Theory": {
+    "fr": "Théorie des organisations",
+    "ja": "組織理論"
+  },
+  "Managing Change": {
+    "fr": "Gestion du changement",
+    "ja": "変革管理"
+  },
+  "Human Computer Interaction": {
+    "fr": "Interaction humain-machine",
+    "ja": "ヒューマン・コンピュータ・インタラクション"
+  },
+  "Scientific Reasoning": {
+    "fr": "Raisonnement scientifique",
+    "ja": "科学的推論"
+  },
+  "Intro to Database Management": {
+    "fr": "Introduction à la gestion des bases de données",
+    "ja": "データベース管理入門"
+  },
+  "Data Structures and Algorithms": {
+    "fr": "Structures de données et algorithmes",
+    "ja": "データ構造とアルゴリズム"
+  },
+  "Operating Systems": {
+    "fr": "Systèmes d’exploitation",
+    "ja": "オペレーティングシステム"
+  },
+  "Java for Programmers": {
+    "fr": "Java pour programmeurs",
+    "ja": "プログラマーのためのJava"
+  },
+  "Intro to Web Programming": {
+    "fr": "Introduction à la programmation web",
+    "ja": "Webプログラミング入門"
+  },
+  "Research Methods": {
+    "fr": "Méthodes de recherche",
+    "ja": "研究方法論"
+  },
+  "Introductory Composition": {
+    "fr": "Introduction à la rédaction",
+    "ja": "作文入門"
+  },
+  "Systems Analysis & Design": {
+    "fr": "Analyse et conception des systèmes",
+    "ja": "システム分析・設計"
+  },
+  "Sociology of Work & Industry": {
+    "fr": "Sociologie du travail et de l’industrie",
+    "ja": "労働・産業社会学"
+  },
+  "Workers and the Economy": {
+    "fr": "Travailleurs et économie",
+    "ja": "労働者と経済"
+  },
+  "Intro to Comp Programming-Java": {
+    "fr": "Introduction à la programmation Java",
+    "ja": "Javaプログラミング入門"
+  },
+  "Interactive Technologies": {
+    "fr": "Technologies interactives",
+    "ja": "インタラクティブ技術"
+  },
+  "Intro Research & Study Skills": {
+    "fr": "Introduction à la recherche et aux méthodes d’étude",
+    "ja": "調査・学習スキル入門"
+  },
+  "Supporting End-User Computing": {
+    "fr": "Soutien informatique aux utilisateurs",
+    "ja": "エンドユーザーのコンピューティング支援"
+  },
+  "Intro to Info Sys & Comp Apps": {
+    "fr": "Introduction aux systèmes d’information et aux applications",
+    "ja": "情報システム・コンピュータ応用入門"
+  },
+  "Intro. to Computer Systems": {
+    "fr": "Introduction aux systèmes informatiques",
+    "ja": "コンピュータシステム入門"
+  },
+  "Intro to Comp Prog w/ Python": {
+    "fr": "Introduction à la programmation Python",
+    "ja": "Pythonプログラミング入門"
+  },
+  "Comp-Oriented Approach to Stat": {
+    "fr": "Statistiques avec approche informatique",
+    "ja": "コンピュータを用いた統計学"
+  },
+  "Professional Ethics": {
+    "fr": "Éthique professionnelle",
+    "ja": "職業倫理"
+  },
+  "Course Categories": {
+    "fr": "Catégories de cours",
+    "ja": "科目の分類"
+  },
+  "Core Computer Science": {
+    "fr": "Fondements de l’informatique",
+    "ja": "コンピュータサイエンスの基礎"
+  },
+  "Mathematics": {
+    "fr": "Mathématiques",
+    "ja": "数学"
+  },
+  "Interdisciplinary": {
+    "fr": "Interdisciplinaire",
+    "ja": "学際領域"
+  },
+  "Foundational CS courses covering algorithms, data structures, programming languages, and system design.": {
+    "fr": "Cours fondamentaux en algorithmes, structures de données, langages de programmation et conception des systèmes.",
+    "ja": "アルゴリズム、データ構造、プログラミング言語、システム設計を扱う基礎科目。"
+  },
+  "Mathematical foundations including calculus, discrete mathematics, statistics, and data science mathematics.": {
+    "fr": "Bases mathématiques : calcul différentiel et intégral, mathématiques discrètes, statistiques et mathématiques pour la science des données.",
+    "ja": "微積分、離散数学、統計、データサイエンスの数学を含む数学的基礎。"
+  },
+  "Courses from related fields including film studies, technical communication, and artificial intelligence.": {
+    "fr": "Cours de domaines connexes : études cinématographiques, communication technique et intelligence artificielle.",
+    "ja": "映画研究、技術コミュニケーション、人工知能など関連分野の科目。"
+  },
+  "Want to read more about my course projects and technical writeups?": {
+    "fr": "Envie d’en savoir plus sur mes projets de cours et mes articles techniques ?",
+    "ja": "授業のプロジェクトや技術記事について、もっと読みたいですか？"
+  },
+  "Browse All Blog Posts →": {
+    "fr": "Voir tous les articles →",
+    "ja": "すべての記事を見る →"
+  },
+  "08 / OPEN CHANNEL": {
+    "fr": "08 / CANAL OUVERT",
+    "ja": "08 / 連絡窓口"
+  },
+  "Start a": {
+    "fr": "Entamons",
+    "ja": "会話を"
+  },
+  "conversation.": {
+    "fr": "conversation.",
+    "ja": "始めましょう。"
+  },
+  "Ideas, opportunities, or a good conversation about technology.": {
+    "fr": "Des idées, des occasions ou une bonne discussion sur la technologie.",
+    "ja": "アイデア、仕事の機会、あるいは技術についての気軽な会話。"
+  },
+  "I'd like to hear from you.": {
+    "fr": "Au plaisir de vous lire.",
+    "ja": "ご連絡をお待ちしています。"
+  },
+  "01 / EMAIL": {
+    "fr": "01 / COURRIEL",
+    "ja": "01 / メール"
+  },
+  "Professional connections": {
+    "fr": "Contacts professionnels",
+    "ja": "仕事のつながり"
+  },
+  "Code & projects": {
+    "fr": "Code et projets",
+    "ja": "コード・プロジェクト"
+  },
+  "Writing & ideas": {
+    "fr": "Articles et idées",
+    "ja": "文章・アイデア"
+  },
+  "03 / EXPERIENCE RECORD": {
+    "fr": "03 / PARCOURS",
+    "ja": "03 / 経歴記録"
+  },
+  "Learning. Building.": {
+    "fr": "Apprendre. Construire.",
+    "ja": "学び、つくり、"
+  },
+  "Connecting.": {
+    "fr": "Créer des liens.",
+    "ja": "つながる。"
+  },
+  "Academic foundations. Professional experience. Open-source collaboration.": {
+    "fr": "Formation universitaire. Expérience professionnelle. Collaboration libre.",
+    "ja": "学びの基礎。仕事の経験。オープンソースでの協働。"
+  },
+  "ACADEMIC RECORD": {
+    "fr": "DOSSIER UNIVERSITAIRE",
+    "ja": "学歴記録"
+  },
+  "Education": {
+    "fr": "Formation",
+    "ja": "学歴"
+  },
+  "Academic studies & certifications": {
+    "fr": "Études et certifications",
+    "ja": "学業・資格"
+  },
+  "OPEN RECORD": {
+    "fr": "OUVRIR LE DOSSIER",
+    "ja": "記録を開く"
+  },
+  "PROFESSIONAL RECORD": {
+    "fr": "DOSSIER PROFESSIONNEL",
+    "ja": "職歴記録"
+  },
+  "Work": {
+    "fr": "Travail",
+    "ja": "職歴"
+  },
+  "Technology, products & client services": {
+    "fr": "Technologie, produits et services à la clientèle",
+    "ja": "技術・製品・顧客サービス"
+  },
+  "COMMUNITY RECORD": {
+    "fr": "DOSSIER COMMUNAUTAIRE",
+    "ja": "コミュニティ活動記録"
+  },
+  "Community": {
+    "fr": "Communauté",
+    "ja": "コミュニティ"
+  },
+  "Open-source contributions & GPU engineering": {
+    "fr": "Contributions libres et ingénierie GPU",
+    "ja": "オープンソース貢献・GPUエンジニアリング"
+  },
+  "03 / PROFESSIONAL RECORD": {
+    "fr": "03 / DOSSIER PROFESSIONNEL",
+    "ja": "03 / 職歴記録"
+  },
+  "Technology. Services.": {
+    "fr": "Technologie. Services.",
+    "ja": "技術。サービス。"
+  },
+  "People.": {
+    "fr": "Les personnes.",
+    "ja": "人。"
+  },
+  "Software development, business relationships, and digital product delivery.": {
+    "fr": "Développement logiciel, relations commerciales et réalisation de produits numériques.",
+    "ja": "ソフトウェア開発、ビジネスの関係づくり、デジタル製品の提供。"
+  },
+  "COMPANY PROFILE ↗": {
+    "fr": "PROFIL DE L’ENTREPRISE ↗",
+    "ja": "企業プロフィール ↗"
+  },
+  "Software Developer": {
+    "fr": "Développeur logiciel",
+    "ja": "ソフトウェア開発者"
+  },
+  "Permanent Full-time · Keswick, Ontario, Canada": {
+    "fr": "Poste permanent à temps plein · Keswick, Ontario, Canada",
+    "ja": "正規フルタイム · カナダ、オンタリオ州ケズウィック"
+  },
+  "Software Development": {
+    "fr": "Développement logiciel",
+    "ja": "ソフトウェア開発"
+  },
+  "Data Pipelines": {
+    "fr": "Pipelines de données",
+    "ja": "データパイプライン"
+  },
+  "Databases": {
+    "fr": "Bases de données",
+    "ja": "データベース"
+  },
+  "Research Synthesis": {
+    "fr": "Synthèse de recherche",
+    "ja": "調査結果の統合"
+  },
+  "Business Development Representative": {
+    "fr": "Représentant en développement commercial",
+    "ja": "ビジネス開発担当"
+  },
+  "On-Call": {
+    "fr": "Sur appel",
+    "ja": "オンコール"
+  },
+  "Business Development": {
+    "fr": "Développement commercial",
+    "ja": "ビジネス開発"
+  },
+  "Customer Success": {
+    "fr": "Réussite client",
+    "ja": "カスタマーサクセス"
+  },
+  "Relationship Management": {
+    "fr": "Gestion des relations",
+    "ja": "関係管理"
+  },
+  "Customer Research": {
+    "fr": "Recherche clientèle",
+    "ja": "顧客調査"
+  },
+  "Digital Product Manager": {
+    "fr": "Responsable de produits numériques",
+    "ja": "デジタルプロダクトマネージャー"
+  },
+  "Permanent Part-time": {
+    "fr": "Poste permanent à temps partiel",
+    "ja": "正規パートタイム"
+  },
+  "Monetization": {
+    "fr": "Monétisation",
+    "ja": "収益化"
+  },
+  "Stakeholder Management": {
+    "fr": "Gestion des parties prenantes",
+    "ja": "ステークホルダー管理"
+  },
+  "Project Management": {
+    "fr": "Gestion de projets",
+    "ja": "プロジェクト管理"
+  },
+  "Contract Procurement": {
+    "fr": "Passation de contrats",
+    "ja": "契約調達"
+  },
+  "Previous experience": {
+    "fr": "Expérience antérieure",
+    "ja": "以前の職歴"
+  },
+  "Client Services Representative": {
+    "fr": "Représentant des services à la clientèle",
+    "ja": "顧客サービス担当"
+  },
+  "Permanent Full-time": {
+    "fr": "Poste permanent à temps plein",
+    "ja": "正規フルタイム"
+  },
+  "Professional Communication": {
+    "fr": "Communication professionnelle",
+    "ja": "業務コミュニケーション"
+  },
+  "← EXPERIENCE ARCHIVE": {
+    "fr": "← ARCHIVES DU PARCOURS",
+    "ja": "← 経歴一覧"
+  },
+  "03 / EDUCATION RECORD": {
+    "fr": "03 / DOSSIER DE FORMATION",
+    "ja": "03 / 学歴記録"
+  },
+  "Education &": {
+    "fr": "Formation et",
+    "ja": "学歴と"
+  },
+  "certifications.": {
+    "fr": "certifications.",
+    "ja": "資格。"
+  },
+  "Bachelor of Science, Computing and Information Systems": {
+    "fr": "Baccalauréat ès sciences, informatique et systèmes d’information",
+    "ja": "理学士課程、コンピューティング・情報システム"
+  },
+  "2025–2026 Honor Roll": {
+    "fr": "Tableau d’honneur 2025–2026",
+    "ja": "2025–2026年度優秀学生名簿"
+  },
+  "Statistics": {
+    "fr": "Statistiques",
+    "ja": "統計学"
+  },
+  "Program website ↗": {
+    "fr": "Site du programme ↗",
+    "ja": "学位プログラムのサイト ↗"
+  },
+  "Coursework archive ↗": {
+    "fr": "Archives des cours ↗",
+    "ja": "履修科目一覧 ↗"
+  },
+  "Coursework, Biomedical Sciences, General": {
+    "fr": "Cours en sciences biomédicales générales",
+    "ja": "生物医学科学（一般）の履修"
+  },
+  "Health Science Certificate": {
+    "fr": "Certificat en sciences de la santé",
+    "ja": "健康科学修了証"
+  },
+  "Research Fundraising Committee — Member": {
+    "fr": "Comité de financement de la recherche — Membre",
+    "ja": "研究資金調達委員会 — メンバー"
+  },
+  "Biotechnology coursework": {
+    "fr": "Cours de biotechnologie",
+    "ja": "バイオテクノロジーの履修"
+  },
+  "Paramedical Science coursework": {
+    "fr": "Cours de sciences paramédicales",
+    "ja": "救急医療科学の履修"
+  },
+  "Leadership": {
+    "fr": "Leadership",
+    "ja": "リーダーシップ"
+  },
+  "Teamwork": {
+    "fr": "Travail d’équipe",
+    "ja": "チームワーク"
+  },
+  "Coursework, Mathematics": {
+    "fr": "Cours de mathématiques",
+    "ja": "数学の履修"
+  },
+  "Calculus II": {
+    "fr": "Calcul différentiel et intégral II",
+    "ja": "微積分II"
+  },
+  "Calculus I": {
+    "fr": "Calcul différentiel et intégral I",
+    "ja": "微積分I"
+  },
+  "Advanced Mathematics": {
+    "fr": "Mathématiques avancées",
+    "ja": "高等数学"
+  },
+  "Licenses & certifications": {
+    "fr": "Licences et certifications",
+    "ja": "免許・資格"
+  },
+  "Education in Quantitative Finance (Cert.)": {
+    "fr": "Formation en finance quantitative (certificat)",
+    "ja": "計量ファイナンス教育（修了証）"
+  },
+  "Financial Modeling": {
+    "fr": "Modélisation financière",
+    "ja": "財務モデリング"
+  },
+  "Investment Analysis": {
+    "fr": "Analyse des investissements",
+    "ja": "投資分析"
+  },
+  "Udemy profile ↗": {
+    "fr": "Profil Udemy ↗",
+    "ja": "Udemyプロフィール ↗"
+  },
+  "Upper Intermediate (CEFR)": {
+    "fr": "Intermédiaire supérieur (CECR)",
+    "ja": "中上級（CEFR）"
+  },
+  "Japanese language studies.": {
+    "fr": "Études de langue japonaise.",
+    "ja": "日本語学習。"
+  },
+  "Japanese Translation": {
+    "fr": "Traduction japonaise",
+    "ja": "日本語翻訳"
+  },
+  "Learning profile ↗": {
+    "fr": "Profil d’apprentissage ↗",
+    "ja": "学習プロフィール ↗"
+  },
+  "Ontario Ministry of Education": {
+    "fr": "Ministère de l’Éducation de l’Ontario",
+    "ja": "オンタリオ州教育省"
+  },
+  "Bilingual Studies (OSSD)": {
+    "fr": "Études bilingues (DESO)",
+    "ja": "バイリンガル教育（OSSD）"
+  },
+  "Bilingual studies with French translation skills.": {
+    "fr": "Études bilingues avec compétences en traduction française.",
+    "ja": "フランス語翻訳のスキルを伴うバイリンガル教育。"
+  },
+  "French Translation": {
+    "fr": "Traduction française",
+    "ja": "フランス語翻訳"
+  },
+  "Education in Software Development (Cert.)": {
+    "fr": "Formation en développement logiciel (certificat)",
+    "ja": "ソフトウェア開発教育（修了証）"
+  },
+  "Web Development": {
+    "fr": "Développement web",
+    "ja": "Web開発"
+  },
+  "Show credential ↗": {
+    "fr": "Voir le certificat ↗",
+    "ja": "資格証明を見る ↗"
+  },
+  "03 / COMMUNITY RECORD": {
+    "fr": "03 / DOSSIER COMMUNAUTAIRE",
+    "ja": "03 / コミュニティ活動記録"
+  },
+  "Building in": {
+    "fr": "Construire",
+    "ja": "オープンに"
+  },
+  "the open.": {
+    "fr": "au grand jour.",
+    "ja": "つくる。"
+  },
+  "MD-INFO / CONTRIBUTION SIGNAL": {
+    "fr": "MD-INFO / SIGNAL DE CONTRIBUTION",
+    "ja": "MD-INFO / 貢献の記録"
+  },
+  "GitHub activity": {
+    "fr": "Activité GitHub",
+    "ja": "GitHubでの活動"
+  },
+  "The contribution graphic is unavailable. View the activity directly on GitHub.": {
+    "fr": "Le graphique des contributions est indisponible. Consultez l’activité directement sur GitHub.",
+    "ja": "貢献グラフを表示できません。GitHubで直接活動をご覧ください。"
+  },
+  "Contribution calendar provided by": {
+    "fr": "Calendrier des contributions fourni par",
+    "ja": "貢献カレンダー提供："
+  },
+  "GITHUB PROFILE ↗": {
+    "fr": "PROFIL GITHUB ↗",
+    "ja": "GITHUBプロフィール ↗"
+  },
+  "Goals & approach": {
+    "fr": "Objectifs et démarche",
+    "ja": "目標と取り組み方"
+  },
+  "Selected contributions": {
+    "fr": "Contributions choisies",
+    "ja": "主な貢献"
+  },
+  "CUDA sample build regression review": {
+    "fr": "Analyse d’une régression de compilation des exemples CUDA",
+    "ja": "CUDAサンプルのビルド回帰レビュー"
+  },
+  "READ REVIEW ↗": {
+    "fr": "LIRE L’ANALYSE ↗",
+    "ja": "レビューを読む ↗"
+  },
+  "REPRODUCER & EVIDENCE ↗": {
+    "fr": "REPRODUCTION ET PREUVES ↗",
+    "ja": "再現コード・検証記録 ↗"
+  },
+  "Autograd regression investigation": {
+    "fr": "Enquête sur une régression Autograd",
+    "ja": "Autogradの回帰調査"
+  },
+  "07 / AFTER HOURS": {
+    "fr": "07 / APRÈS LES HEURES",
+    "ja": "07 / アフターアワーズ"
+  },
+  "Night": {
+    "fr": "Virée",
+    "ja": "ナイト"
+  },
+  "run.": {
+    "fr": "nocturne.",
+    "ja": "ラン。"
+  },
+  "An original browser arcade. Collect cyan signals. Avoid red traffic.": {
+    "fr": "Un jeu d’arcade original dans le navigateur. Collectez les signaux cyan. Évitez le trafic rouge.",
+    "ja": "オリジナルのブラウザーアーケード。シアンの信号を集め、赤い車を避けよう。"
+  },
+  "NO DOWNLOAD / NO SIGN-IN": {
+    "fr": "SANS TÉLÉCHARGEMENT / SANS CONNEXION",
+    "ja": "ダウンロード不要 / ログイン不要"
+  },
+  "SIGNAL": {
+    "fr": "SIGNAL",
+    "ja": "シグナル"
+  },
+  "INTEGRITY": {
+    "fr": "INTÉGRITÉ",
+    "ja": "耐久力"
+  },
+  "BEST": {
+    "fr": "RECORD",
+    "ja": "ベスト"
+  },
+  "TORONTO / AFTER HOURS": {
+    "fr": "TORONTO / APRÈS LES HEURES",
+    "ja": "トロント / アフターアワーズ"
+  },
+  "The city is yours.": {
+    "fr": "La ville est à vous.",
+    "ja": "この街は君のもの。"
+  },
+  "Three lanes. One night. How far can you go?": {
+    "fr": "Trois voies. Une nuit. Jusqu’où irez-vous ?",
+    "ja": "3本のレーン。ひとつの夜。どこまで走れる？"
+  },
+  "START RUN": {
+    "fr": "DÉMARRER",
+    "ja": "スタート"
+  },
+  "← LEFT": {
+    "fr": "← GAUCHE",
+    "ja": "← 左"
+  },
+  "PAUSE": {
+    "fr": "PAUSE",
+    "ja": "一時停止"
+  },
+  "RIGHT →": {
+    "fr": "DROITE →",
+    "ja": "右 →"
+  },
+  "Change lane": {
+    "fr": "Changer de voie",
+    "ja": "レーン変更"
+  },
+  "Pause": {
+    "fr": "Pause",
+    "ja": "一時停止"
+  },
+  "End run. Touch controls work below the screen.": {
+    "fr": "Terminer la partie. Les commandes tactiles se trouvent sous l’écran.",
+    "ja": "終了。画面下のタッチ操作も利用できます。"
+  },
+  "A small independent experiment, built for this portfolio.": {
+    "fr": "Une petite expérience indépendante, conçue pour ce portfolio.",
+    "ja": "このポートフォリオのためにつくった小さな自主制作。"
+  },
+  "This arcade needs JavaScript. The rest of the portfolio is available without it.": {
+    "fr": "Ce jeu nécessite JavaScript. Le reste du portfolio fonctionne sans JavaScript.",
+    "ja": "このゲームにはJavaScriptが必要です。それ以外のページはJavaScriptなしでも閲覧できます。"
+  },
+  "Journal & technical writeups": {
+    "fr": "Journal et articles techniques",
+    "ja": "ノート・技術記事"
+  },
+  "Welcome to my blog! Here you'll find technical writeups, course project reflections, and my thoughts on computer science and information systems.": {
+    "fr": "Bienvenue sur mon blog ! Vous y trouverez des articles techniques, des réflexions sur mes projets de cours et mes idées sur l’informatique et les systèmes d’information.",
+    "ja": "ブログへようこそ！技術記事、授業のプロジェクトの振り返り、コンピュータサイエンス・情報システムについての考えをまとめています。"
+  },
+  "Total Posts": {
+    "fr": "Nombre d’articles",
+    "ja": "記事数"
+  },
+  "Categories": {
+    "fr": "Catégories",
+    "ja": "カテゴリー"
+  },
+  "Featured Posts": {
+    "fr": "Articles à la une",
+    "ja": "注目記事"
+  },
+  "Topics": {
+    "fr": "Sujets",
+    "ja": "トピック"
+  },
+  "All": {
+    "fr": "Tous",
+    "ja": "すべて"
+  },
+  "Industry": {
+    "fr": "Industrie",
+    "ja": "業界"
+  },
+  "No posts found for the selected category.": {
+    "fr": "Aucun article dans cette catégorie.",
+    "ja": "選択したカテゴリーの記事はありません。"
+  },
+  "Popular Topics": {
+    "fr": "Sujets populaires",
+    "ja": "人気のトピック"
+  },
+  "Have Questions?": {
+    "fr": "Des questions ?",
+    "ja": "質問はありますか？"
+  },
+  "Found something interesting? Have questions about my projects or want to discuss tech or logistics systems? I'd love to hear from you!": {
+    "fr": "Quelque chose vous intéresse ? Des questions sur mes projets, la technologie ou les systèmes logistiques ? Écrivez-moi !",
+    "ja": "気になるものはありましたか？プロジェクトについての質問や、技術・物流システムの話など、ぜひご連絡ください！"
+  },
+  "Get in Touch": {
+    "fr": "Me contacter",
+    "ja": "お問い合わせ"
+  },
+  "I'm Michel Deosaran, a Computing & Information Systems undergraduate at Athabasca University. I enjoy understanding how complex systems work, and how technology, cybersecurity, and business come together to solve real problems.": {
+    "fr": "Je suis Michel Deosaran, étudiant de premier cycle en informatique et systèmes d’information à l’Université Athabasca. J’aime comprendre le fonctionnement des systèmes complexes et la façon dont la technologie, la cybersécurité et les affaires se rejoignent pour résoudre des problèmes concrets.",
+    "ja": "アサバスカ大学でコンピューティング・情報システムを学ぶMichel Deosaranです。複雑なシステムの仕組みや、技術・サイバーセキュリティ・ビジネスが現実の問題解決にどう結びつくかを理解するのが好きです。"
+  },
+  "I freelance in business development through Michael & Zion Revenue Group. Starting conversations, exchanging ideas, and discovering what motivates people comes naturally to me.": {
+    "fr": "Je travaille à mon compte en développement commercial par l’intermédiaire de Michael & Zion Revenue Group. Engager la conversation, échanger des idées et découvrir ce qui motive les gens me vient naturellement.",
+    "ja": "Michael & Zion Revenue Groupを通じて、フリーランスでビジネス開発に携わっています。会話を始め、アイデアを交換し、人の原動力を知ることは、僕にとって自然なことです。"
+  },
+  "My studies cover networking, operating systems, programming, databases, cloud technologies, and cybersecurity. I share what I learn through technical videos on": {
+    "fr": "Mes études portent sur les réseaux, les systèmes d’exploitation, la programmation, les bases de données, les technologies infonuagiques et la cybersécurité. Je partage mes apprentissages dans des vidéos techniques sur",
+    "ja": "ネットワーク、OS、プログラミング、データベース、クラウド技術、サイバーセキュリティを学んでいます。学んだことは技術動画として公開しています："
+  },
+  "Beyond computing, I enjoy learning languages. I completed French Immersion bilingual studies and study Japanese through The Japan Foundation, Toronto.": {
+    "fr": "Au-delà de l’informatique, j’aime apprendre des langues. J’ai suivi des études bilingues en immersion française et j’étudie le japonais auprès de la Fondation du Japon à Toronto.",
+    "ja": "コンピューティング以外では、語学も好きです。フランス語イマージョンのバイリンガル教育を修了し、トロントの国際交流基金で日本語を学んでいます。"
+  },
+  "An AI-assisted emergency-savings app that turns expense notes into user-reviewed budget entries and calculates contributions around essential expenses. Validated with 152 automated tests.": {
+    "fr": "Une application d’épargne d’urgence assistée par IA qui transforme les notes de dépenses en écritures budgétaires vérifiées par l’utilisateur et calcule l’épargne après les dépenses essentielles. Validée par 152 tests automatisés.",
+    "ja": "支出メモを利用者が確認できる予算項目に変換し、必要経費を考慮して積立額を計算するAI支援の緊急資金アプリ。152件の自動テストで検証しました。"
+  },
+  "A Python pipeline that turns public web pages into structured, AI-ready records in SQLite, with optional LLM enrichment.": {
+    "fr": "Un pipeline Python qui transforme les pages web publiques en données structurées dans SQLite, prêtes pour l’IA, avec enrichissement facultatif par un grand modèle de langage.",
+    "ja": "公開WebページをSQLiteの構造化データに変換するPythonパイプライン。AIで扱いやすい記録を作成し、必要に応じてLLMによる情報追加も行えます。"
+  },
+  "Developed for the ASEAN Financial Health Challenge’s Emergency Savings track, Ipon Buffer helps people with irregular income plan contributions after accounting for daily essentials and upcoming bills. A locally hosted Qwen3 assistant, integrated through Ollama, converts natural-language expense notes into editable budget drafts. Users review the drafts before they affect the plan; financial calculations remain deterministic. The prototype includes exact monetary calculations, consent controls, and simulated deposits and emergency withdrawals. Validation covered 148 backend tests and 4 frontend tests, alongside browser testing. The project also includes a working demo, pitch deck, and documented AI evaluations.": {
+    "fr": "Conçu pour le volet épargne d’urgence de l’ASEAN Financial Health Challenge, Ipon Buffer aide les personnes aux revenus irréguliers à planifier leur épargne en tenant compte des besoins quotidiens et des factures à venir. Un assistant Qwen3 local, intégré via Ollama, transforme les notes de dépenses en langage naturel en propositions budgétaires modifiables. Les utilisateurs les vérifient avant leur prise en compte ; les calculs financiers restent déterministes. Le prototype comprend des calculs monétaires exacts, des contrôles de consentement et des simulations de dépôts et de retraits d’urgence. La validation comprend 148 tests côté serveur, 4 tests d’interface et des tests dans le navigateur. Le projet inclut une démonstration fonctionnelle, une présentation et des évaluations documentées de l’IA.",
+    "ja": "ASEAN Financial Health Challengeの緊急資金部門向けに開発したIpon Bufferは、収入が不定期な人が日常の必需品や今後の請求を考慮し、積立を計画できるようにします。Ollamaで統合したローカルQwen3アシスタントが自然文の支出メモを編集可能な予算案に変換します。計画へ反映する前に利用者が確認し、金銭計算は決定論的に行います。試作には正確な金額計算、同意の制御、入金と緊急引き出しのシミュレーションを備えています。148件のバックエンドテスト、4件のフロントエンドテスト、ブラウザーテストで検証しました。動作するデモ、ピッチ資料、AI評価の記録も含まれます。"
+  },
+  "Built for The AI Builders Hackathon, Web Intelligence Pipeline runs a public website URL through a complete workflow: Acquire → Extract → Transform → Load → Enrich. Python requests retrieves the page, BeautifulSoup extracts content and metadata, and Pydantic validates structured records. The pipeline cleans and normalizes the extracted information, then persists it in SQLite. An optional LLM layer can add structured insights such as organization, industry, products, and target customers; the core pipeline works without an LLM API key. A command-line interface demonstrates the workflow from a single URL. The implementation handles invalid URLs, HTTP errors, missing metadata, inconsistent text, and unnecessary webpage content. Future directions include multi-page collection, scheduling, stronger extraction, data-quality monitoring, and a web interface.": {
+    "fr": "Conçu pour The AI Builders Hackathon, Web Intelligence Pipeline traite une URL publique selon un flux complet : acquisition → extraction → transformation → chargement → enrichissement. Python requests récupère la page, BeautifulSoup extrait le contenu et les métadonnées, et Pydantic valide les données structurées. Le pipeline nettoie et normalise les données avant leur stockage dans SQLite. Une couche LLM facultative peut ajouter des informations structurées sur l’organisation, le secteur, les produits et les clients cibles ; le pipeline principal fonctionne sans clé API LLM. Une interface en ligne de commande démontre le traitement d’une URL. L’implémentation gère les URL invalides, les erreurs HTTP, les métadonnées manquantes, le texte incohérent et le contenu superflu. Les évolutions envisagées incluent la collecte multipage, la planification, une extraction améliorée, le suivi de la qualité et une interface web.",
+    "ja": "The AI Builders Hackathon向けに開発したWeb Intelligence Pipelineは、公開サイトのURLを取得→抽出→変換→保存→情報追加という一連の処理に通します。Pythonのrequestsでページを取得し、BeautifulSoupで本文とメタデータを抽出し、Pydanticで構造化された記録を検証します。抽出情報を整形・正規化し、SQLiteに保存します。任意のLLM処理で組織、業界、製品、対象顧客などの情報を追加できますが、中核機能にはLLMのAPIキーは不要です。単一URLからの処理をコマンドラインで実行できます。不正なURL、HTTPエラー、メタデータの欠落、表記の不一致、不要なページ内容に対処しています。今後は複数ページの収集、定期実行、抽出精度の向上、データ品質の監視、Web画面を検討しています。"
+  },
+  "Building the research infrastructure behind real estate underwriting at ZM Intelligence.": {
+    "fr": "Construire l’infrastructure de recherche qui soutient l’analyse des risques immobiliers chez ZM Intelligence.",
+    "ja": "ZM Intelligenceで、不動産投資審査を支える調査基盤を構築しています。"
+  },
+  "My research grows out of my work as a software developer. Building a property intelligence platform means investigating where information comes from, what a record actually describes, and how different sources fit together before writing the systems that use them.": {
+    "fr": "Ma recherche découle de mon travail de développeur logiciel. Construire une plateforme d’information immobilière implique de comprendre l’origine des informations, ce que décrit réellement chaque donnée et la manière dont les sources se complètent, avant de concevoir les systèmes qui les exploitent.",
+    "ja": "僕の調査はソフトウェア開発の仕事から生まれています。不動産情報プラットフォームをつくるには、システムを書く前に、情報の出所、記録が実際に表すもの、異なる資料の関係を調べる必要があります。"
+  },
+  "At ZM Intelligence, my focus is sourcing property and development information and developing GIS, data pipelines, and databases. The goal is to turn scattered public records into structured, traceable evidence that can support research synthesis and underwriting.": {
+    "fr": "Chez ZM Intelligence, je collecte des informations sur les propriétés et les projets d’aménagement, et je développe des SIG, des pipelines de données et des bases de données. L’objectif est de transformer des documents publics dispersés en données structurées et traçables, utiles à la synthèse de recherche et à l’analyse des risques.",
+    "ja": "ZM Intelligenceでは、不動産・開発情報の収集とGIS、データパイプライン、データベースの開発に注力しています。散在する公開記録を構造化し、出典をたどれる根拠へ変換して、調査結果の統合や投資審査を支えることが目的です。"
+  },
+  "My contribution is the software and data foundation: making information easier to find, validate, connect, and revisit. Underwriting estimates and assumptions need to remain clearly separate from verified property facts.": {
+    "fr": "Ma contribution est le socle logiciel et les données : faciliter la recherche, la validation, le rapprochement et la consultation des informations. Les estimations et hypothèses d’analyse doivent rester clairement distinctes des faits immobiliers vérifiés.",
+    "ja": "僕が担うのはソフトウェアとデータの基盤です。情報を見つけ、検証し、関連づけ、再確認しやすくします。投資審査の推定や仮定は、検証済みの不動産の事実と明確に区別する必要があります。"
+  },
+  "Property conditions, planning activity, and proposed development each need their own context and source trail.": {
+    "fr": "L’état des propriétés, les activités de planification et les projets d’aménagement ont chacun besoin de leur contexte et d’une trace de leurs sources.",
+    "ja": "物件の現況、都市計画の動き、開発計画には、それぞれ固有の文脈と出典の記録が必要です。"
+  },
+  "Record the source, access date, and confidence. Keep existing conditions distinct from proposed projects. Label estimates and underwriting assumptions.": {
+    "fr": "Consigner la source, la date de consultation et le degré de confiance. Distinguer l’état existant des projets proposés. Identifier les estimations et les hypothèses d’analyse.",
+    "ja": "出典、閲覧日、信頼度を記録します。現況と計画中の事業を区別し、推定値や投資審査の仮定であることを明示します。"
+  },
+  "Investigate public property and development sources, interpret their fields, and design consistent records for ingestion and storage.": {
+    "fr": "Étudier les sources publiques sur les propriétés et les projets, interpréter leurs champs et concevoir des données cohérentes pour leur intégration et leur stockage.",
+    "ja": "公開の不動産・開発資料を調べ、項目を解釈し、取り込み・保存のための一貫した記録を設計します。"
+  },
+  "Develop validation and source tracking alongside GIS and database workflows, so information can be connected without losing its origin or context.": {
+    "fr": "Développer la validation et le suivi des sources avec les processus SIG et de bases de données, afin de relier les informations sans perdre leur origine ni leur contexte.",
+    "ja": "GISやデータベースの処理と併せて検証・出典追跡を構築し、元の出所や文脈を失わずに情報を関連づけます。"
+  },
+  "Build a foundation for comparing property facts and development activity, with a clear boundary between sourced evidence and the assumptions used in underwriting.": {
+    "fr": "Établir une base pour comparer les faits immobiliers et les activités de développement, en séparant clairement les données sourcées des hypothèses d’analyse.",
+    "ja": "不動産の事実と開発動向を比較する基盤をつくり、出典のある根拠と投資審査に用いる仮定を明確に区別します。"
+  },
+  "Computing & Information Systems at Athabasca, science and mathematics coursework, and certifications in finance, web development, and languages.": {
+    "fr": "Informatique et systèmes d’information à Athabasca, cours en sciences et mathématiques, et certifications en finance, développement web et langues.",
+    "ja": "アサバスカ大学でのコンピューティング・情報システム、科学・数学の履修、金融・Web開発・語学の資格。"
+  },
+  "Software, business development, and digital product roles at Zeon Michael Group, alongside earlier client services experience at VIVA.": {
+    "fr": "Fonctions en logiciel, développement commercial et produits numériques chez Zeon Michael Group, précédées d’une expérience en services à la clientèle chez VIVA.",
+    "ja": "Zeon Michael Groupでのソフトウェア、ビジネス開発、デジタル製品の仕事と、以前のVIVAでの顧客サービス経験。"
+  },
+  "GitHub activity, GPU programming goals, and published CUDA and Apex code reviews backed by reproducible tests and evidence.": {
+    "fr": "Activité GitHub, objectifs en programmation GPU et analyses publiées de code CUDA et Apex, étayées par des tests reproductibles et des preuves.",
+    "ja": "GitHubでの活動、GPUプログラミングの目標、再現可能なテストと検証記録に基づくCUDA・Apexの公開コードレビュー。"
+  },
+  "A technology and services company spanning data intelligence, business services, and digital products. My roles connect the systems we build with the people and organizations they serve.": {
+    "fr": "Une entreprise de technologie et de services couvrant l’intelligence des données, les services aux entreprises et les produits numériques. Mes fonctions relient les systèmes que nous construisons aux personnes et organisations qu’ils servent.",
+    "ja": "データインテリジェンス、ビジネスサービス、デジタル製品を手がける技術・サービス企業です。僕の役割は、開発するシステムと、その利用者や組織を結びつけることです。"
+  },
+  "Building a local real estate data and intelligence platform to support research synthesis. My work includes sourcing property and development information and maintaining GIS, data pipelines, and databases. The platform is in development.": {
+    "fr": "Développement d’une plateforme locale de données et d’intelligence immobilières pour soutenir la synthèse de recherche. Mon travail comprend la collecte d’informations sur les propriétés et les projets, ainsi que la maintenance des SIG, pipelines de données et bases de données. La plateforme est en développement.",
+    "ja": "調査結果の統合を支援する地域の不動産データ・インテリジェンス基盤を開発しています。不動産・開発情報の収集、GIS、データパイプライン、データベースの維持を担当しています。プラットフォームは開発中です。"
+  },
+  "Customer success and relationship management, alongside ideal customer profile analysis and research.": {
+    "fr": "Réussite client et gestion des relations, avec analyse et recherche du profil client idéal.",
+    "ja": "カスタマーサクセスと関係管理に加え、理想的な顧客像の分析・調査。"
+  },
+  "Stakeholder management, project management, and contract procurement for digital product work.": {
+    "fr": "Gestion des parties prenantes, gestion de projets et passation de contrats pour les produits numériques.",
+    "ja": "デジタル製品の業務におけるステークホルダー管理、プロジェクト管理、契約調達。"
+  },
+  "Academic foundations in computing, science, and mathematics. Continued learning in finance, software development, and languages.": {
+    "fr": "Bases universitaires en informatique, sciences et mathématiques. Formation continue en finance, développement logiciel et langues.",
+    "ja": "コンピューティング、科学、数学の学問的基礎。金融、ソフトウェア開発、語学の継続的な学習。"
+  },
+  "Completed Algorithmic Stock Trading and Equity Investing with Python, taught by Alexander Hagmann, on August 26, 2026.": {
+    "fr": "Cours Algorithmic Stock Trading and Equity Investing with Python, enseigné par Alexander Hagmann, terminé le 26 août 2026.",
+    "ja": "Alexander Hagmannによる「Algorithmic Stock Trading and Equity Investing with Python」を2026年8月26日に修了。"
+  },
+  "Completed The Web Developer Bootcamp 2026, taught by Colt Steele, on August 26, 2026.": {
+    "fr": "Cours The Web Developer Bootcamp 2026, enseigné par Colt Steele, terminé le 26 août 2026.",
+    "ja": "Colt Steeleによる「The Web Developer Bootcamp 2026」を2026年8月26日に修了。"
+  },
+  "Learning GPU programming and contributing through tested reviews, issue investigation, and collaboration with maintainers.": {
+    "fr": "Apprentissage de la programmation GPU et contributions par des analyses testées, des enquêtes sur les problèmes et la collaboration avec les responsables des projets.",
+    "ja": "GPUプログラミングを学び、検証済みのレビュー、問題調査、メンテナーとの協働を通じて貢献しています。"
+  },
+  "Develop practical skills in GPU kernel programming, CUDA, and performance validation.": {
+    "fr": "Développer des compétences pratiques en programmation de noyaux GPU, CUDA et validation des performances.",
+    "ja": "GPUカーネルプログラミング、CUDA、性能検証の実践的なスキルを身につける。"
+  },
+  "Prioritize substantive reviews of existing code and reproducible investigations of users’ issues.": {
+    "fr": "Privilégier les analyses approfondies du code existant et les enquêtes reproductibles sur les problèmes des utilisateurs.",
+    "ja": "既存コードの実質的なレビューと、利用者の問題の再現可能な調査を優先する。"
+  },
+  "Submit tested pull requests, respond to maintainer feedback, and follow contributions through toward merge.": {
+    "fr": "Soumettre des demandes d’intégration testées, répondre aux retours des responsables et accompagner les contributions jusqu’à leur intégration.",
+    "ja": "テスト済みのプルリクエストを提出し、メンテナーの意見に対応して、マージまで貢献を追う。"
+  },
+  "Publish reproducers, raw logs, and clear findings so others can check the evidence.": {
+    "fr": "Publier des cas de reproduction, des journaux bruts et des conclusions claires pour permettre la vérification des preuves.",
+    "ja": "再現コード、生ログ、明確な調査結果を公開し、他の人が根拠を確認できるようにする。"
+  },
+  "Reflect on the work through regular technical writeups and continued learning.": {
+    "fr": "Prendre du recul sur le travail grâce à des articles techniques réguliers et à un apprentissage continu.",
+    "ja": "定期的な技術記事と継続的な学習を通じて仕事を振り返る。"
+  },
+  "Identified a default-build failure when no host compiler was selected. Tested a conditional fix that preserved both default and explicit compiler configurations.": {
+    "fr": "Identification d’un échec de compilation par défaut lorsqu’aucun compilateur hôte n’était sélectionné. Test d’une correction conditionnelle préservant les configurations par défaut et explicites.",
+    "ja": "ホストコンパイラ未選択時の標準ビルドの失敗を特定。標準設定と明示的なコンパイラ設定の両方を維持する条件付き修正を検証しました。"
+  },
+  "Validation covered one sample’s compilation, with a published reproducer, patch, notebook, and raw logs.": {
+    "fr": "Validation de la compilation d’un exemple, avec publication du cas de reproduction, du correctif, du carnet et des journaux bruts.",
+    "ja": "検証対象は1つのサンプルのコンパイルで、再現コード、パッチ、ノート、生ログを公開しました。"
+  },
+  "Reviewed an inference-memory-leak proposal and identified a training-backward regression in its tensor-saving callbacks. The probe passed all 64 base cases; all 64 proposed-change cases lacked the required saved tensors.": {
+    "fr": "Analyse d’une proposition concernant une fuite mémoire en inférence et identification d’une régression de rétropropagation dans les rappels de sauvegarde des tenseurs. Les 64 cas de base ont réussi ; les 64 cas avec la modification proposée manquaient des tenseurs requis.",
+    "ja": "推論時のメモリリーク対策案をレビューし、テンソル保存コールバックに学習の逆伝播の回帰を特定しました。基準の64ケースはすべて成功し、変更案の64ケースでは必要な保存テンソルが欠けていました。"
+  },
+  "Tested exact callbacks on CPU and T4 and published the reproducer and raw evidence. The original inference leak was outside the verified result.": {
+    "fr": "Test des rappels exacts sur CPU et T4, avec publication du cas de reproduction et des preuves brutes. La fuite d’inférence initiale ne faisait pas partie du résultat vérifié.",
+    "ja": "CPUとT4で実際のコールバックを検証し、再現コードと生の検証記録を公開しました。元の推論リークは検証結果の範囲外です。"
+  },
+  "All portfolio pages are available through the main menu. JavaScript adds sound, settings, and the arcade.": {
+    "fr": "Toutes les pages du portfolio sont accessibles dans le menu principal. JavaScript ajoute les sons, les paramètres et le jeu.",
+    "ja": "すべてのページはメインメニューから閲覧できます。JavaScriptで音、設定、ゲームが利用できます。"
+  },
+  "I'm Michel. Toronto looks good from here, right? Give a city a little darkness and suddenly even the concrete has personality. Anyway—glad you picked up. What's on your mind?": {
+    "fr": "Moi, c’est Michel. Toronto a de l’allure d’ici, non ? Un peu d’obscurité, et même le béton a du caractère. Bref, content que tu aies décroché. Qu’est-ce qui t’amène ?",
+    "ja": "僕はMichel。ここから見るトロント、いいだろ？街に少し夜が降りるだけで、コンクリートにも個性が出てくる。まあ、出てくれてよかった。何か気になることある？"
+  },
+  "Hey. You found the place. I was wondering who'd turn up.": {
+    "fr": "Salut. Tu as trouvé l’endroit. Je me demandais qui allait passer.",
+    "ja": "よう。ここを見つけたんだね。誰が来るか、ちょっと気になってた。"
+  },
+  "Too quiet in here? Radio's down by Settings. Pick a track. Every late-night detour needs a soundtrack.": {
+    "fr": "Trop calme ici ? La radio est en bas, près des paramètres. Choisis un morceau. Toute virée nocturne mérite sa bande-son.",
+    "ja": "静かすぎる？ラジオは下の設定の隣にあるよ。好きな曲を選んで。夜の寄り道には、サウンドトラックがいるからね。"
+  },
+  "All right. Let me look around.": {
+    "fr": "D’accord. Je vais faire un tour.",
+    "ja": "じゃあ、ちょっと見て回るよ。"
+  },
+  "You always call strangers like this?": {
+    "fr": "Tu appelles toujours les inconnus comme ça ?",
+    "ja": "知らない人にも、いつもこんなふうに電話するの？"
+  },
+  "So, what's keeping you up?": {
+    "fr": "Alors, qu’est-ce qui te tient éveillé ?",
+    "ja": "それで、何して夜更かししてるの？"
+  },
+  "Make yourself at home. If something catches your eye, follow it. I'll be around.": {
+    "fr": "Fais comme chez toi. Si quelque chose t’intéresse, suis le fil. Je ne suis pas loin.",
+    "ja": "ゆっくりしていって。気になるものがあったら、その先をたどってみて。僕はこの辺にいるから。"
+  },
+  "Only the ones wandering through my corner of the internet. A normal welcome page would've been easier, sure. But I like a little atmosphere. You remember a conversation. You forget another wall of text.": {
+    "fr": "Seulement ceux qui passent dans mon coin d’internet. Une page d’accueil ordinaire aurait été plus simple, c’est sûr. Mais j’aime une petite ambiance. Une conversation, ça reste. Un autre pavé de texte, ça s’oublie.",
+    "ja": "僕のネットの片隅を歩いてる人だけだよ。普通のトップページのほうが簡単だったけど、少し雰囲気が欲しくてさ。会話は記憶に残る。文字の壁は忘れるだろ？"
+  },
+  "Fair enough. Show me around.": {
+    "fr": "Ça se tient. Fais-moi visiter.",
+    "ja": "なるほどね。案内してよ。"
+  },
+  "Deal. Pick a thread and see where it goes. No guided tour required.": {
+    "fr": "Marché conclu. Choisis un fil et vois où il mène. Pas besoin de visite guidée.",
+    "ja": "了解。気になる話を選んで、どこにつながるか見てみて。ツアーガイドはいらないよ。"
+  },
+  "I'll give you this—the view's pretty good.": {
+    "fr": "Je te l’accorde : la vue est pas mal.",
+    "ja": "確かに、この景色はいいね。"
+  },
+  "All this atmosphere… got a résumé to go with it?": {
+    "fr": "Toute cette ambiance… tu as aussi un CV ?",
+    "ja": "この雰囲気はいいけど…履歴書もある？"
+  },
+  "Right? I like Toronto with the volume turned down. Same city, different mood. Though I think the best part of technology is still the people using it. All the neon in the world can't make a frustrating system feel good.": {
+    "fr": "Hein ? J’aime Toronto quand on baisse le volume. Même ville, autre humeur. Cela dit, le meilleur de la technologie, ce sont encore les gens qui l’utilisent. Tous les néons du monde ne rendent pas agréable un système frustrant.",
+    "ja": "だろ？少し音量を下げたトロントが好きなんだ。同じ街でも、気分が変わる。でも技術のいちばんいいところは、やっぱり使う人だと思う。ネオンをどれだけ足しても、使いにくいシステムは心地よくならない。"
+  },
+  "Let me see what you've built.": {
+    "fr": "Montre-moi ce que tu as construit.",
+    "ja": "つくったものを見せて。"
+  },
+  "Here's the work. Different problems, different tools. Hopefully something in there gives you an idea of your own.": {
+    "fr": "Voilà les projets. Des problèmes différents, des outils différents. Avec un peu de chance, tu y trouveras une idée à toi.",
+    "ja": "これが僕の仕事。課題が違えば、道具も違う。何かひとつ、君自身のアイデアのきっかけになったらいいな。"
+  },
+  "So when does a system actually feel good?": {
+    "fr": "Alors, quand est-ce qu’un système devient vraiment agréable ?",
+    "ja": "じゃあ、どんなシステムなら気持ちよく使えるの？"
+  },
+  "Okay, back to you. What else is here?": {
+    "fr": "Bon, revenons à toi. Il y a quoi d’autre ici ?",
+    "ja": "じゃあ、君の話に戻ろう。他には何がある？"
+  },
+  "Software. The usual trap: 'this should be a quick fix.' Lately it's property data at ZM Intelligence—getting records, maps, and databases to agree with each other. I like that moment when a messy problem finally starts making sense. Getting there can be… less elegant.": {
+    "fr": "Du logiciel. Le piège habituel : « ça devrait être vite réglé ». Ces temps-ci, des données immobilières chez ZM Intelligence : faire concorder les dossiers, les cartes et les bases de données. J’aime le moment où un problème embrouillé devient enfin clair. Pour y arriver… c’est parfois moins élégant.",
+    "ja": "ソフトウェアだね。よくある罠、「すぐ直せるはず」ってやつ。最近はZM Intelligenceで不動産データを扱って、記録と地図とデータベースの整合性を取ってる。ごちゃごちゃした問題が、ようやくつながる瞬間が好きなんだ。そこに着くまでは…まあ、あまり華麗じゃない。"
+  },
+  "Okay, show me the projects.": {
+    "fr": "D’accord, montre-moi les projets.",
+    "ja": "じゃあ、プロジェクトを見せて。"
+  },
+  "Take a look. There's a local AI savings planner and a web intelligence pipeline. I'll let the details do the talking for a minute.": {
+    "fr": "Jette un œil. Il y a un planificateur d’épargne avec IA locale et un pipeline d’intelligence web. Je laisse les détails parler un peu.",
+    "ja": "見てみて。ローカルAIの積立プランナーと、Web情報のパイプラインがある。少しの間、詳しい内容に話してもらおう。"
+  },
+  "Be honest. Does everything really need AI now?": {
+    "fr": "Franchement, tout a vraiment besoin d’IA maintenant ?",
+    "ja": "正直、今って何でもAIが必要なの？"
+  },
+  "Sounds like work. Give me the résumé version.": {
+    "fr": "Ça ressemble à du travail. Donne-moi la version CV.",
+    "ja": "仕事って感じだね。履歴書版で聞かせて。"
+  },
+  "My take? A tool earns its place when it makes someone's next step easier. AI can help. So can a decent search box. I'd rather have something useful that explains itself than something impressive that makes you guess.": {
+    "fr": "Mon avis ? Un outil mérite sa place quand il facilite la prochaine étape de quelqu’un. L’IA peut aider. Une bonne barre de recherche aussi. Je préfère quelque chose d’utile et clair à quelque chose d’impressionnant qui te laisse deviner.",
+    "ja": "僕の考え？誰かの次の一歩を楽にできてこそ、道具に価値がある。AIも役立つし、ちゃんとした検索欄も役立つ。すごそうでも使い方を推測させるものより、役立って、わかりやすいものがいい。"
+  },
+  "Let's open the notebook.": {
+    "fr": "Ouvrons le carnet.",
+    "ja": "ノートを開こう。"
+  },
+  "It's in the journal. Folders, study notes, a few things worth keeping. Browse at your own pace.": {
+    "fr": "C’est dans le journal. Des dossiers, des notes d’étude, quelques choses à conserver. Parcours-le à ton rythme.",
+    "ja": "ノートのところにあるよ。フォルダ、学習メモ、残しておきたいもの。自分のペースで見ていって。"
+  },
+  "And when the impressive thing is confidently wrong?": {
+    "fr": "Et quand la chose impressionnante se trompe avec assurance ?",
+    "ja": "じゃあ、そのすごそうなものが自信満々に間違ってたら？"
+  },
+  "Fair. Let's change the subject.": {
+    "fr": "D’accord. Changeons de sujet.",
+    "ja": "そうだね。話題を変えよう。"
+  },
+  "That's when I want receipts. Where did this come from? What's a fact, and what's a guess? It's part of the ZM Intelligence work—keeping the source trail visible. A polished screen shouldn't get to bluff its way past a bad assumption.": {
+    "fr": "Là, je veux des preuves. Ça vient d’où ? Qu’est-ce qui est un fait, et qu’est-ce qui est une supposition ? Ça fait partie du travail chez ZM Intelligence : garder les sources visibles. Un bel écran ne doit pas masquer une mauvaise hypothèse.",
+    "ja": "そういうときこそ根拠が欲しい。どこから来た情報？何が事実で、何が推測？出典を見えるようにしておくのもZM Intelligenceの仕事なんだ。見た目のいい画面で、怪しい前提をごまかしちゃいけない。"
+  },
+  "Show me that side of the work.": {
+    "fr": "Montre-moi cette partie du travail.",
+    "ja": "その仕事の側面を見せて。"
+  },
+  "Research is where I've put that approach. It's still taking shape, but the source should always be something you can follow.": {
+    "fr": "Cette approche est dans la section Recherche. Elle prend encore forme, mais les sources doivent toujours pouvoir être suivies.",
+    "ja": "その考え方は調査・研究のページにまとめてる。まだ形にしているところだけど、出典はいつでもたどれるものでありたい。"
+  },
+  "Okay, I like that. What's your background?": {
+    "fr": "D’accord, j’aime ça. Quel est ton parcours ?",
+    "ja": "いいね。どんな経歴なの？"
+  },
+  "Enough serious talk. Back to the view.": {
+    "fr": "Assez parlé sérieusement. Revenons à la vue.",
+    "ja": "真面目な話はこの辺で。景色に戻ろう。"
+  },
+  "Sure—the short version. Computing & Information Systems at Athabasca. Software development, business development, and digital products at Zeon Michael Group. Before that, client services at VIVA. Different settings, same reminder: the person on the other end matters.": {
+    "fr": "Bien sûr, en bref. Informatique et systèmes d’information à Athabasca. Logiciel, développement commercial et produits numériques chez Zeon Michael Group. Avant, services à la clientèle chez VIVA. Des milieux différents, même rappel : la personne en face compte.",
+    "ja": "もちろん、短く言うと。アサバスカでコンピューティング・情報システム。Zeon Michael Groupでソフトウェア開発、ビジネス開発、デジタル製品。その前はVIVAで顧客サービス。場所は違っても、向こう側にいる人が大切だってことは変わらない。"
+  },
+  "Let me read the experience record.": {
+    "fr": "Je vais lire ton parcours.",
+    "ja": "経歴を読んでみるよ。"
+  },
+  "Work, education, and community—all in there. And if you've got something interesting in mind, you'll find me under Connect.": {
+    "fr": "Travail, formation, communauté : tout y est. Et si tu as une idée intéressante, retrouve-moi dans Contact.",
+    "ja": "職歴、学歴、コミュニティ活動、全部そこにある。面白いアイデアがあったら、連絡のページで僕を見つけて。"
+  },
+  "All right. Back to the 'quick fix.'": {
+    "fr": "D’accord. Revenons à la « petite correction ».",
+    "ja": "じゃあ、「すぐ直せる」の話に戻ろう。"
+  },
+  "Thanks. Let's just look around for a minute.": {
+    "fr": "Merci. Faisons juste un tour un moment.",
+    "ja": "ありがとう。ちょっと見て回ろう。"
+  },
+  "You": {
+    "fr": "Toi",
+    "ja": "あなた"
+  },
+  "Incoming call from Michel. Answer or decline.": {
+    "fr": "Appel entrant de Michel. Répondre ou refuser.",
+    "ja": "Michelから着信です。応答または拒否してください。"
+  },
+  "Close radio": {
+    "fr": "Fermer la radio",
+    "ja": "ラジオを閉じる"
+  },
+  "Radio player": {
+    "fr": "Lecteur radio",
+    "ja": "ラジオプレーヤー"
+  },
+  "Radio controls": {
+    "fr": "Commandes radio",
+    "ja": "ラジオ操作"
+  },
+  "Previous song": {
+    "fr": "Morceau précédent",
+    "ja": "前の曲"
+  },
+  "Play radio": {
+    "fr": "Écouter la radio",
+    "ja": "ラジオを再生"
+  },
+  "Pause radio": {
+    "fr": "Mettre la radio en pause",
+    "ja": "ラジオを一時停止"
+  },
+  "Next song": {
+    "fr": "Morceau suivant",
+    "ja": "次の曲"
+  },
+  "Loop current song": {
+    "fr": "Répéter le morceau",
+    "ja": "現在の曲を繰り返す"
+  },
+  "Radio volume": {
+    "fr": "Volume de la radio",
+    "ja": "ラジオの音量"
+  },
+  "Loop on": {
+    "fr": "Répétition activée",
+    "ja": "リピート・オン"
+  },
+  "Loop off": {
+    "fr": "Répétition désactivée",
+    "ja": "リピート・オフ"
+  },
+  "AUDIO UNAVAILABLE": {
+    "fr": "AUDIO INDISPONIBLE",
+    "ja": "音声を読み込めません"
+  },
+  "Playback could not start. Please try again.": {
+    "fr": "La lecture n’a pas démarré. Réessayez.",
+    "ja": "再生を開始できませんでした。もう一度お試しください。"
+  },
+  "This track could not load. Try another song.": {
+    "fr": "Ce morceau n’a pas pu être chargé. Essayez-en un autre.",
+    "ja": "この曲を読み込めませんでした。別の曲をお試しください。"
+  },
+  "Close settings": {
+    "fr": "Fermer les paramètres",
+    "ja": "設定を閉じる"
+  },
+  "Open interface settings": {
+    "fr": "Ouvrir les paramètres",
+    "ja": "設定を開く"
+  },
+  "Michel Deosaran main menu": {
+    "fr": "Menu principal de Michel Deosaran",
+    "ja": "Michel Deosaranのメインメニュー"
+  },
+  "Main menu": {
+    "fr": "Menu principal",
+    "ja": "メインメニュー"
+  },
+  "Incoming call from Michel": {
+    "fr": "Appel entrant de Michel",
+    "ja": "Michelからの着信"
+  },
+  "Active call with Michel": {
+    "fr": "Appel en cours avec Michel",
+    "ja": "Michelと通話中"
+  },
+  "End call with Michel": {
+    "fr": "Raccrocher avec Michel",
+    "ja": "Michelとの通話を終了"
+  },
+  "Conversation with Michel": {
+    "fr": "Conversation avec Michel",
+    "ja": "Michelとの会話"
+  },
+  "Choose your reply": {
+    "fr": "Choisir une réponse",
+    "ja": "返答を選ぶ"
+  },
+  "Skills": {
+    "fr": "Compétences",
+    "ja": "スキル"
+  },
+  "Filter projects": {
+    "fr": "Filtrer les projets",
+    "ja": "プロジェクトを絞り込む"
+  },
+  "Close project details": {
+    "fr": "Fermer les détails du projet",
+    "ja": "プロジェクト詳細を閉じる"
+  },
+  "RUN AGAIN ↗": {
+    "fr": "REJOUER ↗",
+    "ja": "もう一度 ↗"
+  },
+  "RESUME ↗": {
+    "fr": "REPRENDRE ↗",
+    "ja": "再開 ↗"
+  },
+  "RESUME": {
+    "fr": "REPRENDRE",
+    "ja": "再開"
+  },
+  "Run paused.": {
+    "fr": "Partie en pause.",
+    "ja": "一時停止中。"
+  },
+  "READING VIEW": {
+    "fr": "MODE LECTURE",
+    "ja": "閲覧モード"
+  },
+  "JOURNAL": {
+    "fr": "JOURNAL",
+    "ja": "ノート"
+  },
+  "NOTE": {
+    "fr": "NOTE",
+    "ja": "ノート"
+  },
+  "Author": {
+    "fr": "Auteur",
+    "ja": "著者"
+  },
+  "Published": {
+    "fr": "Publié",
+    "ja": "公開日"
+  },
+  "Updated": {
+    "fr": "Mis à jour",
+    "ja": "更新日"
+  },
+  "Course": {
+    "fr": "Cours",
+    "ja": "科目"
+  },
+  "Tags": {
+    "fr": "Étiquettes",
+    "ja": "タグ"
+  },
+  "ON THIS PAGE": {
+    "fr": "SUR CETTE PAGE",
+    "ja": "このページの内容"
+  },
+  "RELATED NOTES": {
+    "fr": "NOTES CONNEXES",
+    "ja": "関連ノート"
+  },
+  "This note has no sections.": {
+    "fr": "Cette note n’a pas de sections.",
+    "ja": "このノートには見出しがありません。"
+  },
+  "Note outline": {
+    "fr": "Plan de la note",
+    "ja": "ノートの目次"
+  },
+  "Full-text search unavailable; searching titles and tags.": {
+    "fr": "Recherche intégrale indisponible ; recherche dans les titres et étiquettes.",
+    "ja": "全文検索を利用できません。タイトルとタグを検索しています。"
+  },
+  "No matching notes. Try another search.": {
+    "fr": "Aucune note correspondante. Essayez une autre recherche.",
+    "ja": "一致するノートはありません。別の語句をお試しください。"
+  },
+  "Search notes": {
+    "fr": "Rechercher des notes",
+    "ja": "ノートを検索"
+  },
+  "Published notes": {
+    "fr": "Notes publiées",
+    "ja": "公開ノート"
+  },
+  "FILES": {
+    "fr": "FICHIERS",
+    "ja": "ファイル"
+  },
+  "Search all notes": {
+    "fr": "Rechercher dans toutes les notes",
+    "ja": "すべてのノートを検索"
+  },
+  "Language": {
+    "fr": "Langue",
+    "ja": "言語"
+  },
+  "JOURNAL / EXPLORER": {
+    "fr": "JOURNAL / EXPLORATEUR",
+    "ja": "ノート / エクスプローラー"
+  },
+  "← ALL JOURNAL ENTRIES": {
+    "fr": "← TOUS LES ARTICLES",
+    "ja": "← ノート一覧"
+  },
+  "Title, topic, or text…": {
+    "fr": "Titre, sujet ou texte…",
+    "ja": "タイトル、トピック、本文…"
+  },
+  "Close project": {
+    "fr": "Fermer le projet",
+    "ja": "プロジェクトを閉じる"
+  },
+  "NVIDIA / cuda-samples #457 / REVIEW PUBLISHED": {
+    "fr": "NVIDIA / cuda-samples #457 / ANALYSE PUBLIÉE",
+    "ja": "NVIDIA / cuda-samples #457 / レビュー公開済み"
+  },
+  "NVIDIA / Apex #2012 / REVIEW PUBLISHED": {
+    "fr": "NVIDIA / Apex #2012 / ANALYSE PUBLIÉE",
+    "ja": "NVIDIA / Apex #2012 / レビュー公開済み"
+  },
+  "Change lane &nbsp;": {
+    "fr": "Changer de voie",
+    "ja": "レーン変更"
+  },
+  "Pause &nbsp;": {
+    "fr": "Pause",
+    "ja": "一時停止"
+  },
+  "Michel Deosaran — Toronto After Dark": {
+    "fr": "Michel Deosaran — Toronto la nuit",
+    "ja": "Michel Deosaran — 夜のトロント"
+  },
+  "ARCHIVES": {
+    "fr": "ARCHIVES",
+    "ja": "アーカイブ"
+  },
+  "Journal folders": {
+    "fr": "Dossiers du journal",
+    "ja": "ノートのフォルダ"
+  },
+  "Night Run. Use left and right arrow keys or A and D to change lanes. Space pauses. Escape exits the run.": {
+    "fr": "Virée nocturne. Utilisez les flèches gauche et droite ou A et D pour changer de voie. Espace met en pause. Échap termine la partie.",
+    "ja": "ナイトラン。左右矢印キーまたはA・Dでレーンを変更。スペースで一時停止。Escで終了。"
+  },
+  "Move left": {
+    "fr": "Aller à gauche",
+    "ja": "左へ移動"
+  },
+  "Move right": {
+    "fr": "Aller à droite",
+    "ja": "右へ移動"
+  },
+  "View md-info's GitHub contributions": {
+    "fr": "Voir les contributions GitHub de md-info",
+    "ja": "md-infoのGitHub貢献を見る"
+  },
+  "GitHub contribution calendar for md-info": {
+    "fr": "Calendrier des contributions GitHub de md-info",
+    "ja": "md-infoのGitHub貢献カレンダー"
+  }
+}

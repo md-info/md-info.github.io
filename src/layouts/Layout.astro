@@ -22,7 +22,7 @@ const items = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href="/images/toronto-waterfront.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <title>{title}</title><ClientRouter fallback="swap" />
   </head>
   <body class:list={['night-city', { 'is-home': home }]}>
@@ -54,12 +54,12 @@ const items = [
     <dialog id="settings-dialog" aria-labelledby="settings-title">
       <div class="dialog-top"><span>INTERFACE CONFIGURATION</span><button id="settings-close" aria-label="Close settings">×</button></div>
       <h2 id="settings-title">Settings</h2><p>Make yourself comfortable.</p>
-      <label class="setting-row">Ambient motion <input type="checkbox" id="motion-setting" checked /></label>
+      <label class="setting-row">Language <select data-language-select aria-label="Language"><option value="en" lang="en">English</option><option value="fr" lang="fr">Français</option><option value="ja" lang="ja">日本語</option></select></label><label class="setting-row">Ambient motion <input type="checkbox" id="motion-setting" checked /></label>
       <label class="setting-row">Menu sound <input type="checkbox" id="sound-setting" /></label>
       <p class="settings-note">Sound is off by default. Motion follows your device preference until you change it.</p>
       <div class="photo-credits"><span>TORONTO NIGHT PHOTOGRAPHY</span><a href="https://unsplash.com/photos/pFR9lF9LuN8" target="_blank" rel="noopener noreferrer">Mike Swigunski ↗</a><a href="https://unsplash.com/photos/CamJb_3RDoM" target="_blank" rel="noopener noreferrer">alex° ↗</a><a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash license ↗</a></div>
     </dialog>
-    <script>import '../scripts/interface.ts';</script>
+    <script>import '../i18n/client'; import '../scripts/interface.ts';</script>
   </body>
 </html>
 

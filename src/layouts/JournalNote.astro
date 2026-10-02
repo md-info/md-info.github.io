@@ -39,13 +39,13 @@ const related = notes.filter(note=>note.data.listed && note.slug!==post.slug && 
       <div class="note-tab"><span aria-hidden="true">▤</span> {post.data.title}<span class="read-mode">READING VIEW</span></div>
       <div class="note-document">
         <p class="note-path">JOURNAL / {folderPath(post)} / NOTE</p>
-        <header>
+        <header lang="en" translate="no">
           <h1>{post.data.title}</h1>
           <p class="note-description">{post.data.description}</p>
           <dl class="note-properties"><div><dt>Author</dt><dd>{post.data.author}</dd></div><div><dt>Published</dt><dd><time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time></dd></div>{post.data.updatedDate && <div><dt>Updated</dt><dd>{formatDate(post.data.updatedDate)}</dd></div>}{post.data.courseName && <div><dt>Course</dt><dd>{post.data.courseName}</dd></div>}<div><dt>Tags</dt><dd>{post.data.tags.map(tag=><span class="note-tag">#{tag}</span>)}</dd></div></dl>
         </header>
         {post.data.image && <img class="note-cover" src={post.data.image} alt={post.data.title} />}
-        <div class="note-body prose"><slot /></div>
+        <div class="note-body prose" lang="en" translate="no"><slot /></div>
       </div>
     </article>
     <aside class="note-context">

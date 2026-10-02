@@ -8,8 +8,8 @@
     "src": "/audio/makes-me-feel-better.mp3"
   },
   {
-    "title": "Delicate Weapon · Grimes / Lizzy Wizzy",
-    "src": "/audio/delicate-weapon.mp3"
+    "title": "Let It Go as If You Wander",
+    "src": "/audio/let-it-go-as-if-you-wander.mp3"
   },
   {
     "title": "Major Crimes · HEALTH",
@@ -24,7 +24,11 @@
     "src": "/audio/night-city.mp3"
   },
   {
-    "title": "This Fffire · Franz Ferdinand",
-    "src": "/audio/this-fffire.mp3"
+    "title": "ﾍﾞﾆｽｽﾞﾒﾀﾌｧ · 俺いるよ日高屋",
+    "src": "/audio/ore-iruyo-hidakaya.mp3"
+  },
+  {
+    "title": "Essaie pas · Futur Parlé",
+    "src": "/audio/essaie-pas-futur-parle.mp3"
   }
 ]
