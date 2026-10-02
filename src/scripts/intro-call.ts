@@ -7,14 +7,129 @@ const announcement = document.querySelector<HTMLElement>('#call-announcement')!;
 const incoming = document.querySelector<HTMLElement>('#incoming-call')!;
 const active = document.querySelector<HTMLElement>('#active-call')!;
 const introduction = line.textContent!;
-const replies: Record<string,string> = {
- interests: "I'm studying Computing & Information Systems at Athabasca University, while exploring cybersecurity, creating technical content, and building digital business projects. You'll find those threads in my profile.",
- toronto: "Toronto after dark is the setting for this portfolio: city lights, movement, and a game-inspired interface. Take a look around — the menu opens my work, studies, and interests."
+const progress = document.querySelector<HTMLAnchorElement>('#dialogue-progress')!;
+const progressText = progress.querySelector<HTMLElement>('.progress-text')!;
+const replyButtons = [...choices.querySelectorAll<HTMLButtonElement>('button[data-reply]')];
+type Thread = { line:string; action:string; href:string; farewell:string; options:[{key:string;text:string},{key:string;text:string}] };
+const threads:Record<string,Thread> = {
+  "root": {
+    "line": "I'm Michel. Toronto looks good from here, right? Give a city a little darkness and suddenly even the concrete has personality. Anyway—glad you picked up. What's on your mind?",
+    "action": "All right. Let me look around.",
+    "href": "/profile/",
+    "farewell": "Make yourself at home. If something catches your eye, follow it. I'll be around.",
+    "options": [
+      {
+        "key": "banter",
+        "text": "You always call strangers like this?"
+      },
+      {
+        "key": "work",
+        "text": "So, what's keeping you up?"
+      }
+    ]
+  },
+  "banter": {
+    "line": "Only the ones wandering through my corner of the internet. A normal welcome page would've been easier, sure. But I like a little atmosphere. You remember a conversation. You forget another wall of text.",
+    "action": "Fair enough. Show me around.",
+    "href": "/profile/",
+    "farewell": "Deal. Pick a thread and see where it goes. No guided tour required.",
+    "options": [
+      {
+        "key": "city",
+        "text": "I'll give you this—the view's pretty good."
+      },
+      {
+        "key": "resume",
+        "text": "All this atmosphere… got a résumé to go with it?"
+      }
+    ]
+  },
+  "city": {
+    "line": "Right? I like Toronto with the volume turned down. Same city, different mood. Though I think the best part of technology is still the people using it. All the neon in the world can't make a frustrating system feel good.",
+    "action": "Let me see what you've built.",
+    "href": "/projects/",
+    "farewell": "Here's the work. Different problems, different tools. Hopefully something in there gives you an idea of your own.",
+    "options": [
+      {
+        "key": "taste",
+        "text": "So when does a system actually feel good?"
+      },
+      {
+        "key": "root",
+        "text": "Okay, back to you. What else is here?"
+      }
+    ]
+  },
+  "work": {
+    "line": "Software. The usual trap: 'this should be a quick fix.' Lately it's property data at ZM Intelligence—getting records, maps, and databases to agree with each other. I like that moment when a messy problem finally starts making sense. Getting there can be… less elegant.",
+    "action": "Okay, show me the projects.",
+    "href": "/projects/",
+    "farewell": "Take a look. There's a local AI savings planner and a web intelligence pipeline. I'll let the details do the talking for a minute.",
+    "options": [
+      {
+        "key": "taste",
+        "text": "Be honest. Does everything really need AI now?"
+      },
+      {
+        "key": "resume",
+        "text": "Sounds like work. Give me the résumé version."
+      }
+    ]
+  },
+  "taste": {
+    "line": "My take? A tool earns its place when it makes someone's next step easier. AI can help. So can a decent search box. I'd rather have something useful that explains itself than something impressive that makes you guess.",
+    "action": "Let's open the notebook.",
+    "href": "/blog/",
+    "farewell": "It's in the journal. Folders, study notes, a few things worth keeping. Browse at your own pace.",
+    "options": [
+      {
+        "key": "evidence",
+        "text": "And when the impressive thing is confidently wrong?"
+      },
+      {
+        "key": "root",
+        "text": "Fair. Let's change the subject."
+      }
+    ]
+  },
+  "evidence": {
+    "line": "That's when I want receipts. Where did this come from? What's a fact, and what's a guess? It's part of the ZM Intelligence work—keeping the source trail visible. A polished screen shouldn't get to bluff its way past a bad assumption.",
+    "action": "Show me that side of the work.",
+    "href": "/research/",
+    "farewell": "Research is where I've put that approach. It's still taking shape, but the source should always be something you can follow.",
+    "options": [
+      {
+        "key": "resume",
+        "text": "Okay, I like that. What's your background?"
+      },
+      {
+        "key": "root",
+        "text": "Enough serious talk. Back to the view."
+      }
+    ]
+  },
+  "resume": {
+    "line": "Sure—the short version. Computing & Information Systems at Athabasca. Software development, business development, and digital products at Zeon Michael Group. Before that, client services at VIVA. Different settings, same reminder: the person on the other end matters.",
+    "action": "Let me read the experience record.",
+    "href": "/experience/",
+    "farewell": "Work, education, and community—all in there. And if you've got something interesting in mind, you'll find me under Connect.",
+    "options": [
+      {
+        "key": "work",
+        "text": "All right. Back to the 'quick fix.'"
+      },
+      {
+        "key": "root",
+        "text": "Thanks. Let's just look around for a minute."
+      }
+    ]
+  }
 };
 function readSession(key:string) { try { return sessionStorage.getItem(key); } catch { return null; } }
-function saveSession(key:string,value:string) { try { sessionStorage.setItem(key,value); } catch { /* Optional interaction works without storage. */ } }
+function saveSession(key:string,value:string) { try { sessionStorage.setItem(key,value); } catch {} }
 let generation=0;
 let inCall=false;
+let thread='root';
 const timers = new Set<number>();
 function delay(ms:number) { return new Promise<void>(resolve=>{const id=window.setTimeout(()=>{timers.delete(id);resolve();},ms);timers.add(id);}); }
 function cancel() { generation++; timers.forEach(id=>clearTimeout(id)); timers.clear(); }
@@ -34,11 +149,18 @@ async function say(name:string,text:string,token:number) {
  }
  if(token!==generation) return false;
  announcement.textContent=name+': '+text;
- await delay(name==='You'?850:450);
+ await delay(name==='You'?850:900);
  return token===generation;
 }
 function revealChoices() {
  if(!inCall) return;
+ const current=threads[thread];
+ progress.href=current.href;progressText.textContent=current.action;
+ replyButtons.forEach((button,index)=>{
+  const option=current.options[index];button.dataset.reply=option.key;
+  button.querySelector('.reply-text')!.textContent=option.text;
+  button.disabled=option.key!=='root' && readSession('md-intro-thread-'+option.key)==='yes';
+ });
  choices.hidden=false; choices.classList.remove('dialogue-refresh'); void choices.offsetWidth; choices.classList.add('dialogue-refresh');
 }
 if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!=='yes') {
@@ -52,24 +174,25 @@ if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!
  document.querySelector('#answer-call')!.addEventListener('click',async()=>{
   if(inCall) return; cancel(); inCall=true; incoming.hidden=true; active.hidden=false; returning.hidden=true;
   const token=generation;
-  if(await say('Michel',introduction,token)) { revealChoices(); choices.querySelector<HTMLAnchorElement>('a')!.focus({preventScroll:true}); }
+  if(!await say('Michel',"Hey. You found the place. I was wondering who'd turn up.",token))return;
+  if(await say('Michel',introduction,token)) { revealChoices(); progress.focus({preventScroll:true}); }
  });
  for(const id of ['decline-call','end-call']) document.querySelector('#'+id)!.addEventListener('click',()=>{saveSession('md-call-dismissed','yes');restore();returning.focus({preventScroll:true});});
- choices.querySelectorAll<HTMLButtonElement>('button[data-reply]').forEach(button=>{
-  const key=button.dataset.reply!; if(readSession('md-intro-used-'+key)==='yes') button.disabled=true;
-  button.addEventListener('click',async()=>{
-   if(!inCall || choices.hidden || button.disabled) return;
-   const token=++generation; button.disabled=true; saveSession('md-intro-used-'+key,'yes');
-   if(!await say('You',button.textContent!.replace('›','').trim(),token)) return;
-   if(await say('Michel',replies[key],token)) { revealChoices(); choices.querySelector<HTMLAnchorElement>('a')!.focus({preventScroll:true}); }
-  });
- });
- document.querySelector('#dialogue-progress')!.addEventListener('click',async(event)=>{
-  event.preventDefault(); if(!inCall || choices.hidden) return;
-  const token=++generation;
-  if(!await say('You',"Sure, I'll check it out.",token)) return;
-  if(!await say('Michel',"Great. Take a look — I'll see you on the other side.",token)) return;
-  saveSession('md-intro-complete','yes'); location.assign('/profile/');
+ replyButtons.forEach(button=>button.addEventListener('click',async()=>{
+  if(!inCall || choices.hidden || button.disabled) return;
+  const key=button.dataset.reply!; const userLine=button.querySelector('.reply-text')!.textContent!;
+  const token=++generation; button.disabled=true;
+  if(key!=='root')saveSession('md-intro-thread-'+key,'yes');
+  if(!await say('You',userLine,token))return;
+  thread=key;
+  if(await say('Michel',threads[thread].line,token)){revealChoices();progress.focus({preventScroll:true});}
+ }));
+ progress.addEventListener('click',async(event)=>{
+  event.preventDefault(); if(!inCall || choices.hidden)return;
+  const current=threads[thread];const token=++generation;
+  if(!await say('You',current.action,token))return;
+  if(!await say('Michel',current.farewell,token))return;
+  saveSession('md-intro-complete','yes');location.assign(current.href);
  });
 }
 window.addEventListener('pagehide',cancel);
