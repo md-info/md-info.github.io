@@ -418,12 +418,12 @@
 
 /* Downward audio spectrum occupies the existing space above the identity. */
 .menu-panel { position:relative; }
-.radio-spectrum { position:absolute; top:4px; left:25px; right:30px; height:clamp(24px,5vw,82px); display:flex; align-items:flex-start; gap:3px; pointer-events:none; overflow:hidden; }
+.radio-spectrum { position:absolute; top:4px; left:25px; right:30px; height:300px; display:flex; align-items:flex-start; gap:4px; pointer-events:none; overflow:visible; opacity:.38; z-index:0; }
 .radio-spectrum[hidden] { display:none; }
-.radio-spectrum span { flex:1; height:100%; background:linear-gradient(var(--hud-red),#ff525288); transform:scaleY(.025); transform-origin:top; box-shadow:0 0 5px #ff525233; }
-@media(min-width:701px) and (max-height:850px) { .radio-spectrum { height:22px; } }
+.radio-spectrum span { flex:1; height:0; background:repeating-linear-gradient(to bottom,#ac4549 0 2px,#642a32 2px 3px,transparent 3px 5px); box-shadow:0 0 3px #8b34331a; mask-image:linear-gradient(to bottom,#000 65%,transparent); }
+.menu-panel>.identity,.menu-panel>.identity-caption,.menu-panel>.menu-heading,.menu-panel>nav,.menu-panel>.menu-bottom { position:relative; z-index:1; }
 @media(max-width:700px) {
- .radio-spectrum { left:12px; right:12px; height:28px; }
+ .radio-spectrum { left:12px; right:12px; height:240px; }
  .incoming-call { position:fixed; top:max(12px,env(safe-area-inset-top)); right:max(12px,env(safe-area-inset-right)); width:min(260px,calc(100vw - 24px)); z-index:70; }
  .active-call,.home-screen:has(#active-call:not([hidden])) .active-call { position:fixed; top:max(12px,env(safe-area-inset-top)); left:max(12px,env(safe-area-inset-left)); width:150px; z-index:70; }
  .home-screen:has(#active-call:not([hidden])) .welcome-copy { padding-top:0; }
