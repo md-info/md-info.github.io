@@ -1,0 +1,21 @@
+{
+  "title": "Ipon Buffer — Local AI Emergency Savings Planner",
+  "category": "AI-Assisted Financial Planning",
+  "description": "An AI-assisted emergency-savings app that turns expense notes into user-reviewed budget entries and calculates contributions around essential expenses. Validated with 152 automated tests.",
+  "detailedDescription": "Developed for the ASEAN Financial Health Challenge’s Emergency Savings track, Ipon Buffer helps people with irregular income plan contributions after accounting for daily essentials and upcoming bills. A locally hosted Qwen3 assistant, integrated through Ollama, converts natural-language expense notes into editable budget drafts. Users review the drafts before they affect the plan; financial calculations remain deterministic. The prototype includes exact monetary calculations, consent controls, and simulated deposits and emergency withdrawals. Validation covered 148 backend tests and 4 frontend tests, alongside browser testing. The project also includes a working demo, pitch deck, and documented AI evaluations.",
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "React",
+    "TypeScript",
+    "SQLite",
+    "Ollama",
+    "Qwen3"
+  ],
+  "images": [],
+  "featured": true,
+  "date": "2026-10-01",
+  "dateLabel": "Sep 2026 – Oct 2026",
+  "event": "ASEAN Financial Health Challenge",
+  "association": "Zeon Michael Group"
+}

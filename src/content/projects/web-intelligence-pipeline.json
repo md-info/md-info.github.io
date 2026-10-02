@@ -1,0 +1,22 @@
+{
+  "title": "Web Intelligence Pipeline",
+  "category": "Web Data ETL & Intelligence",
+  "description": "A Python pipeline that turns public web pages into structured, AI-ready records in SQLite, with optional LLM enrichment.",
+  "detailedDescription": "Built for The AI Builders Hackathon, Web Intelligence Pipeline runs a public website URL through a complete workflow: Acquire → Extract → Transform → Load → Enrich. Python requests retrieves the page, BeautifulSoup extracts content and metadata, and Pydantic validates structured records. The pipeline cleans and normalizes the extracted information, then persists it in SQLite. An optional LLM layer can add structured insights such as organization, industry, products, and target customers; the core pipeline works without an LLM API key. A command-line interface demonstrates the workflow from a single URL. The implementation handles invalid URLs, HTTP errors, missing metadata, inconsistent text, and unnecessary webpage content. Future directions include multi-page collection, scheduling, stronger extraction, data-quality monitoring, and a web interface.",
+  "technologies": [
+    "Python",
+    "requests",
+    "BeautifulSoup",
+    "Pydantic",
+    "SQLite",
+    "LLM API"
+  ],
+  "githubUrl": "https://github.com/md-info/web-intelligence-pipeline",
+  "deployedUrl": "https://devpost.com/software/web-intelligence-pipeline",
+  "images": [],
+  "featured": true,
+  "date": "2026-09-01",
+  "dateLabel": "Aug 2026 – Sep 2026",
+  "event": "The AI Builders Hackathon",
+  "association": "Athabasca University"
+}
