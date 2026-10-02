@@ -1,31 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
-
+import JournalNote from '../../layouts/JournalNote.astro';
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog', ({ data }) => !data.draft);
-  return blogPosts.map(post => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+  return blogPosts.map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
-
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
-
-<BlogPost
-  title={post.data.title}
-  description={post.data.description}
-  publishDate={post.data.publishDate}
-  updatedDate={post.data.updatedDate}
-  category={post.data.category}
-  tags={post.data.tags}
-  featured={post.data.featured}
-  author={post.data.author}
-  image={post.data.image}
-  courseCode={post.data.courseCode}
-  courseName={post.data.courseName}
->
-  <Content />
-</BlogPost>
+<JournalNote post={post} headings={headings}><Content /></JournalNote>
