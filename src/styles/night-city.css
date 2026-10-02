@@ -358,8 +358,7 @@
 .active-call .call-label { display:flex; flex-wrap:wrap; gap:5px 10px; margin-bottom:7px; font-size:11px; }
 .active-call .call-label span { color:var(--hud-cyan); }
 .caller-feed { position:relative; height:190px; overflow:hidden; border:1px solid var(--hud-red); clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%); }
-.caller-feed img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 35%; filter:saturate(.55) contrast(1.15); }
-.caller-scan { position:absolute; inset:0; background:linear-gradient(#86edf314,#ff727510),repeating-linear-gradient(0deg,transparent 0 3px,#06111a55 3px 4px); pointer-events:none; }
+.caller-feed img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
 #end-call { margin-top:7px; font-size:13px; padding:4px 8px; }
 .home-screen:has(#active-call:not([hidden])) .welcome-copy { padding-top:290px; }
 .motion-paused .incoming-call,.motion-paused .active-call { animation:none; }
