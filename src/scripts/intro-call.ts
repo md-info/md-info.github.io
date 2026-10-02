@@ -212,7 +212,6 @@ if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!
     subtitle.scrollIntoView({block:'center',behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
   });
   if(!await greeting)return;
-  if(!await say('Michel',"Too quiet in here? Radio's down by Settings. Pick a track. Every late-night detour needs a soundtrack.",token))return;
   if(await say('Michel',introduction,token)) { revealChoices(); progress.focus({preventScroll:true}); }
  });
  for(const id of ['decline-call','end-call']) document.querySelector('#'+id)!.addEventListener('click',()=>{saveSession('md-call-dismissed','yes');restore();returning.focus({preventScroll:true});});
