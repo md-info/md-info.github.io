@@ -1,282 +1,44 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro';
+const contributions = [
+ { title:'CUDA sample build regression review', project:'NVIDIA / cuda-samples #457', result:'Identified a default-build failure when no host compiler was selected. Tested a conditional fix that preserved both default and explicit compiler configurations.', evidence:'Validation covered one sample’s compilation, with a published reproducer, patch, notebook, and raw logs.', review:'https://github.com/NVIDIA/cuda-samples/pull/457#pullrequestreview-5384507784', artifacts:'https://github.com/md-info/cuda-kernel-validation/tree/87df1d431f344b380162b17d153ba1e269f5daed/samples457' },
+ { title:'Autograd regression investigation', project:'NVIDIA / Apex #2012', result:'Reviewed an inference-memory-leak proposal and identified a training-backward regression in its tensor-saving callbacks. The probe passed all 64 base cases; all 64 proposed-change cases lacked the required saved tensors.', evidence:'Tested exact callbacks on CPU and T4 and published the reproducer and raw evidence. The original inference leak was outside the verified result.', review:'https://github.com/NVIDIA/apex/pull/2012#pullrequestreview-5374739241', artifacts:'https://github.com/md-info/cuda-kernel-validation/tree/main/apex2012' },
+];
 ---
-
-<Layout
-  title="Extracurricular Activities - Michel Deosaran"
-  description="My involvement in clubs, volunteer work, and extracurricular activities."
->
-  <div
-    class="py-16 px-4 sm:px-6 lg:px-8"
-  >
-    <div class="max-w-4xl mx-auto">
-      <!-- Header -->
-      <div
-        class="text-center mb-12 animate-fade-in"
-      >
-        <h1
-          class="text-4xl font-bold text-primary mb-4"
-        >
-          Extracurricular Activities
-        </h1>
-        <p
-          class="text-secondary text-lg"
-        >
-          My involvement in clubs,
-          volunteer work, and community
-          initiatives that have shaped
-          my leadership and teamwork
-          skills
-        </p>
-      </div>
-
-      <!-- Activities Timeline -->
-      <div class="relative">
-        <!-- Timeline Line -->
-        <div
-          class="absolute left-8 top-0 bottom-0 w-0.5 bg-border-light"
-        >
-        </div>
-
-        <!-- Activity Items -->
-        <div class="space-y-12">
-          <!-- Current Activities -->
-          <div
-            class="relative animate-slide-in-left"
-          >
-            <div
-              class="absolute left-6 w-4 h-4 bg-accent rounded-full border-4 border-background"
-            >
-            </div>
-            <div class="ml-16 card p-6">
-              <div
-                class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
-              >
-                <div>
-                  <h2
-                    class="text-2xl font-bold text-primary"
-                  >
-                    Core Member &
-                    Director of Student
-                    Affairs
-                  </h2>
-                  <h3
-                    class="text-xl text-accent mb-2"
-                  >
-                    Workgroup for
-                    Resilient Industrial
-                    Systems
-                  </h3>
-                  <p
-                    class="text-secondary"
-                  >
-                    Athabasca Univeristy
-                  </p>
-                </div>
-                <div class="text-right">
-                  <div
-                    class="text-primary font-semibold"
-                  >
-                    Current
-                  </div>
-                  <div
-                    class="text-secondary"
-                  >
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-4">
-                <p
-                  class="text-secondary mb-4"
-                >
-                  My role was to
-                  represent the WRIS
-                  Student Workgroup in
-                  communication with the
-                  Athabasca University
-                  Students Union, during
-                  which we managed to
-                  accomplish the best
-                  relations and most
-                  involvement a
-                  workgroup has had with
-                  the AUSU in years. I
-                  also founded the
-                  group, which produces
-                  guides and projects
-                  that aim to help helps
-                  hundreds of students
-                  gain academic
-                  experience every year.
-                </p>
-                <ul
-                  class="space-y-2 text-secondary"
-                >
-                  <li>
-                    • Authored two
-                    editions of the
-                    First Year Guide,
-                    earning 100+
-                    visitors to the
-                    club's website
-                  </li>
-                  <li>
-                    • Developed a the
-                    website, overcoming
-                    limitations of a
-                    paged document
-                    format
-                  </li>
-                  <li>
-                    • Established the
-                    student committee to
-                    develop more
-                    resources in the
-                    future
-                  </li>
-                  <li>
-                    • Promoted and
-                    compiled 20+ student
-                    role postings
-                  </li>
-                </ul>
-              </div>
-
-              <div
-                class="flex flex-wrap gap-2"
-              >
-                <span
-                  class="px-3 py-1 bg-surface-alt text-primary text-sm rounded-full"
-                  >Event Planning</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-alt text-primary text-sm rounded-full"
-                  >Leadership</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-alt text-primary text-sm rounded-full"
-                  >Community Building</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-alt text-primary text-sm rounded-full"
-                  >Public Speaking</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Volunteering -->
-          <!-- <div class="relative animate-slide-in-right">
-						<div class="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
-						<div class="ml-16 card p-6">
-							<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-								<div>
-									<h2 class="text-2xl font-bold text-primary">Secretary-General</h2>
-									<h3 class="text-xl text-accent mb-2">University of Manitoba Model United Nations</h3>
-									<p class="text-secondary">University of Manitoba</p>
-								</div>
-								<div class="text-right">
-									<div class="text-primary font-semibold">Jan 2024 - Apr 2025</div>
-									<div class="text-secondary">1 year 4 months</div>
-								</div>
-							</div>
-
-							<div class="mb-4">
-								<p class="text-secondary mb-4">
-                  TBA
-								</p>
-							</div>
-						</div>
-					</div> -->
-
-          <!-- Hackathons -->
-          <!-- <div class="relative animate-slide-in-left">
-						<div class="absolute left-6 w-4 h-4 bg-secondary rounded-full border-4 border-background"></div>
-						<div class="ml-16 card p-6">
-							<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-								<div>
-									<h2 class="text-2xl font-bold text-primary">Student Ambassador</h2>
-									<h3 class="text-xl text-accent mb-2">Faculty of Science</h3>
-									<p class="text-secondary">University of Manitoba</p>
-								</div>
-								<div class="text-right">
-									<div class="text-primary font-semibold">Jan 2024 - Current</div>
-									<div class="text-secondary">1 year 9 months</div>
-								</div>
-							</div>
-
-							<div class="mb-4">
-								<p class="text-secondary mb-4">
-                  TBA
-								</p>
-							</div>
-						</div>
-					</div> -->
-
-          <!-- Academic Communities -->
-          <!-- <div class="relative animate-slide-in-right">
-						<div class="absolute left-6 w-4 h-4 bg-secondary rounded-full border-4 border-background"></div>
-						<div class="ml-16 card p-6">
-							<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-								<div>
-									<h2 class="text-2xl font-bold text-primary">Volunteer Notetaker</h2>
-									<h3 class="text-xl text-accent mb-2">FILM 1310 Winter 2024</h3>
-									<p class="text-secondary">University of Manitoba</p>
-								</div>
-								<div class="text-right">
-									<div class="text-primary font-semibold">Jan 2024 - Apr 2024</div>
-									<div class="text-secondary">4 months</div>
-								</div>
-							</div>
-
-							<div class="mb-4">
-								<p class="text-secondary mb-4">
-                  TBA
-								</p>
-							</div>
-						</div>
-					</div> -->
-
-          <!-- Community Outreach -->
-          <!-- <div class="relative animate-slide-in-left">
-						<div class="absolute left-6 w-4 h-4 bg-accent rounded-full border-4 border-background"></div>
-						<div class="ml-16 card p-6">
-							<div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-								<div>
-									<h2 class="text-2xl font-bold text-primary">Vice President & Head of Logistics</h2>
-									<h3 class="text-xl text-accent mb-2">Hanoi - Amsterdam Japanese Vietnamese Culture Club</h3>
-                  <p class="text-secondary">Hanoi, Vietnam</p>
-								</div>
-								<div class="text-right">
-									<div class="text-primary font-semibold">Aug 2021 - Aug 2022</div>
-									<div class="text-secondary">1 year 1 month</div>
-								</div>
-							</div>
-
-							<div class="mb-4">
-								<p class="text-secondary mb-4">
-                  TBA
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-
-          <!-- Back Navigation -->
-          <div
-            class="mt-12 text-center"
-          >
-            <a
-              href="/experience"
-              class="btn btn-secondary"
-            >
-              ← Back to Experience
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div></Layout
->
+<Layout title="Open Source & GitHub — Michel Deosaran" description="Michel Deosaran's open-source goals, GPU engineering investigations, code reviews, and GitHub contributions.">
+ <div class="dossier-content">
+  <p class="eyebrow">03 / COMMUNITY RECORD</p><h1>Building in <em>the open.</em></h1>
+  <p class="lead">Learning GPU programming and contributing through tested reviews, issue investigation, and collaboration with maintainers.</p>
+  <section aria-labelledby="activity-heading" class="card p-6 sm:p-8 mb-10">
+   <p class="eyebrow mb-3">MD-INFO / CONTRIBUTION SIGNAL</p><h2 id="activity-heading" class="text-3xl mb-5">GitHub activity</h2>
+   <a href="https://github.com/md-info" target="_blank" rel="noopener noreferrer" aria-label="View md-info's GitHub contributions"><img id="github-contributions" src="https://ghchart.rshah.org/86edf3/md-info" alt="GitHub contribution calendar for md-info" width="722" height="112" loading="lazy" style="width:100%;height:auto;min-height:90px;background:#111923;padding:12px" /></a>
+   <p id="chart-fallback" class="body-copy mt-4" hidden>The contribution graphic is unavailable. View the activity directly on GitHub.</p>
+   <p class="text-accent text-sm mt-4">Contribution calendar provided by <a href="https://github.com/2016rshah/githubchart-api" target="_blank" rel="noopener noreferrer">GitHub Chart API</a>.</p>
+   <a class="enter-button mt-5" href="https://github.com/md-info" target="_blank" rel="noopener noreferrer">GITHUB PROFILE ↗</a>
+  </section>
+  <section aria-labelledby="goals-heading" class="mb-12">
+   <h2 id="goals-heading" class="text-3xl mb-5">Goals &amp; approach</h2>
+   <ul class="body-copy list-disc pl-6 space-y-3">
+    <li>Develop practical skills in GPU kernel programming, CUDA, and performance validation.</li>
+    <li>Prioritize substantive reviews of existing code and reproducible investigations of users’ issues.</li>
+    <li>Submit tested pull requests, respond to maintainer feedback, and follow contributions through toward merge.</li>
+    <li>Publish reproducers, raw logs, and clear findings so others can check the evidence.</li>
+    <li>Reflect on the work through regular technical writeups and continued learning.</li>
+   </ul>
+  </section>
+  <section aria-labelledby="achievements-heading">
+   <h2 id="achievements-heading" class="text-3xl mb-6">Selected contributions</h2>
+   <div class="space-y-6">{contributions.map((item,index)=><article class="card p-6 sm:p-8 animate-slide-in-left" style={`--index:${index}`}>
+    <p class="eyebrow mb-3">{item.project} / REVIEW PUBLISHED</p><h3 class="text-2xl text-accent mb-4">{item.title}</h3>
+    <p class="body-copy mb-4">{item.result}</p><p class="body-copy mb-5">{item.evidence}</p>
+    <div class="project-links"><a class="enter-button" href={item.review} target="_blank" rel="noopener noreferrer">READ REVIEW ↗</a><a class="enter-button" href={item.artifacts} target="_blank" rel="noopener noreferrer">REPRODUCER &amp; EVIDENCE ↗</a></div>
+   </article>)}</div>
+  </section>
+  <a class="record-back" href="/experience/">← EXPERIENCE ARCHIVE</a>
+ </div>
+ <script>
+  const chart=document.querySelector<HTMLImageElement>('#github-contributions')!;
+  function fallback() { chart.hidden=true; document.querySelector<HTMLElement>('#chart-fallback')!.hidden=false; }
+  chart.addEventListener('error',fallback); if(chart.complete && chart.naturalWidth===0) fallback();
+ </script>
+</Layout>
