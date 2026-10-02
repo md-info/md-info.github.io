@@ -451,3 +451,7 @@ html[lang='ja'] .menu-item { font-size:23px; }
 html[lang='ja'] .home-description,html[lang='ja'] .body-copy { line-height:1.8; }
 html[lang='fr'] .menu-item { font-size:26px; }
 html[lang='ja'] .night-city .note-body { font-family:'Rajdhani',sans-serif; }
+.call-languages { display:flex; justify-content:center; gap:7px; padding:5px 0; background:#0b1421d9; border:1px solid #ff727544; border-top:0; }
+.call-languages button { font:10px 'IBM Plex Mono',monospace; color:var(--hud-cyan); padding:3px 6px; border:1px solid transparent; }
+.call-languages button[aria-pressed='true'] { color:var(--hud-yellow); border-color:#e9dd5655; }
+.dialogue-choice[hidden] { display:none; }
