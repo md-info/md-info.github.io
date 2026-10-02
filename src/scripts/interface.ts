@@ -1,3 +1,7 @@
+import { navigate } from 'astro:transitions/client';
+document.addEventListener('astro:page-load',()=>{
+const lifecycle=new AbortController();
+document.addEventListener('astro:before-swap',()=>lifecycle.abort(),{once:true});
 const dialog = document.querySelector<HTMLDialogElement>('#settings-dialog')!;
 const motion = document.querySelector<HTMLInputElement>('#motion-setting')!;
 const sound = document.querySelector<HTMLInputElement>('#sound-setting')!;
@@ -9,7 +13,7 @@ sound.checked = read('md-sound') === 'on';
 function applyMotion() { document.documentElement.classList.toggle('motion-paused', !motion.checked); }
 applyMotion();
 motion.addEventListener('change', () => { save('md-motion', motion.checked ? 'on' : 'off'); applyMotion(); });
-preference.addEventListener('change', () => { if (read('md-motion') === null) { motion.checked = !preference.matches; applyMotion(); } });
+preference.addEventListener('change', () => { if (read('md-motion') === null) { motion.checked = !preference.matches; applyMotion(); } },{signal:lifecycle.signal});
 sound.addEventListener('change', () => save('md-sound', sound.checked ? 'on' : 'off'));
 let audio: AudioContext | undefined;
 function tick() {
@@ -38,8 +42,10 @@ document.addEventListener('keydown', event => {
     event.preventDefault(); const next = index < 0 ? 0 : (index + (event.key === 'ArrowDown' ? 1 : -1) + menu.length) % menu.length;
     menu[next].focus();
   }
-  if (event.key === 'Escape' && location.pathname !== '/') { location.assign('/'); }
-});
+  if (event.key === 'Escape' && location.pathname !== '/') { void navigate('/'); }
+},{signal:lifecycle.signal});
 function clock() { const el = document.querySelector('#toronto-time'); if (el) el.textContent = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Toronto', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()) + ' / TORONTO'; }
-clock(); setInterval(clock, 60000);
-document.addEventListener('visibilitychange', () => document.documentElement.classList.toggle('tab-hidden', document.hidden));
+clock(); const clockTimer=setInterval(clock,60000); lifecycle.signal.addEventListener('abort',()=>clearInterval(clockTimer));
+document.addEventListener('visibilitychange', () => document.documentElement.classList.toggle('tab-hidden', document.hidden),{signal:lifecycle.signal});
+
+});

@@ -1,3 +1,6 @@
+import { navigate } from 'astro:transitions/client';
+document.addEventListener('astro:page-load',()=>{
+if(!document.querySelector('#incoming-call'))return;
 const choices = document.querySelector<HTMLElement>('#dialogue-choices')!;
 const returning = document.querySelector<HTMLElement>('#return-profile')!;
 const speaker = document.querySelector<HTMLElement>('.dialogue-speaker')!;
@@ -134,7 +137,7 @@ const timers = new Set<number>();
 function delay(ms:number) { return new Promise<void>(resolve=>{const id=window.setTimeout(()=>{timers.delete(id);resolve();},ms);timers.add(id);}); }
 function cancel() { generation++; timers.forEach(id=>clearTimeout(id)); timers.clear(); }
 function restore() {
- cancel(); inCall=false; incoming.hidden=true; active.hidden=true; choices.hidden=true;
+ cancel(); window.dispatchEvent(new CustomEvent('portfolio-call',{detail:false})); inCall=false; incoming.hidden=true; active.hidden=true; choices.hidden=true;
  returning.hidden=false; subtitle.hidden=false; speaker.hidden=true; line.textContent=introduction;
 }
 async function say(name:string,text:string,token:number) {
@@ -172,7 +175,7 @@ if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!
   if(!inCall) { incoming.hidden=false; announcement.textContent='Incoming call from Michel. Answer or decline.'; }
  })();
  document.querySelector('#answer-call')!.addEventListener('click',async()=>{
-  if(inCall) return; cancel(); inCall=true; incoming.hidden=true; active.hidden=false; returning.hidden=true;
+  if(inCall) return; cancel(); inCall=true; window.dispatchEvent(new CustomEvent('portfolio-call',{detail:true})); incoming.hidden=true; active.hidden=false; returning.hidden=true;
   const token=generation;
   if(!await say('Michel',"Hey. You found the place. I was wondering who'd turn up.",token))return;
   if(await say('Michel',introduction,token)) { revealChoices(); progress.focus({preventScroll:true}); }
@@ -192,7 +195,8 @@ if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!
   const current=threads[thread];const token=++generation;
   if(!await say('You',current.action,token))return;
   if(!await say('Michel',current.farewell,token))return;
-  saveSession('md-intro-complete','yes');location.assign(current.href);
+  saveSession('md-intro-complete','yes');void navigate(current.href);
  });
 }
-window.addEventListener('pagehide',cancel);
+document.addEventListener('astro:before-swap',()=>{cancel();window.dispatchEvent(new CustomEvent('portfolio-call',{detail:false}));},{once:true});
+});

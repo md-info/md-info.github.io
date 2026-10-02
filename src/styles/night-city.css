@@ -415,6 +415,3 @@
 @media(max-width:700px) { .identity .identity-logo,.night-city .identity .identity-logo:hover { transform:scale(1.12); } }
 
 
-.system-bar:has(.radio) time { margin-left:0; white-space:nowrap; }
-@media (min-width:701px) and (max-width:1450px) { .system-bar:has(.radio)>span { display:none; } }
-@media (max-width:700px) { .system-bar:has(.radio) { flex-wrap:wrap; height:auto; min-height:62px; padding-top:14px; gap:10px 16px; } .system-bar:has(.radio) time { margin-left:auto; } .system-bar:has(.radio)>span { display:none; } }

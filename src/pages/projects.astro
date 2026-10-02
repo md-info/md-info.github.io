@@ -12,6 +12,8 @@ const categories = [...new Set(projects.map(p => p.data.category))];
     {projects.map(({id,data}) => <dialog id={`project-${id}`} class="project-dialog" aria-labelledby={`title-${id}`}><div class="dialog-top"><span>PROJECT DOSSIER</span><button class="project-close" aria-label="Close project">×</button></div><p class="eyebrow">{data.category}</p><h2 id={`title-${id}`}>{data.title}</h2><p class="eyebrow">{data.dateLabel} · {data.event}</p><p class="project-detail-copy">Associated with {data.association}</p><p class="project-detail-copy">{data.detailedDescription}</p><div class="skill-tags">{data.technologies.map(tech => <span>{tech}</span>)}</div><div class="project-links">{data.deployedUrl && <a class="enter-button" href={data.deployedUrl} target="_blank" rel="noopener noreferrer">VIEW SUBMISSION ↗</a>}{data.githubUrl && data.githubUrl !== data.deployedUrl && <a class="enter-button" href={data.githubUrl} target="_blank" rel="noopener noreferrer">SOURCE ↗</a>}</div></dialog>)}
   </div>
   <script>
+document.addEventListener("astro:page-load",()=>{
+
     const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-category]')];
     const cards = [...document.querySelectorAll<HTMLElement>('[data-project-category]')];
     filters.forEach(button => button.addEventListener('click', () => {
@@ -25,5 +27,7 @@ const categories = [...new Set(projects.map(p => p.data.category))];
       dialog.querySelector('.project-close')?.addEventListener('click', () => dialog.close());
       dialog.addEventListener('click', event => { const rect = dialog.getBoundingClientRect(); if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close(); });
     });
-  </script>
+  
+});
+</script>
 </Layout>

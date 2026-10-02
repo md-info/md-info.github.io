@@ -1,3 +1,6 @@
+document.addEventListener('astro:page-load',()=>{
+if(!document.querySelector('#night-run'))return;
+const lifecycle=new AbortController();
 const canvas = document.querySelector<HTMLCanvasElement>('#night-run')!;
 const ctx = canvas.getContext('2d')!;
 const overlay = document.querySelector<HTMLElement>('#game-overlay')!;
@@ -87,7 +90,10 @@ document.addEventListener('keydown', event => {
     event.preventDefault(); event.stopImmediatePropagation();
     if (event.key === 'Escape') end(); else if (event.key === ' ') pause(); else move(['ArrowLeft', 'a', 'A'].includes(event.key) ? -1 : 1);
   }
-}, true);
-document.addEventListener('visibilitychange', () => { if (document.hidden && state === 'running') pause(); });
+}, {capture:true,signal:lifecycle.signal});
+document.addEventListener('visibilitychange', () => { if (document.hidden && state === 'running') pause(); },{signal:lifecycle.signal});
 document.querySelectorAll('.settings-open').forEach(button => button.addEventListener('click', () => { if (state === 'running') pause(); }));
 draw();
+
+document.addEventListener('astro:before-swap',()=>{cancelAnimationFrame(frame);lifecycle.abort();document.body.classList.remove('game-playing');},{once:true});
+});

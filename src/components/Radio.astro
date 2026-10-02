@@ -1,49 +1,69 @@
 ---
 import tracks from '../data/radio.json';
-const available=tracks.filter(track=>track.src);
 ---
-<div class="radio" aria-label="Portfolio radio" data-tracks={JSON.stringify(tracks)}>
-  <div class="radio-track"><span class="radio-label">RADIO / <span id="radio-state">{available.length?'PAUSED':'AWAITING AUDIO'}</span></span><span id="radio-title">{tracks[0]?.title ?? 'Menu Atmosphere'}</span></div>
-  <div class="radio-controls" role="group" aria-label="Radio controls">
-    <button id="radio-prev" aria-label="Previous song" disabled={available.length<2}>⏮</button>
-    <button id="radio-play" aria-label="Play radio" disabled={!available.length}>▶</button>
-    <button id="radio-next" aria-label="Next song" disabled={available.length<2}>⏭</button>
-    <button id="radio-loop" aria-label="Loop current song" aria-pressed="true">↻</button>
-  </div>
-  <audio id="radio-audio" loop preload="none"></audio>
-  <span id="radio-message" class="sr-only" role="status" aria-live="polite"></span>
+<div class="radio" transition:persist="portfolio-radio" data-tracks={JSON.stringify(tracks)}>
+  <button id="radio-toggle" aria-expanded="false" aria-controls="radio-panel">♫ Radio</button>
+  <section id="radio-panel" class="radio-panel" aria-label="Radio player" hidden>
+    <div class="radio-top"><span class="radio-label">TORONTO AFTER DARK / RADIO</span><button id="radio-close" aria-label="Close radio">×</button></div>
+    <p id="radio-title">{tracks[0].title}</p>
+    <div class="radio-meta"><span id="radio-state">PAUSED</span><span id="radio-time">0:00</span></div>
+    <div class="radio-controls" role="group" aria-label="Radio controls">
+      <button id="radio-prev" aria-label="Previous song">⏮</button>
+      <button id="radio-play" aria-label="Play radio">▶</button>
+      <button id="radio-next" aria-label="Next song">⏭</button>
+      <button id="radio-loop" aria-label="Loop current song" aria-pressed="true">↻</button>
+    </div>
+    <label class="radio-volume">VOLUME <input id="radio-volume" type="range" min="0" max="100" value="55" aria-label="Radio volume" /></label>
+    <audio id="radio-audio" loop preload="none"></audio>
+    <span id="radio-message" class="sr-only" role="status" aria-live="polite"></span>
+  </section>
 </div>
 <script>
   const radio=document.querySelector<HTMLElement>('.radio')!;
-  const tracks: {title:string;src:string|null}[]=JSON.parse(radio.dataset.tracks!);
-  const playlist=tracks.filter((track):track is {title:string;src:string}=>!!track.src);
-  const audio=document.querySelector<HTMLAudioElement>('#radio-audio')!;
-  const play=document.querySelector<HTMLButtonElement>('#radio-play')!;
-  const loop=document.querySelector<HTMLButtonElement>('#radio-loop')!;
-  const title=document.querySelector<HTMLElement>('#radio-title')!;
-  const state=document.querySelector<HTMLElement>('#radio-state')!;
-  const message=document.querySelector<HTMLElement>('#radio-message')!;
-  let index=0;
-  function showState(){ play.textContent=audio.paused?'▶':'Ⅱ';play.setAttribute('aria-label',audio.paused?'Play radio':'Pause radio');state.textContent=playlist.length?(audio.paused?'PAUSED':'ON AIR'):'AWAITING AUDIO'; }
+  const playlist:{title:string;src:string}[]=JSON.parse(radio.dataset.tracks!);
+  const audio=radio.querySelector<HTMLAudioElement>('#radio-audio')!;
+  const play=radio.querySelector<HTMLButtonElement>('#radio-play')!;
+  const loop=radio.querySelector<HTMLButtonElement>('#radio-loop')!;
+  const title=radio.querySelector<HTMLElement>('#radio-title')!;
+  const state=radio.querySelector<HTMLElement>('#radio-state')!;
+  const message=radio.querySelector<HTMLElement>('#radio-message')!;
+  const panel=radio.querySelector<HTMLElement>('#radio-panel')!;
+  const toggle=radio.querySelector<HTMLButtonElement>('#radio-toggle')!;
+  const volume=radio.querySelector<HTMLInputElement>('#radio-volume')!;
+  let index=0,baseVolume=.55,inCall=false,fade=0;
+  audio.src=playlist[0].src;audio.volume=baseVolume;
+  function showState(){play.textContent=audio.paused?'▶':'Ⅱ';play.setAttribute('aria-label',audio.paused?'Play radio':'Pause radio');state.textContent=audio.paused?'PAUSED':'ON AIR';toggle.textContent=audio.paused?'♫ Radio':'♫ Radio · LIVE';}
+  function open(value:boolean){panel.hidden=!value;toggle.setAttribute('aria-expanded',String(value));if(value)play.focus();}
+  toggle.addEventListener('click',()=>open(panel.hidden));
+  radio.querySelector('#radio-close')!.addEventListener('click',()=>{open(false);toggle.focus();});
+  document.addEventListener('click',event=>{if(!panel.hidden && !radio.contains(event.target as Node))open(false);});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){event.preventDefault();event.stopImmediatePropagation();open(false);toggle.focus();}},true);
+  document.addEventListener('astro:before-swap',()=>open(false));
   async function start(){try{await audio.play();}catch{message.textContent='Playback could not start. Please try again.';showState();}}
-  function select(next:number){if(!playlist.length)return;const wasPlaying=!audio.paused;index=(next+playlist.length)%playlist.length;audio.src=playlist[index].src;title.textContent=playlist[index].title;showState();message.textContent='Selected '+playlist[index].title;if(wasPlaying)void start();}
-  if(playlist.length){audio.src=playlist[0].src;title.textContent=playlist[0].title;}
+  function select(next:number){const wasPlaying=!audio.paused;index=(next+playlist.length)%playlist.length;audio.src=playlist[index].src;title.textContent=playlist[index].title;radio.querySelector('#radio-time')!.textContent='0:00';showState();message.textContent='Selected '+playlist[index].title;if(wasPlaying)void start();}
   play.addEventListener('click',()=>{if(audio.paused)void start();else audio.pause();});
   loop.addEventListener('click',()=>{audio.loop=!audio.loop;loop.setAttribute('aria-pressed',String(audio.loop));message.textContent=audio.loop?'Loop on':'Loop off';});
-  document.querySelector('#radio-prev')!.addEventListener('click',()=>select(index-1));
-  document.querySelector('#radio-next')!.addEventListener('click',()=>select(index+1));
+  radio.querySelector('#radio-prev')!.addEventListener('click',()=>select(index-1));radio.querySelector('#radio-next')!.addEventListener('click',()=>select(index+1));
+  function setVolume(){cancelAnimationFrame(fade);const target=baseVolume*(inCall?.3:1);const from=audio.volume;const begin=performance.now();function step(now:number){const t=Math.min(1,(now-begin)/250);audio.volume=from+(target-from)*t;if(t<1)fade=requestAnimationFrame(step);}fade=requestAnimationFrame(step);}
+  volume.addEventListener('input',()=>{baseVolume=Number(volume.value)/100;setVolume();});
+  window.addEventListener('portfolio-call',event=>{inCall=Boolean((event as CustomEvent).detail);setVolume();});
   audio.addEventListener('play',showState);audio.addEventListener('pause',showState);
-  audio.addEventListener('ended',()=>{if(!audio.loop && playlist.length>1){select(index+1);void start();}else showState();});
+  audio.addEventListener('timeupdate',()=>{const t=Math.floor(audio.currentTime);radio.querySelector('#radio-time')!.textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');});
+  audio.addEventListener('ended',()=>{if(!audio.loop){select(index+1);void start();}});
   audio.addEventListener('error',()=>{state.textContent='AUDIO UNAVAILABLE';message.textContent='This track could not load. Try another song.';});
 </script>
 <style>
-  .radio { display:flex; align-items:center; gap:18px; margin-left:auto; min-width:0; flex:0 1 550px; padding:8px 18px; border-left:1px solid #ff727544; border-right:1px solid #ff727544; letter-spacing:.05em; }
-  .radio-track { display:flex; flex-direction:column; gap:3px; min-width:0; flex:1; }
-  .radio-label { font-size:10px; color:var(--hud-red); }
-  #radio-title { font-family:'Rajdhani',sans-serif; font-size:20px; line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .radio-controls { display:flex; gap:8px; }
-  button { display:grid; place-items:center; width:36px; height:36px; border:1px solid #86edf344; background:#091622; color:var(--hud-cyan); font-size:20px; cursor:pointer; }
-  button:disabled { opacity:.35; cursor:default; }
-  button[aria-pressed='true'] { border-color:var(--hud-cyan); background:#17313b; }
-  @media(max-width:700px) { .radio { flex:1 1 100%; order:5; margin:0; padding:8px 0; border:0; } }
+  .radio { display:inline-flex; letter-spacing:.03em; }
+  #radio-toggle { white-space:nowrap; }
+  .radio-panel { position:fixed; z-index:60; bottom:68px; right:42px; width:min(390px,calc(100vw - 48px)); padding:22px; border:1px solid #86edf388; background:linear-gradient(135deg,#251728f5,#091822fa); box-shadow:0 8px 35px #0008; color:var(--hud-cyan); font-family:'Rajdhani',sans-serif; }
+  .radio-top { display:flex; justify-content:space-between; align-items:center; gap:15px; }
+  .radio-label { font:11px 'IBM Plex Mono',monospace; color:var(--hud-red); }
+  #radio-title { font-size:27px; line-height:1.3; margin:18px 0 12px; }
+  .radio-meta { display:flex; justify-content:space-between; font:12px 'IBM Plex Mono',monospace; margin-bottom:18px; }
+  .radio-controls { display:flex; gap:12px; }
+  .radio-controls button { width:54px; height:48px; border:1px solid #86edf366; background:#0b1a27; color:var(--hud-cyan); font-size:24px; }
+  .radio-controls button[aria-pressed='true'] { border-color:var(--hud-cyan); background:#17313b; }
+  .radio-volume { display:flex; align-items:center; gap:16px; margin-top:22px; font:11px 'IBM Plex Mono',monospace; }
+  input { min-width:0; width:100%; accent-color:var(--hud-cyan); }
+  @media(max-width:700px) { .radio-panel { right:24px; bottom:64px; } }
 </style>
