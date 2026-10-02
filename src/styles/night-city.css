@@ -408,3 +408,8 @@
 
 .identity .identity-logo { display:block; width:100%; height:auto; max-width:430px; margin:0 0 4px; }
 .identity-caption { line-height:1.7; }
+/* Enlarge the wordmark without changing its reserved layout space. */
+.identity .identity-logo { transform:translateX(-6px) scale(1.26); transform-origin:center; }
+.night-city .identity .identity-logo:hover { transform:translateX(-6px) scale(1.26); }
+
+@media(max-width:700px) { .identity .identity-logo,.night-city .identity .identity-logo:hover { transform:scale(1.12); } }
