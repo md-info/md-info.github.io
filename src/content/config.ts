@@ -8,6 +8,7 @@ const blogCollection = defineCollection({
     publishDate: z.date(),
     updatedDate: z.date().optional(),
     folder: z.string().optional(),
+    listed: z.boolean().default(true),
     category: z.string(),
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),
@@ -64,3 +65,5 @@ export const collections = {
   'projects': projectsCollection,
   'courses': coursesCollection,
 };
+
+

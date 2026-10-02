@@ -2,11 +2,13 @@
 interface Node { name: string; children: Node[]; notes: {title:string;url:string;search:string}[]; }
 interface Props { node: Node; current: string; }
 const { node, current } = Astro.props;
+const containsCurrent = (branch:Node):boolean => branch.notes.some(note=>note.url===current) || branch.children.some(containsCurrent);
 ---
-<details class="note-folder" open>
+<details class="note-folder" open={node.name === 'Journal' || containsCurrent(node)}>
   <summary>{node.name}</summary>
   <div class="folder-children">
     {node.children.map(child => <Astro.self node={child} current={current} />)}
     {node.notes.map(note => <a href={note.url} data-note-search={note.search} aria-current={note.url === current ? 'page' : undefined}><span aria-hidden="true">▤</span>{note.title}</a>)}
   </div>
 </details>
+
