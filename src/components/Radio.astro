@@ -39,7 +39,7 @@ import tracks from '../data/radio.json';
     if(audio.paused||audio.ended||document.hidden||!spectrum||!analyser||!bins){stopSpectrum();return;}
     spectrum.hidden=false;analyser.getByteFrequencyData(bins);
     const bars=spectrum.children;
-    for(let i=0;i<bars.length;i++){const bin=Math.floor(2*Math.pow(90,i/(bars.length-1)));const level=Math.min(1,bins[bin]/210);(bars[i] as HTMLElement).style.transform=`scaleY(${Math.max(.025,level*level)})`;}
+    for(let i=0;i<bars.length;i++){const bin=Math.floor(2*Math.pow(90,i/(bars.length-1)));const level=bins[bin]/255;(bars[i] as HTMLElement).style.height=`${Math.max(1,Math.pow(level,1.7)*130)}%`;}
     spectrumFrame=requestAnimationFrame(drawSpectrum);
   }
   async function startSpectrum(){
