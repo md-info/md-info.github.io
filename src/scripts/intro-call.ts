@@ -1,3 +1,4 @@
+import {translate,original,getLocale} from '../i18n/client';
 import { navigate } from 'astro:transitions/client';
 document.addEventListener('astro:page-load',()=>{
 if(!document.querySelector('#incoming-call'))return;
@@ -22,7 +23,7 @@ document.addEventListener('astro:before-swap',()=>{
   mobileCall.removeEventListener('change',positionCallPanels);
   if(incoming.parentElement===document.body){incoming.remove();active.remove();}
 },{once:true});
-const introduction = line.textContent!;
+const introduction = original(line.textContent!);
 const progress = document.querySelector<HTMLAnchorElement>('#dialogue-progress')!;
 const progressText = progress.querySelector<HTMLElement>('.progress-text')!;
 const replyButtons = [...choices.querySelectorAll<HTMLButtonElement>('button[data-reply]')];
@@ -155,13 +156,13 @@ function restore() {
 }
 async function say(name:string,text:string,token:number) {
  if(token!==generation) return false;
- choices.hidden=true; subtitle.hidden=false; speaker.hidden=false; speaker.textContent=name+':'; line.textContent='';
- const words=text.split(' ');
+ text=translate(text); choices.hidden=true; subtitle.hidden=false; speaker.hidden=false; speaker.textContent=translate(name)+':'; line.textContent='';
+ const japanese=getLocale()==='ja'; const words=japanese?Array.from(text):text.split(' ');
  const instant=document.documentElement.classList.contains('motion-paused') || matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(instant) line.textContent=text;
  else for(let i=0;i<words.length;i++) {
   if(token!==generation) return false;
-  line.textContent=words.slice(0,i+1).join(' '); await delay(55);
+  line.textContent=words.slice(0,i+1).join(japanese?'':' '); await delay(japanese?25:55);
  }
  if(token!==generation) return false;
  announcement.textContent=name+': '+text;
