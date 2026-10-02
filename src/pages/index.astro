@@ -12,6 +12,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="call-label">MICHEL DEOSARAN <span>● LIVE</span></div>
     <div class="caller-feed"><img src="/images/michel-caller.png" alt="Michel Deosaran" width="936" height="1047" /><div class="caller-scan" aria-hidden="true"></div></div>
     <button id="end-call" aria-label="End call with Michel">END CALL ×</button>
+    <div class="call-languages" role="group" aria-label="Call language"><button data-call-language="en" aria-label="English">EN</button><button data-call-language="fr" aria-label="Français">FR</button><button data-call-language="ja" aria-label="日本語">JA</button></div>
   </aside>
   <div class="welcome-copy"><p class="eyebrow">WELCOME TO MY CORNER OF THE CITY</p><h1>Curious mind.<br />Connected <em>world.</em></h1><div class="intro-dialogue" aria-label="Conversation with Michel">
     <p class="home-description dialogue-subtitle" id="call-subtitle"><span class="dialogue-speaker" hidden>Michel:</span> <span id="dialogue-line">I'm Michel. Toronto looks good from here, right? Give a city a little darkness and suddenly even the concrete has personality. Anyway—glad you picked up. What's on your mind?</span></p>
@@ -20,6 +21,7 @@ import Layout from '../layouts/Layout.astro';
       <a href="/profile/" class="dialogue-choice dialogue-progress" id="dialogue-progress"><span aria-hidden="true">›</span> <span class="progress-text">All right. Let me look around.</span> <span class="dialogue-action" aria-hidden="true">↗</span></a>
       <button class="dialogue-choice" data-reply="banter"><span aria-hidden="true">›</span> <span class="reply-text">You always call strangers like this?</span></button>
       <button class="dialogue-choice" data-reply="work"><span aria-hidden="true">›</span> <span class="reply-text">So, what's keeping you up?</span></button>
+      <button class="dialogue-choice" data-reply="radio"><span aria-hidden="true">›</span> <span class="reply-text">What's on your radio tonight?</span></button>
     </div>
     <a class="enter-button" id="return-profile" href="/profile/"><span>ENTER PROFILE</span><span>↗</span></a>
   </div></div>
@@ -28,3 +30,4 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script src="../scripts/intro-call.ts"></script>
+

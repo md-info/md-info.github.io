@@ -1,4 +1,4 @@
-import {translate,original,getLocale} from '../i18n/client';
+import {translate,original,getLocale,setLocale,type Locale} from '../i18n/client';
 import { navigate } from 'astro:transitions/client';
 document.addEventListener('astro:page-load',()=>{
 if(!document.querySelector('#incoming-call'))return;
@@ -10,6 +10,11 @@ const subtitle = document.querySelector<HTMLElement>('#call-subtitle')!;
 const announcement = document.querySelector<HTMLElement>('#call-announcement')!;
 const incoming = document.querySelector<HTMLElement>('#incoming-call')!;
 const active = document.querySelector<HTMLElement>('#active-call')!;
+const languageButtons=[...active.querySelectorAll<HTMLButtonElement>('[data-call-language]')];
+function updateCallLanguage(){languageButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.callLanguage===getLocale())));}
+languageButtons.forEach(button=>button.addEventListener('click',()=>setLocale(button.dataset.callLanguage as Locale)));
+updateCallLanguage();window.addEventListener('portfolio-language',updateCallLanguage);
+document.addEventListener('astro:before-swap',()=>window.removeEventListener('portfolio-language',updateCallLanguage),{once:true});
 // Keep mobile HUD panels outside the animated page's containing block.
 const callHome = incoming.parentElement!;
 const mobileCall = window.matchMedia('(max-width:700px)');
@@ -27,7 +32,7 @@ const introduction = original(line.textContent!);
 const progress = document.querySelector<HTMLAnchorElement>('#dialogue-progress')!;
 const progressText = progress.querySelector<HTMLElement>('.progress-text')!;
 const replyButtons = [...choices.querySelectorAll<HTMLButtonElement>('button[data-reply]')];
-type Thread = { line:string; action:string; href:string; farewell:string; options:[{key:string;text:string},{key:string;text:string}] };
+type Thread = { line:string; action:string; href:string; farewell:string; options:{key:string;text:string}[] };
 const threads:Record<string,Thread> = {
   "root": {
     "line": "I'm Michel. Toronto looks good from here, right? Give a city a little darkness and suddenly even the concrete has personality. Anyway—glad you picked up. What's on your mind?",
@@ -42,8 +47,16 @@ const threads:Record<string,Thread> = {
       {
         "key": "work",
         "text": "So, what's keeping you up?"
-      }
+      },
+      {"key":"radio","text":"What's on your radio tonight?"}
     ]
+  },
+  "radio": {
+    "line":"Hang on. This view needs the right track. Check this out.",
+    "action":"Leave it playing. I'll look around.",
+    "href":"/profile/",
+    "farewell":"You got it. Take the long way. The city's not going anywhere.",
+    "options":[{"key":"city","text":"Okay. That fits the view."},{"key":"root","text":"Good call. What else is here?"}]
   },
   "banter": {
     "line": "Only the ones wandering through my corner of the internet. A normal welcome page would've been easier, sure. But I like a little atmosphere. You remember a conversation. You forget another wall of text.",
@@ -156,12 +169,14 @@ function restore() {
 }
 async function say(name:string,text:string,token:number) {
  if(token!==generation) return false;
- text=translate(text); choices.hidden=true; subtitle.hidden=false; speaker.hidden=false; speaker.textContent=translate(name)+':'; line.textContent='';
- const japanese=getLocale()==='ja'; const words=japanese?Array.from(text):text.split(' ');
+ const source=original(text);let speakingLocale=getLocale();
+ text=translate(source); choices.hidden=true; subtitle.hidden=false; speaker.hidden=false; speaker.textContent=translate(name)+':'; line.textContent='';
+ let japanese=getLocale()==='ja'; let words=japanese?Array.from(text):text.split(' ');
  const instant=document.documentElement.classList.contains('motion-paused') || matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(instant) line.textContent=text;
  else for(let i=0;i<words.length;i++) {
   if(token!==generation) return false;
+  if(speakingLocale!==getLocale()){speakingLocale=getLocale();text=translate(source);japanese=speakingLocale==='ja';words=japanese?Array.from(text):text.split(' ');speaker.textContent=translate(name)+':';i=-1;continue;}
   line.textContent=words.slice(0,i+1).join(japanese?'':' '); await delay(japanese?25:55);
  }
  if(token!==generation) return false;
@@ -174,7 +189,7 @@ function revealChoices() {
  const current=threads[thread];
  progress.href=current.href;progressText.textContent=current.action;
  replyButtons.forEach((button,index)=>{
-  const option=current.options[index];button.dataset.reply=option.key;
+  const option=current.options[index];button.hidden=!option;if(!option)return;button.dataset.reply=option.key;
   button.querySelector('.reply-text')!.textContent=option.text;
   button.disabled=option.key!=='root' && readSession('md-intro-thread-'+option.key)==='yes';
  });
@@ -204,11 +219,17 @@ if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!
  replyButtons.forEach(button=>button.addEventListener('click',async()=>{
   if(!inCall || choices.hidden || button.disabled) return;
   const key=button.dataset.reply!; const userLine=button.querySelector('.reply-text')!.textContent!;
+  if(key==='radio')window.dispatchEvent(new CustomEvent('portfolio-radio-prepare'));
   const token=++generation; button.disabled=true;
   if(key!=='root')saveSession('md-intro-thread-'+key,'yes');
   if(!await say('You',userLine,token))return;
   thread=key;
-  if(await say('Michel',threads[thread].line,token)){revealChoices();progress.focus({preventScroll:true});}
+  if(!await say('Michel',threads[thread].line,token))return;
+  if(key==='radio'){
+    window.dispatchEvent(new CustomEvent('portfolio-radio-cue',{detail:'/audio/night-city.mp3'}));
+    if(!await say('Michel',"There. Now it feels like we're going somewhere.",token))return;
+  }
+  revealChoices();progress.focus({preventScroll:true});
  }));
  progress.addEventListener('click',async(event)=>{
   event.preventDefault(); if(!inCall || choices.hidden)return;

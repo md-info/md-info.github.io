@@ -1646,5 +1646,37 @@
   "GitHub contribution calendar for md-info": {
     "fr": "Calendrier des contributions GitHub de md-info",
     "ja": "md-infoのGitHub貢献カレンダー"
+  },
+  "What's on your radio tonight?": {
+    "fr": "Tu écoutes quoi à la radio ce soir ?",
+    "ja": "今夜のラジオは何を流してるの？"
+  },
+  "Hang on. This view needs the right track. Check this out.": {
+    "fr": "Attends. Cette vue mérite le bon morceau. Écoute ça.",
+    "ja": "ちょっと待って。この景色には、それに合う曲がいる。これ、聴いてみて。"
+  },
+  "There. Now it feels like we're going somewhere.": {
+    "fr": "Voilà. Là, on a l’impression d’aller quelque part.",
+    "ja": "ほら。これで、どこかへ向かってる感じがするだろ。"
+  },
+  "Leave it playing. I'll look around.": {
+    "fr": "Laisse tourner. Je vais faire un tour.",
+    "ja": "そのまま流してて。ちょっと見て回るよ。"
+  },
+  "You got it. Take the long way. The city's not going anywhere.": {
+    "fr": "Ça marche. Prends le chemin le plus long. La ville ne va pas disparaître.",
+    "ja": "了解。遠回りしていって。この街は逃げないから。"
+  },
+  "Okay. That fits the view.": {
+    "fr": "D’accord. Ça colle bien à la vue.",
+    "ja": "うん。この景色に合うね。"
+  },
+  "Good call. What else is here?": {
+    "fr": "Bien vu. Il y a quoi d’autre ici ?",
+    "ja": "いい選曲。他には何がある？"
+  },
+  "Call language": {
+    "fr": "Langue de l’appel",
+    "ja": "通話の言語"
   }
 }

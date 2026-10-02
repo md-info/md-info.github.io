@@ -65,6 +65,15 @@ import tracks from '../data/radio.json';
   function setVolume(){cancelAnimationFrame(fade);const target=baseVolume*(inCall?.3:1);const from=audio.volume;const begin=performance.now();function step(now:number){const t=Math.min(1,(now-begin)/250);audio.volume=from+(target-from)*t;if(t<1)fade=requestAnimationFrame(step);}fade=requestAnimationFrame(step);}
   volume.addEventListener('input',()=>{baseVolume=Number(volume.value)/100;setVolume();});
   window.addEventListener('portfolio-call',event=>{inCall=Boolean((event as CustomEvent).detail);setVolume();});
+  window.addEventListener('portfolio-radio-prepare',()=>{
+    if(!audio.paused)return;
+    const muted=audio.muted;audio.muted=true;
+    void audio.play().then(()=>{audio.pause();audio.muted=muted;}).catch(()=>{audio.muted=muted;});
+  });
+  window.addEventListener('portfolio-radio-cue',event=>{
+    const next=playlist.findIndex(track=>track.src===(event as CustomEvent<string>).detail);
+    if(next<0)return;select(next);void start();
+  });
   audio.addEventListener('play',showState);audio.addEventListener('pause',showState);
   audio.addEventListener('timeupdate',()=>{const t=Math.floor(audio.currentTime);radio.querySelector('#radio-time')!.textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');});
   audio.addEventListener('ended',()=>{if(!audio.loop){select(index+1);void start();}});
