@@ -422,6 +422,8 @@ const featuredPosts =
 </Layout>
 
 <script>
+document.addEventListener("astro:page-load",()=>{
+
   // Filter functionality
   const filterBtns =
     document.querySelectorAll(
@@ -492,6 +494,8 @@ const featuredPosts =
       },
     );
   });
+
+});
 </script>
 
 <style>
@@ -560,3 +564,4 @@ const featuredPosts =
     }
   }
 </style>
+

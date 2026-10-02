@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Radio from '../components/Radio.astro';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/night-city.css';
 interface Props { title?: string; description?: string; home?: boolean; }
 const { title = 'Michel Deosaran', description = 'Computing, cybersecurity, and business. The personal portfolio of Michel Deosaran.', home = false } = Astro.props;
@@ -21,7 +23,7 @@ const items = [
     <link rel="preload" as="image" href="/images/toronto-waterfront.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <title>{title}</title>
+    <title>{title}</title><ClientRouter fallback="swap" />
   </head>
   <body class:list={['night-city', { 'is-home': home }]}>
     <a href="#content" class="skip-link">Skip to content</a>
@@ -47,7 +49,7 @@ const items = [
         <slot />
       </main>
     </div>
-    <footer class="controls-bar"><span>43°39′ N &nbsp; 79°23′ W <i> / </i> THE CITY AFTER DARK</span><div><span><kbd>{home ? '↑ ↓' : 'Tab'}</kbd> Navigate</span><span><kbd>↵</kbd> Select</span><span><kbd>Esc</kbd> Back</span><button class="settings-open" aria-label="Open interface settings">⚙ Settings</button></div></footer>
+    <footer class="controls-bar"><span>43°39′ N &nbsp; 79°23′ W <i> / </i> THE CITY AFTER DARK</span><div><span><kbd>{home ? '↑ ↓' : 'Tab'}</kbd> Navigate</span><span><kbd>↵</kbd> Select</span><span><kbd>Esc</kbd> Back</span><Radio /><button class="settings-open" aria-label="Open interface settings">⚙ Settings</button></div></footer>
     <dialog id="settings-dialog" aria-labelledby="settings-title">
       <div class="dialog-top"><span>INTERFACE CONFIGURATION</span><button id="settings-close" aria-label="Close settings">×</button></div>
       <h2 id="settings-title">Settings</h2><p>Make yourself comfortable.</p>
@@ -59,4 +61,5 @@ const items = [
     <script>import '../scripts/interface.ts';</script>
   </body>
 </html>
+
 

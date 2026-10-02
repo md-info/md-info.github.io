@@ -37,8 +37,13 @@ const contributions = [
   <a class="record-back" href="/experience/">← EXPERIENCE ARCHIVE</a>
  </div>
  <script>
-  const chart=document.querySelector<HTMLImageElement>('#github-contributions')!;
+document.addEventListener("astro:page-load",()=>{
+
+  const chart=document.querySelector<HTMLImageElement>('#github-contributions'); if(!chart)return;
   function fallback() { chart.hidden=true; document.querySelector<HTMLElement>('#chart-fallback')!.hidden=false; }
   chart.addEventListener('error',fallback); if(chart.complete && chart.naturalWidth===0) fallback();
- </script>
+ 
+});
+</script>
 </Layout>
+
