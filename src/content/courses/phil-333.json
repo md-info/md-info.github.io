@@ -1,9 +1,13 @@
 {
-    "title": "Professional Ethics",
-    "code": "PHIL 333",
-    "institution": "Athabasca University",
-    "semester": "Summer 2024",
-    "description": "Course description and key topics covered",
-    "grade": "B+",
-    "writeups": []
-  }
+  "title": "Professional Ethics",
+  "code": "PHIL 333",
+  "institution": "Athabasca University",
+  "semester": "Summer 2024",
+  "description": "",
+  "grade": "B+",
+  "writeups": [],
+  "startDate": "2024-06-01",
+  "endDate": "2024-09-09",
+  "status": "Completed",
+  "registrationOrder": 25
+}

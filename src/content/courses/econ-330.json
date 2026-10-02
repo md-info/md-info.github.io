@@ -1,9 +1,13 @@
 {
-    "title": "Workers and the Economy",
-    "code": "ECON 330",
-    "institution": "Athabasca University",
-    "semester": "Summer 2025",
-    "description": "Course description and key topics covered",
-    "grade": "C",
-    "writeups": []
-  }
+  "title": "Workers and the Economy",
+  "code": "ECON 330",
+  "institution": "Athabasca University",
+  "semester": "Summer 2025",
+  "description": "",
+  "grade": "C",
+  "writeups": [],
+  "startDate": "2025-06-01",
+  "endDate": "2025-09-18",
+  "status": "Completed",
+  "registrationOrder": 16
+}

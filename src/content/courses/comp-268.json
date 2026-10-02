@@ -1,9 +1,13 @@
 {
-    "title": "Intro to Computer Programming (Java)",
-    "code": "COMP 268",
-    "institution": "Athabasca University",
-    "semester": "Summer 2025",
-    "description": "Course description and key topics covered",
-    "grade": "A+",
-    "writeups": []
-  }
+  "title": "Intro to Comp Programming-Java",
+  "code": "COMP 268",
+  "institution": "Athabasca University",
+  "semester": "Summer 2025",
+  "description": "",
+  "grade": "A+",
+  "writeups": [],
+  "startDate": "2025-06-01",
+  "endDate": "2025-08-11",
+  "status": "Completed",
+  "registrationOrder": 17
+}

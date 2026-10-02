@@ -1,9 +1,13 @@
 {
-    "title": "Introductory Composition",
-    "code": "ENGL 255",
-    "institution": "Athabasca University",
-    "semester": "Fall 2025",
-    "description": "Course description and key topics covered",
-    "grade": "B+",
-    "writeups": []
-  }
+  "title": "Introductory Composition",
+  "code": "ENGL 255",
+  "institution": "Athabasca University",
+  "semester": "Fall 2025",
+  "description": "",
+  "grade": "B+",
+  "writeups": [],
+  "startDate": "2025-10-01",
+  "endDate": "2026-01-06",
+  "status": "Completed",
+  "registrationOrder": 13
+}

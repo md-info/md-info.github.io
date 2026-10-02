@@ -1,9 +1,13 @@
 {
-    "title": "Operating Systems",
-    "code": "COMP 314",
-    "institution": "Athabasca University",
-    "semester": "Winter 2026",
-    "description": "Course description and key topics covered",
-    "grade": "IP",
-    "writeups": []
-  }
+  "title": "Operating Systems",
+  "code": "COMP 314",
+  "institution": "Athabasca University",
+  "semester": "Winter 2026",
+  "description": "",
+  "grade": "C+",
+  "writeups": [],
+  "startDate": "2026-02-01",
+  "endDate": "2026-05-29",
+  "status": "Completed",
+  "registrationOrder": 9
+}

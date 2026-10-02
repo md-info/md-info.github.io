@@ -1,9 +1,13 @@
- {
-    "title": "Intro to Computer Programming with Python",
-    "code": "COMP 218",
-    "institution": "Athabasca University",
-    "semester": "Summer 2024",
-    "description": "Course description and key topics covered",
-    "grade": "A-",
-    "writeups": []
-  }
+{
+  "title": "Intro to Comp Prog w/ Python",
+  "code": "COMP 218",
+  "institution": "Athabasca University",
+  "semester": "Summer 2024",
+  "description": "",
+  "grade": "A-",
+  "writeups": [],
+  "startDate": "2024-06-01",
+  "endDate": "2024-09-20",
+  "status": "Completed",
+  "registrationOrder": 23
+}

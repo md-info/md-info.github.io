@@ -45,10 +45,7 @@ const sortedYears = Object.keys(coursesByYear).sort((a, b) => {
 });
 sortedYears.forEach(year => {
   coursesByYear[year].sort((a, b) => {
-    const semesterOrder = { 'Fall': 2, 'Winter': 1, 'Spring': 0, 'Summer': 0 };
-    const aSemester = a.semester.split(' ')[0];
-    const bSemester = b.semester.split(' ')[0];
-    return (semesterOrder[bSemester] || 0) - (semesterOrder[aSemester] || 0);
+    return b.startDate.localeCompare(a.startDate) || a.registrationOrder - b.registrationOrder;
   });
 });
 ---
@@ -60,7 +57,7 @@ sortedYears.forEach(year => {
 			<div class="text-center mb-16 animate-fade-in">
 				<h1 class="text-4xl font-bold text-primary mb-4">Coursework archive</h1>
 				<p class="text-secondary text-lg max-w-3xl mx-auto">
-          A comprehensive overview of the courses I've taken during my Computer Science studies. To be updated, with related writeups!
+          My Computing & Information Systems registration archive, including completed courses and current studies.
 				</p>
 			</div>
 
@@ -75,12 +72,12 @@ sortedYears.forEach(year => {
 					<div class="text-secondary">Academic Years</div>
 				</div>
 				<div class="text-center card p-6 animate-scale-in" style="--index: 2;">
-					<div class="text-3xl font-bold text-accent mb-2">{courses.filter(c => c.writeups && c.writeups.length > 0).length}</div>
-					<div class="text-secondary">Courses with Writeups</div>
+					<div class="text-3xl font-bold text-accent mb-2">{courses.filter(c => c.status === 'Completed').length}</div>
+					<div class="text-secondary">Completed Courses</div>
 				</div>
 				<div class="text-center card p-6 animate-scale-in" style="--index: 3;">
-					<div class="text-3xl font-bold text-accent mb-2">{courses.reduce((total, c) => total + (c.writeups ? c.writeups.length : 0), 0)}</div>
-					<div class="text-secondary">Total Writeups</div>
+					<div class="text-3xl font-bold text-accent mb-2">{courses.filter(c => c.status === 'In Progress').length}</div>
+					<div class="text-secondary">In Progress</div>
 				</div>
 			</div>
 
@@ -105,15 +102,8 @@ sortedYears.forEach(year => {
 										</div>
 										<div class="flex items-center gap-2">
 											<span class="text-sm bg-surface-alt text-primary px-2 py-1 rounded">{course.semester}</span>
-											{course.grade && (
-												<span class={`text-sm px-2 py-1 rounded font-medium ${
-													course.grade === 'A+' || course.grade === 'A' ? 'bg-green-100 text-green-800' :
-													course.grade === 'A-' || course.grade === 'B+' ? 'bg-blue-100 text-blue-800' :
-													'bg-gray-100 text-gray-800'
-												}`}>
-													Grade: {course.grade}
-												</span>
-											)}
+											<span class="text-sm border border-color px-2 py-1 text-accent">{course.status}</span>
+                      <span class="text-sm border border-color px-2 py-1 text-accent">Final Grade: {course.grade}</span>
 										</div>
 									</div>
 									<div class="flex-shrink-0">
@@ -127,7 +117,11 @@ sortedYears.forEach(year => {
 									</div>
 								</div>
 
-								<p class="text-secondary mb-4">{course.description}</p>
+								<dl class="grid grid-cols-2 gap-4 mb-4 text-accent">
+                  <div><dt class="text-sm text-secondary">Start date</dt><dd><time datetime={course.startDate}>{course.startDate}</time></dd></div>
+                  <div><dt class="text-sm text-secondary">End date</dt><dd><time datetime={course.endDate}>{course.endDate}</time></dd></div>
+                </dl>
+                {course.description && <p class="text-secondary mb-4">{course.description}</p>}
 
 								{course.writeups && course.writeups.length > 0 && (
 									<div>

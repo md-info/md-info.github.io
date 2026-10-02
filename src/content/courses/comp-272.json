@@ -1,9 +1,13 @@
-  {
-    "title": "Data Structures and Algorithms",
-    "code": "COMP 272",
-    "institution": "Athabasca University",
-    "semester": "Winter 2026",
-    "description": "Course description and key topics covered",
-    "grade": "IP",
-    "writeups": []
-  }
+{
+  "title": "Data Structures and Algorithms",
+  "code": "COMP 272",
+  "institution": "Athabasca University",
+  "semester": "Winter 2026",
+  "description": "",
+  "grade": "B-",
+  "writeups": [],
+  "startDate": "2026-02-01",
+  "endDate": "2026-05-31",
+  "status": "Completed",
+  "registrationOrder": 8
+}
