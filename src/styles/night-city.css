@@ -431,3 +431,15 @@
 @media(max-width:700px) {
  body>.active-call .caller-feed { height:140px; }
 }
+@media(max-width:700px) {
+ .incoming-call { width:min(218px,calc(100vw - 24px)); padding:12px; }
+ .incoming-call .call-label,.incoming-call .call-status { font-size:10px; }
+ .incoming-call .call-icon { width:42px; height:42px; margin:10px auto; font-size:24px; }
+ .incoming-call strong { font-size:20px; }
+ .incoming-call .call-actions { gap:8px; margin-top:10px; }
+ .incoming-call .call-actions button { padding:7px 10px; font-size:15px; }
+ .active-call,.home-screen:has(#active-call:not([hidden])) .active-call { width:120px; }
+ body>.active-call .caller-feed { height:108px; }
+ .active-call .call-label { font-size:9px; gap:3px 6px; }
+ .active-call #end-call { font-size:12px; padding:6px; }
+}
