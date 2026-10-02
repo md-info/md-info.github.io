@@ -1079,18 +1079,6 @@
     "fr": "Me contacter",
     "ja": "お問い合わせ"
   },
-  "I'm Michel Deosaran, a Computing & Information Systems undergraduate at Athabasca University. I enjoy understanding how complex systems work, and how technology, cybersecurity, and business come together to solve real problems.": {
-    "fr": "Je suis Michel Deosaran, étudiant de premier cycle en informatique et systèmes d’information à l’Université Athabasca. J’aime comprendre le fonctionnement des systèmes complexes et la façon dont la technologie, la cybersécurité et les affaires se rejoignent pour résoudre des problèmes concrets.",
-    "ja": "アサバスカ大学でコンピューティング・情報システムを学ぶMichel Deosaranです。複雑なシステムの仕組みや、技術・サイバーセキュリティ・ビジネスが現実の問題解決にどう結びつくかを理解するのが好きです。"
-  },
-  "I freelance in business development through Michael & Zion Revenue Group. Starting conversations, exchanging ideas, and discovering what motivates people comes naturally to me.": {
-    "fr": "Je travaille à mon compte en développement commercial par l’intermédiaire de Michael & Zion Revenue Group. Engager la conversation, échanger des idées et découvrir ce qui motive les gens me vient naturellement.",
-    "ja": "Michael & Zion Revenue Groupを通じて、フリーランスでビジネス開発に携わっています。会話を始め、アイデアを交換し、人の原動力を知ることは、僕にとって自然なことです。"
-  },
-  "My studies cover networking, operating systems, programming, databases, cloud technologies, and cybersecurity. I share what I learn through technical videos on": {
-    "fr": "Mes études portent sur les réseaux, les systèmes d’exploitation, la programmation, les bases de données, les technologies infonuagiques et la cybersécurité. Je partage mes apprentissages dans des vidéos techniques sur",
-    "ja": "ネットワーク、OS、プログラミング、データベース、クラウド技術、サイバーセキュリティを学んでいます。学んだことは技術動画として公開しています："
-  },
   "Beyond computing, I enjoy learning languages. I completed French Immersion bilingual studies and study Japanese through The Japan Foundation, Toronto.": {
     "fr": "Au-delà de l’informatique, j’aime apprendre des langues. J’ai suivi des études bilingues en immersion française et j’étudie le japonais auprès de la Fondation du Japon à Toronto.",
     "ja": "コンピューティング以外では、語学も好きです。フランス語イマージョンのバイリンガル教育を修了し、トロントの国際交流基金で日本語を学んでいます。"
@@ -1678,5 +1666,17 @@
   "Call language": {
     "fr": "Langue de l’appel",
     "ja": "通話の言語"
+  },
+  "I'm Michel Deosaran, a Computing & Information Systems undergraduate at Athabasca University. I enjoy understanding how complex systems work, and how software and business come together to solve real problems.": {
+    "fr": "Je m'appelle Michel Deosaran et j'étudie l'informatique et les systèmes d'information à l'Université Athabasca. J'aime comprendre le fonctionnement des systèmes complexes et la façon dont le logiciel et les affaires se rejoignent pour résoudre des problèmes concrets.",
+    "ja": "アサバスカ大学でコンピューティングと情報システムを学ぶミシェル・デオサランです。複雑なシステムの仕組みを理解し、ソフトウェアとビジネスを結びつけて身近な課題を解決することに関心があります。"
+  },
+  "At Zeon Michael Group, I work on practical problems at the grassroots level, exploring how software can make personal finance and small businesses work better. That means building useful tools, managing data pipelines, and turning ideas into solutions grounded in people's everyday needs.": {
+    "fr": "Chez Zeon Michael Group, je m'attaque à des problèmes concrets sur le terrain et j'explore comment le logiciel peut améliorer les finances personnelles et le fonctionnement des petites entreprises. Je développe des outils utiles, gère des pipelines de données et transforme des idées en solutions ancrées dans les besoins quotidiens des gens.",
+    "ja": "Zeon Michael Groupでは、現場の身近な課題に取り組み、ソフトウェアを通じて個人の家計管理や小規模事業をより良くする方法を探っています。便利なツールの開発やデータパイプラインの管理を通じて、日々のニーズに根ざしたアイデアを形にしています。"
+  },
+  "My studies cover networking, operating systems, programming, databases, and cloud technologies. I've also gotten hands-on with real estate data and quantitative finance, putting what I learn into practice through data workflows, financial modelling, and software projects.": {
+    "fr": "Mes études portent sur les réseaux, les systèmes d'exploitation, la programmation, les bases de données et les technologies infonuagiques. J'ai aussi acquis une expérience pratique des données immobilières et de la finance quantitative, en appliquant mes connaissances à des flux de données, à la modélisation financière et à des projets logiciels.",
+    "ja": "大学ではネットワーク、オペレーティングシステム、プログラミング、データベース、クラウド技術を学んでいます。不動産データやクオンツ・ファイナンスにも実際に取り組み、データ処理、金融モデリング、ソフトウェア開発のプロジェクトで学びを実践しています。"
   }
 }
