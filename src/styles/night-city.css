@@ -404,3 +404,7 @@
 .night-city :is(.enter-button,.btn-primary,.btn-secondary):is(:hover,:focus-visible)::before { background:var(--hud-amber)!important; }
 .night-city :is(.enter-button,.btn-primary,.btn-secondary):is(:hover,:focus-visible)::after { background:#241e19f2!important; }
 .night-city :is(input,select,textarea):focus-visible { outline:2px solid var(--hud-amber); outline-offset:3px; box-shadow:0 0 14px #ffc36c44; }
+
+
+.identity .identity-logo { display:block; width:100%; height:auto; max-width:430px; margin:0 0 4px; }
+.identity-caption { line-height:1.7; }

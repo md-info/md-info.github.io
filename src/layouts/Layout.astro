@@ -33,8 +33,8 @@ const items = [
     <header class="system-bar"><a href="/" aria-label="Michel Deosaran main menu">MD<span>_</span></a><span>PERSONAL INTERFACE <b> / </b> TORONTO, ON</span><time id="toronto-time">TORONTO</time></header>
     <div class="interface-grid">
       {home && <aside class="menu-panel">
-        <a href="/" class="identity" aria-label="Michel Deosaran main menu"><span>MICHEL</span><strong>DEOSARAN<span class="identity-dot">.</span></strong></a>
-        <p class="identity-caption">COMPUTING · SECURITY · BUSINESS</p>
+        <a href="/" class="identity" aria-label="Michel Deosaran main menu"><img class="identity-logo" src="/images/deosaran-michel.png" alt="Deosaran Michel" width="2170" height="725" /></a>
+        <p class="identity-caption">SOFTWARE · BUSINESS DEVELOPMENT</p>
         <div class="menu-heading"><span>MAIN MENU</span><span>MD / 001</span></div>
         <nav aria-label="Main menu" class="game-menu">
           {items.map(([href, label, number], index) => <a href={href} class:list={['menu-item', { active: index === 0 }]}><span class="menu-number">{number}</span><span>{label}</span><span class="menu-indicator" aria-hidden="true">↗</span></a>)}
@@ -59,3 +59,4 @@ const items = [
     <script>import '../scripts/interface.ts';</script>
   </body>
 </html>
+
