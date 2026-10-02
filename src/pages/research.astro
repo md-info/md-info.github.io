@@ -1,8 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-const posts = (await getCollection('blog', ({data}) => !data.draft)).filter(post => post.data.category.toLowerCase().includes('research'));
 ---
-<Layout title="Research — Michel Deosaran" description="Michel's interests in information systems and computing education.">
-  <div class="dossier-content"><p class="eyebrow">04 / RESEARCH LOG</p><h1>Understanding<br />the <em>system.</em></h1><p class="lead">Exploring Information Systems and Computer Science Education.</p><div class="profile-grid"><div class="body-copy"><p>My research interests sit at the intersection of computing, education, and the way people work with technology.</p><p>I document ideas, reading, and reflections through technical writing and educational media. This log is a space for that work as it develops.</p><a class="enter-button" href="/blog/">OPEN JOURNAL <span>↗</span></a></div><aside class="profile-facts"><p class="eyebrow">RELATED READING</p>{posts.map(post => <a class="research-link" href={`/blog/${post.slug}/`}>{post.data.title} ↗</a>)}<a class="research-link" href="https://micheldeosaran.medium.com/">Writing on Medium ↗</a><a class="research-link" href="https://www.youtube.com/@LeroyLock">Technical essays on Leroy Lock ↗</a></aside></div></div>
+<Layout title="Research — Michel Deosaran" description="Applied research through software development at ZM Intelligence: property data, source validation, and systems supporting real estate underwriting.">
+  <div class="dossier-content">
+    <p class="eyebrow">04 / APPLIED RESEARCH</p>
+    <h1>Evidence into<br /><em>intelligence.</em></h1>
+    <p class="lead">Building the research infrastructure behind real estate underwriting at ZM Intelligence.</p>
+    <div class="profile-grid">
+      <div class="body-copy">
+        <p>My research grows out of my work as a software developer. Building a property intelligence platform means investigating where information comes from, what a record actually describes, and how different sources fit together before writing the systems that use them.</p>
+        <p>At ZM Intelligence, my focus is sourcing property and development information and developing GIS, data pipelines, and databases. The goal is to turn scattered public records into structured, traceable evidence that can support research synthesis and underwriting.</p>
+        <p>My contribution is the software and data foundation: making information easier to find, validate, connect, and revisit. Underwriting estimates and assumptions need to remain clearly separate from verified property facts.</p>
+        <div class="project-links"><a class="enter-button" href="https://zm-intel.onrender.com/" target="_blank" rel="noopener noreferrer">EXPLORE ZM INTELLIGENCE <span>↗</span></a><a class="research-link" href="/experience/work/">SOFTWARE DEVELOPMENT ROLE ↗</a></div>
+      </div>
+      <aside class="profile-facts">
+        <p class="eyebrow">CURRENT FOCUS / IN DEVELOPMENT</p>
+        <h2>Trace the source.</h2>
+        <p>Property conditions, planning activity, and proposed development each need their own context and source trail.</p>
+        <p>Record the source, access date, and confidence. Keep existing conditions distinct from proposed projects. Label estimates and underwriting assumptions.</p>
+        <a class="research-link" href="https://zm-intel.onrender.com/methodology" target="_blank" rel="noopener noreferrer">ZM INTELLIGENCE METHODOLOGY ↗</a>
+      </aside>
+    </div>
+    <p class="eyebrow mt-10">RESEARCH THROUGH ENGINEERING</p>
+    <div class="project-grid mt-4">
+      <article class="card"><p class="eyebrow">01 / SOURCE &amp; STRUCTURE</p><h2>Understand the records.</h2><p>Investigate public property and development sources, interpret their fields, and design consistent records for ingestion and storage.</p></article>
+      <article class="card"><p class="eyebrow">02 / VERIFY &amp; CONNECT</p><h2>Preserve the evidence.</h2><p>Develop validation and source tracking alongside GIS and database workflows, so information can be connected without losing its origin or context.</p></article>
+      <article class="card"><p class="eyebrow">03 / SUPPORT UNDERWRITING</p><h2>Make research reusable.</h2><p>Build a foundation for comparing property facts and development activity, with a clear boundary between sourced evidence and the assumptions used in underwriting.</p></article>
+    </div>
+  </div>
 </Layout>
