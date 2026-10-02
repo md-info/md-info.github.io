@@ -382,3 +382,25 @@
  .home-screen:has(#active-call:not([hidden])) .dialogue-choices { margin-top:12px; }
  .home-screen:has(#active-call:not([hidden])) .dialogue-choice { font-size:22px; min-height:40px; }
 }
+
+/* Interaction cues: amber for controls; passive panels remain still. */
+.night-city { --hud-amber:#ffc36c; }
+.night-city .card:not(a):not(button):not([role="button"]):hover {
+  border-color:#ff727544; box-shadow:none; transform:none; background:#111720bd;
+}
+
+.night-city :is(a[href],button:not(:disabled),summary,[role="button"]):not(.menu-panel *):is(:hover,:focus-visible) {
+  color:var(--hud-amber)!important;
+  text-shadow:0 0 8px #ffc36c99,0 0 20px #ffc36c55!important;
+  outline-color:var(--hud-amber);
+}
+.night-city :is(a[href],button:not(:disabled),summary,[role="button"]):not(.menu-panel *):is(:hover,:focus-visible) :is(span,strong,h2,h3,b) {
+  color:var(--hud-amber)!important; text-shadow:inherit!important;
+}
+.night-city :is(.enter-button,.btn,.experience-file,.menu-item:not(.menu-panel *),.archive-filters button,.filter-btn,.dialogue-choice,.call-actions button,#end-call):not(:disabled):is(:hover,:focus-visible) {
+  border-color:var(--hud-amber)!important; background:#ffc36c14!important;
+  box-shadow:0 0 15px #ffc36c30,inset 0 0 12px #ffc36c12!important;
+}
+.night-city :is(.enter-button,.btn-primary,.btn-secondary):is(:hover,:focus-visible)::before { background:var(--hud-amber)!important; }
+.night-city :is(.enter-button,.btn-primary,.btn-secondary):is(:hover,:focus-visible)::after { background:#241e19f2!important; }
+.night-city :is(input,select,textarea):focus-visible { outline:2px solid var(--hud-amber); outline-offset:3px; box-shadow:0 0 14px #ffc36c44; }
