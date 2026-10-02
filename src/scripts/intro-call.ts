@@ -9,6 +9,19 @@ const subtitle = document.querySelector<HTMLElement>('#call-subtitle')!;
 const announcement = document.querySelector<HTMLElement>('#call-announcement')!;
 const incoming = document.querySelector<HTMLElement>('#incoming-call')!;
 const active = document.querySelector<HTMLElement>('#active-call')!;
+// Keep mobile HUD panels outside the animated page's containing block.
+const callHome = incoming.parentElement!;
+const mobileCall = window.matchMedia('(max-width:700px)');
+function positionCallPanels(){
+  const parent=mobileCall.matches?document.body:callHome;
+  parent.append(incoming,active);
+}
+positionCallPanels();
+mobileCall.addEventListener('change',positionCallPanels);
+document.addEventListener('astro:before-swap',()=>{
+  mobileCall.removeEventListener('change',positionCallPanels);
+  if(incoming.parentElement===document.body){incoming.remove();active.remove();}
+},{once:true});
 const introduction = line.textContent!;
 const progress = document.querySelector<HTMLAnchorElement>('#dialogue-progress')!;
 const progressText = progress.querySelector<HTMLElement>('.progress-text')!;
