@@ -190,7 +190,13 @@ if(readSession('md-intro-complete')!=='yes' && readSession('md-call-dismissed')!
  document.querySelector('#answer-call')!.addEventListener('click',async()=>{
   if(inCall) return; cancel(); inCall=true; window.dispatchEvent(new CustomEvent('portfolio-call',{detail:true})); incoming.hidden=true; active.hidden=false; returning.hidden=true;
   const token=generation;
-  if(!await say('Michel',"Hey. You found the place. I was wondering who'd turn up.",token))return;
+  const greeting=say('Michel',"Hey. You found the place. I was wondering who'd turn up.",token);
+  if(mobileCall.matches)requestAnimationFrame(()=>{
+    if(!inCall||token!==generation)return;
+    subtitle.scrollIntoView({block:'center',behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
+  });
+  if(!await greeting)return;
+  if(!await say('Michel',"Too quiet in here? Radio's down by Settings. Pick a track. Every late-night detour needs a soundtrack.",token))return;
   if(await say('Michel',introduction,token)) { revealChoices(); progress.focus({preventScroll:true}); }
  });
  for(const id of ['decline-call','end-call']) document.querySelector('#'+id)!.addEventListener('click',()=>{saveSession('md-call-dismissed','yes');restore();returning.focus({preventScroll:true});});
