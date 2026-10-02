@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 const files = [
-  { number: '01', title: 'Education', subtitle: 'Computing & Information Systems', text: 'Athabasca University. A foundation in software, systems, and the way people use technology.', href: '/experience/education/', tag: 'ACADEMIC RECORD' },
-  { number: '02', title: 'Work', subtitle: 'Technology & services', text: 'Software development, business development, and digital product management at Zeon Michael Group. Previous client services experience at VIVA.', href: '/experience/work/', tag: 'PROFESSIONAL RECORD' },
-  { number: '03', title: 'Community', subtitle: 'Open source & GitHub', text: 'GPU engineering goals, substantive code reviews, reproducible investigations, and collaboration with maintainers.', href: '/experience/extracurricular/', tag: 'COMMUNITY RECORD' },
+  { number: '01', title: 'Education', subtitle: 'Academic studies & certifications', text: 'Computing & Information Systems at Athabasca, science and mathematics coursework, and certifications in finance, web development, and languages.', href: '/experience/education/', tag: 'ACADEMIC RECORD' },
+  { number: '02', title: 'Work', subtitle: 'Technology, products & client services', text: 'Software, business development, and digital product roles at Zeon Michael Group, alongside earlier client services experience at VIVA.', href: '/experience/work/', tag: 'PROFESSIONAL RECORD' },
+  { number: '03', title: 'Community', subtitle: 'Open-source contributions & GPU engineering', text: 'GitHub activity, GPU programming goals, and published CUDA and Apex code reviews backed by reproducible tests and evidence.', href: '/experience/extracurricular/', tag: 'COMMUNITY RECORD' },
 ];
 ---
 <Layout title="Experience — Michel Deosaran">
-  <div class="dossier-content"><p class="eyebrow">03 / EXPERIENCE RECORD</p><h1>Learning. Building.<br /><em>Connecting.</em></h1><p class="lead">Three parts of the same journey.</p><div class="experience-files">{files.map(file => <a class="experience-file" href={file.href}><div class="experience-number">{file.number}</div><span class="eyebrow">{file.tag}</span><h2>{file.title}</h2><h3>{file.subtitle}</h3><p>{file.text}</p><span class="file-action">OPEN RECORD <b>↗</b></span></a>)}</div></div>
+  <div class="dossier-content"><p class="eyebrow">03 / EXPERIENCE RECORD</p><h1>Learning. Building.<br /><em>Connecting.</em></h1><p class="lead">Academic foundations. Professional experience. Open-source collaboration.</p><div class="experience-files">{files.map(file => <a class="experience-file" href={file.href}><div class="experience-number">{file.number}</div><span class="eyebrow">{file.tag}</span><h2>{file.title}</h2><h3>{file.subtitle}</h3><p>{file.text}</p><span class="file-action">OPEN RECORD <b>↗</b></span></a>)}</div></div>
 </Layout>
