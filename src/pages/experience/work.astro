@@ -1,4 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const roles = [
+ { title:'Software Developer', arrangement:'Permanent Full-time', dates:'Aug 2026 – Present', location:'Keswick, Ontario, Canada', division:'ZM Intelligence', description:'Building a local real estate data and intelligence platform to support research synthesis. My work includes sourcing property and development information and maintaining GIS, data pipelines, and databases. The platform is in development.', skills:['Software Development','GIS','Data Pipelines','Databases','Research Synthesis'], link:null },
+ { title:'Business Development Representative', arrangement:'On-Call', dates:'Jul 2026 – Present', location:'', division:'ZM Business Services', description:'Customer success and relationship management, alongside ideal customer profile analysis and research.', skills:['Business Development','Customer Success','Relationship Management','Customer Research'], link:{label:'ZM Business Services',url:'https://zionmichaelrevenue.github.io'} },
+ { title:'Digital Product Manager', arrangement:'Permanent Part-time', dates:'Aug 2026 – Present', location:'', division:'ZM Digital Products', description:'Stakeholder management, project management, and contract procurement for digital product work.', skills:['Monetization','Stakeholder Management','Project Management','Contract Procurement'], link:{label:'ZM Digital Products',url:'https://zmpublications.medium.com'} },
+];
 ---
-<Layout title="Work — Michel Deosaran"><div class="dossier-content"><p class="eyebrow">03 / PROFESSIONAL RECORD</p><h1>Connecting technology<br />with <em>opportunity.</em></h1><p class="lead">Freelance business development.</p><article class="work-record"><p class="eyebrow">MICHAEL & ZION REVENUE GROUP</p><h2>Founder & freelance BDR</h2><div class="body-copy"><p>I built a freelance B2B sales development agency to help businesses generate opportunities through personalized outreach, prospect research, lead qualification, and relationship-driven sales strategies.</p><p>My work brings together digital branding, website development, sales operations, and communication. I designed the agency's digital presence, messaging, and client-facing materials while managing outreach campaigns.</p></div><div class="skill-tags"><span>Prospect research</span><span>Outreach</span><span>CRM & lead management</span><span>Digital branding</span></div><a class="enter-button" href="https://www.linkedin.com/company/michael-zion-sales-group/">EXPLORE THE AGENCY ↗</a></article><a class="record-back" href="/experience/">← EXPERIENCE RECORDS</a></div></Layout>
+<Layout title="Work Experience — Michel Deosaran" description="Michel Deosaran's roles at Zeon Michael Group and previous client services experience at VIVA Retirement Communities.">
+ <div class="dossier-content">
+  <p class="eyebrow">03 / PROFESSIONAL RECORD</p><h1>Technology. Services.<br /><em>People.</em></h1>
+  <p class="lead">Software development, business relationships, and digital product delivery.</p>
+  <section aria-labelledby="zeon-heading">
+   <h2 id="zeon-heading" class="text-3xl mb-4">Zeon Michael Group</h2>
+   <p class="body-copy mb-6">A technology and services company spanning data intelligence, business services, and digital products. My roles connect the systems we build with the people and organizations they serve.</p>
+   <a class="enter-button mb-8" href="https://www.linkedin.com/company/142910079/" target="_blank" rel="noopener noreferrer">COMPANY PROFILE ↗</a>
+   <div class="space-y-6">{roles.map((role,index)=><article class="card p-6 sm:p-8 animate-slide-in-left" style={`--index:${index}`}>
+    <p class="eyebrow mb-3">{role.division} / {role.dates}</p><h3 class="text-2xl text-accent mb-2">{role.title}</h3>
+    <p class="text-accent mb-5">{role.arrangement}{role.location && ` · ${role.location}`}</p>
+    <p class="body-copy">{role.description}</p>
+    <div class="skill-tags" aria-label="Skills">{role.skills.map(skill=><span>{skill}</span>)}</div>
+    {role.link && <a class="enter-button" href={role.link.url} target="_blank" rel="noopener noreferrer">{role.link.label} ↗</a>}
+   </article>)}</div>
+  </section>
+  <section aria-labelledby="previous-heading" class="mt-12">
+   <h2 id="previous-heading" class="text-3xl mb-6">Previous experience</h2>
+   <article class="card p-6 sm:p-8">
+    <p class="eyebrow mb-3">VIVA RETIREMENT COMMUNITIES / AUG 2020 – AUG 2023</p>
+    <h3 class="text-2xl text-accent mb-2">Client Services Representative</h3>
+    <p class="text-accent mb-5">Permanent Full-time</p>
+    <div class="skill-tags" aria-label="Skills"><span>Professional Communication</span></div>
+    <a class="enter-button" href="https://vivalife.ca/" target="_blank" rel="noopener noreferrer">VIVA RETIREMENT COMMUNITIES ↗</a>
+   </article>
+  </section>
+  <a class="record-back" href="/experience/">← EXPERIENCE ARCHIVE</a>
+ </div>
+</Layout>
