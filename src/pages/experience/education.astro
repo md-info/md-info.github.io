@@ -1,255 +1,41 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro';
+const education = [
+ { institution:'Athabasca University', program:'Bachelor of Science, Computing and Information Systems', dates:'May 2023 – Present', details:['Athabasca Philomatheans','2025–2026 Honor Roll'], skills:['Research Methods','Statistics'], links:[{label:'Program website',url:'https://www-preview.athabascau.ca/science-and-technology/programs/bachelor-of-science-in-computing-and-information-systems.html'}] },
+ { institution:'Humber Polytechnic', program:'Coursework, Biomedical Sciences, General', dates:'Sep 2019 – May 2023', details:['Health Science Certificate','Research Fundraising Committee — Member','Biotechnology coursework','Paramedical Science coursework'], skills:['Leadership','Teamwork'], links:[] },
+ { institution:'York University', program:'Coursework, Mathematics', dates:'Sep 2021 – May 2022', details:['Calculus II','Calculus I'], skills:['Advanced Mathematics'], links:[] },
+];
+const certifications = [
+ { title:'Education in Quantitative Finance (Cert.)', issuer:'Udemy', description:'Completed Algorithmic Stock Trading and Equity Investing with Python, taught by Alexander Hagmann, on August 26, 2026.', skills:['Financial Modeling','Investment Analysis'], credentialId:'', link:{label:'Udemy profile',url:'https://www.udemy.com/user/mikey-deosaran/'} },
+ { title:'Upper Intermediate (CEFR)', issuer:'The Japan Foundation, Toronto', description:'Japanese language studies.', skills:['英訳','Japanese Translation'], credentialId:'', link:{label:'Learning profile',url:'https://www.italki.com/user/33018287'} },
+ { title:'Bilingual Studies (OSSD)', issuer:'Ontario Ministry of Education', description:'Bilingual studies with French translation skills.', skills:['French Translation'], credentialId:'', link:null },
+ { title:'Education in Software Development (Cert.)', issuer:'Udemy', description:'Completed The Web Developer Bootcamp 2026, taught by Colt Steele, on August 26, 2026.', skills:['Web Development'], credentialId:'UC-3440d788-4ccf-40e7-a96f-ffb721dca650', link:{label:'Show credential',url:'https://www.udemy.com/certificate/UC-3440d788-4ccf-40e7-a96f-ffb721dca650/'} },
+];
 ---
-
-<Layout
-  title="Education - Michel Deosaran"
-  description="My academic background and educational achievements."
->
-  <div
-    class="py-16 px-4 sm:px-6 lg:px-8"
-  >
-    <div class="max-w-4xl mx-auto">
-      <!-- Header -->
-      <div
-        class="text-center mb-12 animate-fade-in"
-      >
-        <h1
-          class="text-4xl font-bold text-primary mb-4"
-        >
-          Education
-        </h1>
-        <p
-          class="text-secondary text-lg"
-        >
-          My academic journey and the
-          knowledge foundation that
-          drives my passion for systems
-        </p>
-      </div>
-
-      <!-- Education Timeline -->
-      <div class="space-y-8">
-        <!-- 1 -->
-        <div
-          class="card p-8 animate-slide-in-left"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-center md:justify-between mb-6"
-          >
-            <div>
-              <h2
-                class="text-2xl font-bold text-primary mb-2"
-              >
-                Athabasca University
-              </h2>
-              <h3
-                class="text-xl text-accent mb-2"
-              >
-                Computing, Information
-                Systems, B.Sc.
-              </h3>
-              <p class="text-secondary">
-                Minor in Software
-                Development
-              </p>
-            </div>
-            <div class="text-right">
-              <div
-                class="text-primary font-semibold"
-              >
-                Jan 2025 - Dec 2027
-              </div>
-              <div
-                class="text-secondary"
-              >
-                GPA: 3.6/4
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6">
-            <h4
-              class="text-lg font-semibold text-primary mb-3"
-            >
-              Relevant Coursework
-            </h4>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-2"
-            >
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                  >COMP 361 - System
-                  Analysis & Design</span
-                >
-              </div>
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                  >MATH 216 -
-                  Comp-Oriented Approach
-                  to Stat</span
-                >
-              </div>
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                >
-                  COMP 494 - Research
-                  Methods
-                </span>
-              </div>
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                  >CMIS 311 - Supporting
-                  End-User Computing
-                </span>
-              </div>
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                  >COMP 308 - Java for
-                  Programmers
-                </span>
-              </div>
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                  >COMP 272 - Data
-                  Structures and
-                  Algorithms
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6">
-            <h4
-              class="text-lg font-semibold text-primary mb-3"
-            >
-              Awards
-            </h4>
-            <ul
-              class="space-y-2 text-secondary"
-            >
-            </ul>
-          </div>
-        </div>
-        <!-- 2 -->
-        <div
-          class="card p-8 animate-slide-in-left"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-center md:justify-between mb-6"
-          >
-            <div>
-              <h2
-                class="text-2xl font-bold text-primary mb-2"
-              >
-                Humber Polytechnic
-              </h2>
-              <h3
-                class="text-xl text-accent mb-2"
-              >
-                Biology, Diploma
-              </h3>
-              <p class="text-secondary">
-                Paramedical Sciences,
-                Biotechnology,
-              </p>
-            </div>
-            <div class="text-right">
-              <div
-                class="text-primary font-semibold"
-              >
-                Sept 2019 - May 2023
-              </div>
-              <div
-                class="text-secondary"
-              >
-                GPA: 3.3/4
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6">
-            <h4
-              class="text-lg font-semibold text-primary mb-3"
-            >
-              Relevant Coursework
-            </h4>
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-2"
-            >
-              <div
-                class="flex items-center gap-2"
-              >
-                <span
-                  class="w-2 h-2 bg-accent rounded-full"
-                ></span>
-                <span
-                  class="text-secondary"
-                  >TBA</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6">
-            <h4
-              class="text-lg font-semibold text-primary mb-3"
-            >
-              Awards
-            </h4>
-            <ul
-              class="space-y-2 text-secondary"
-            >
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Back Navigation -->
-      <div class="mt-12 text-center">
-        <a
-          href="/experience"
-          class="btn btn-secondary"
-        >
-          ← Back to Experience
-        </a>
-      </div>
-    </div>
-  </div>
+<Layout title="Education & Certifications — Michel Deosaran" description="Michel Deosaran's education, academic honors, licenses, and certifications.">
+ <div class="dossier-content">
+  <p class="eyebrow">03 / EDUCATION RECORD</p><h1>Education &amp; <em>certifications.</em></h1>
+  <p class="lead">Academic foundations in computing, science, and mathematics. Continued learning in finance, software development, and languages.</p>
+  <section aria-labelledby="education-heading">
+   <h2 id="education-heading" class="text-3xl mb-6">Education</h2>
+   <div class="space-y-6">{education.map((record,index)=><article class="card p-6 sm:p-8 animate-slide-in-left" style={`--index:${index}`}>
+    <p class="eyebrow mb-3">{record.dates}</p><h3 class="text-2xl text-accent mb-2">{record.institution}</h3>
+    <p class="text-xl text-accent mb-5">{record.program}</p>
+    <ul class="body-copy list-disc pl-6 mb-5">{record.details.map(detail=><li>{detail}</li>)}</ul>
+    <div class="skill-tags" aria-label="Skills">{record.skills.map(skill=><span>{skill}</span>)}</div>
+    <div class="project-links">{record.links.map(link=><a class="enter-button" href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}{index===0 && <a class="enter-button" href="/coursework/">Coursework archive ↗</a>}</div>
+   </article>)}</div>
+  </section>
+  <section aria-labelledby="certifications-heading" class="mt-12">
+   <h2 id="certifications-heading" class="text-3xl mb-6">Licenses &amp; certifications</h2>
+   <div class="project-grid">{certifications.map((record,index)=><article class="card p-6 sm:p-8 animate-slide-in-left" style={`--index:${index}`}>
+    <p class="eyebrow mb-3">{record.issuer}</p><h3 class="text-2xl text-accent mb-4">{record.title}</h3>
+    <p class="body-copy">{record.description}</p>
+    {record.credentialId && <p class="text-accent mt-4 break-all">Credential ID: {record.credentialId}</p>}
+    <div class="skill-tags" aria-label="Skills">{record.skills.map(skill=><span>{skill}</span>)}</div>
+    {record.link && <a class="enter-button" href={record.link.url} target="_blank" rel="noopener noreferrer">{record.link.label} ↗</a>}
+   </article>)}</div>
+  </section>
+  <a class="record-back" href="/experience/">← EXPERIENCE ARCHIVE</a>
+ </div>
 </Layout>
