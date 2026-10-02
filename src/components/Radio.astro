@@ -57,7 +57,14 @@ import tracks from '../data/radio.json';
   document.addEventListener('click',event=>{if(!panel.hidden && !radio.contains(event.target as Node))open(false);});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){event.preventDefault();event.stopImmediatePropagation();open(false);toggle.focus();}},true);
   document.addEventListener('astro:before-swap',()=>open(false));
-  async function start(){try{await audio.play();}catch{message.textContent='Playback could not start. Please try again.';showState();}}
+  async function start(){
+    try{
+      await audio.play();
+      if(window.matchMedia('(max-width:700px)').matches){
+        window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});
+      }
+    }catch{message.textContent='Playback could not start. Please try again.';showState();}
+  }
   function select(next:number){const wasPlaying=!audio.paused;index=(next+playlist.length)%playlist.length;audio.src=playlist[index].src;title.textContent=playlist[index].title;radio.querySelector('#radio-time')!.textContent='0:00';showState();message.textContent='Selected '+playlist[index].title;if(wasPlaying)void start();}
   play.addEventListener('click',()=>{if(audio.paused)void start();else audio.pause();});
   loop.addEventListener('click',()=>{audio.loop=!audio.loop;loop.setAttribute('aria-pressed',String(audio.loop));message.textContent=audio.loop?'Loop on':'Loop off';});
