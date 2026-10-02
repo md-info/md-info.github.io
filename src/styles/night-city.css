@@ -415,3 +415,16 @@
 @media(max-width:700px) { .identity .identity-logo,.night-city .identity .identity-logo:hover { transform:scale(1.12); } }
 
 
+
+/* Downward audio spectrum occupies the existing space above the identity. */
+.menu-panel { position:relative; }
+.radio-spectrum { position:absolute; top:4px; left:25px; right:30px; height:clamp(24px,5vw,82px); display:flex; align-items:flex-start; gap:3px; pointer-events:none; overflow:hidden; }
+.radio-spectrum[hidden] { display:none; }
+.radio-spectrum span { flex:1; height:100%; background:linear-gradient(var(--hud-red),#ff525288); transform:scaleY(.025); transform-origin:top; box-shadow:0 0 5px #ff525233; }
+@media(min-width:701px) and (max-height:850px) { .radio-spectrum { height:22px; } }
+@media(max-width:700px) {
+ .radio-spectrum { left:12px; right:12px; height:28px; }
+ .incoming-call { position:fixed; top:max(12px,env(safe-area-inset-top)); right:max(12px,env(safe-area-inset-right)); width:min(260px,calc(100vw - 24px)); z-index:70; }
+ .active-call,.home-screen:has(#active-call:not([hidden])) .active-call { position:fixed; top:max(12px,env(safe-area-inset-top)); left:max(12px,env(safe-area-inset-left)); width:150px; z-index:70; }
+ .home-screen:has(#active-call:not([hidden])) .welcome-copy { padding-top:0; }
+}
