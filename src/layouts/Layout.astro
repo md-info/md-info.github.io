@@ -35,6 +35,7 @@ const items = [
     <header class="system-bar"><span>PERSONAL INTERFACE <b> / </b> TORONTO, ON</span><time id="toronto-time">TORONTO</time></header>
     <div class="interface-grid">
       {home && <aside class="menu-panel">
+        <div class="radio-spectrum" aria-hidden="true" hidden>{Array.from({length:40},()=> <span></span>)}</div>
         <a href="/" class="identity" aria-label="Michel Deosaran main menu"><img class="identity-logo" src="/images/deosaran-michel.png" alt="Deosaran Michel" width="2170" height="725" /></a>
         <p class="identity-caption">SOFTWARE · BUSINESS DEVELOPMENT</p>
         <div class="menu-heading"><span>MAIN MENU</span><span>MD / 001</span></div>

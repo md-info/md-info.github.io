@@ -32,6 +32,24 @@ import tracks from '../data/radio.json';
   const volume=radio.querySelector<HTMLInputElement>('#radio-volume')!;
   let index=0,baseVolume=.55,inCall=false,fade=0;
   audio.src=playlist[0].src;audio.volume=baseVolume;
+  let context:AudioContext|undefined,analyser:AnalyserNode|undefined,bins:Uint8Array<ArrayBuffer>|undefined,spectrumFrame=0;
+  function stopSpectrum(){cancelAnimationFrame(spectrumFrame);const spectrum=document.querySelector<HTMLElement>('.radio-spectrum');if(spectrum)spectrum.hidden=true;}
+  function drawSpectrum(){
+    const spectrum=document.querySelector<HTMLElement>('.radio-spectrum');
+    if(audio.paused||audio.ended||document.hidden||!spectrum||!analyser||!bins){stopSpectrum();return;}
+    spectrum.hidden=false;analyser.getByteFrequencyData(bins);
+    const bars=spectrum.children;
+    for(let i=0;i<bars.length;i++){const bin=Math.floor(2*Math.pow(90,i/(bars.length-1)));const level=Math.min(1,bins[bin]/210);(bars[i] as HTMLElement).style.transform=`scaleY(${Math.max(.025,level*level)})`;}
+    spectrumFrame=requestAnimationFrame(drawSpectrum);
+  }
+  async function startSpectrum(){
+    if(!context){context=new AudioContext();analyser=context.createAnalyser();analyser.fftSize=2048;analyser.smoothingTimeConstant=.78;bins=new Uint8Array(analyser.frequencyBinCount);const source=context.createMediaElementSource(audio);source.connect(analyser);analyser.connect(context.destination);}
+    await context.resume();cancelAnimationFrame(spectrumFrame);drawSpectrum();
+  }
+  audio.addEventListener('play',()=>{void startSpectrum();});audio.addEventListener('pause',stopSpectrum);
+  document.addEventListener('astro:before-swap',stopSpectrum);
+  document.addEventListener('astro:page-load',()=>{if(!audio.paused)void startSpectrum();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopSpectrum();else if(!audio.paused)void startSpectrum();});
   function showState(){play.textContent=audio.paused?'▶':'Ⅱ';play.setAttribute('aria-label',audio.paused?'Play radio':'Pause radio');state.textContent=audio.paused?'PAUSED':'ON AIR';toggle.textContent=audio.paused?'♫ Radio':'♫ Radio · LIVE';}
   function open(value:boolean){panel.hidden=!value;toggle.setAttribute('aria-expanded',String(value));if(value)play.focus();}
   toggle.addEventListener('click',()=>open(panel.hidden));
